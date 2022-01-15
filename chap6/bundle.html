@@ -1,0 +1,685 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chap 6. OPA Bundle · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-etoc-plus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chap7/integrations.html" />
+    
+    
+    <link rel="prev" href="../chap5/writingpolicy.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../LICENSE.html">
+            
+                <a href="../LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../AUTHOR.html">
+            
+                <a href="../AUTHOR.html">
+            
+                    
+                    About Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ACKNOWLEGEMENT.html">
+            
+                <a href="../ACKNOWLEGEMENT.html">
+            
+                    
+                    Acknowledgement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../CONTRIBUTORS.html">
+            
+                <a href="../CONTRIBUTORS.html">
+            
+                    
+                    Contributors and Sponsors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chap1/introduction.html">
+            
+                <a href="../chap1/introduction.html">
+            
+                    
+                    Chap 1. Introduction to OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chap2/installandusage.html">
+            
+                <a href="../chap2/installandusage.html">
+            
+                    
+                    Chap 2. OPA Installation and Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chap3/rego.html">
+            
+                <a href="../chap3/rego.html">
+            
+                    
+                    Chap 3. Rego
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chap4/builtinfunction.html">
+            
+                <a href="../chap4/builtinfunction.html">
+            
+                    
+                    Chap 4. Built-in Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chap5/writingpolicy.html">
+            
+                <a href="../chap5/writingpolicy.html">
+            
+                    
+                    Chap 5. Writing Policies Using OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="bundle.html">
+            
+                <a href="bundle.html">
+            
+                    
+                    Chap 6. OPA Bundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../chap7/integrations.html">
+            
+                <a href="../chap7/integrations.html">
+            
+                    
+                    Chap 7. OPA Integrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../chap8/monitoring.html">
+            
+                <a href="../chap8/monitoring.html">
+            
+                    
+                    Chap 8. Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../chap9/kubernetes.html">
+            
+                <a href="../chap9/kubernetes.html">
+            
+                    
+                    Chap 9. Using OPA in Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../chap10/extending.html">
+            
+                <a href="../chap10/extending.html">
+            
+                    
+                    Chap 10. Extending OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../chap11/wasm.html">
+            
+                <a href="../chap11/wasm.html">
+            
+                    
+                    Chap 11. OPA and Web Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chap 6. OPA Bundle</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chap-6-opa-bundle">Chap 6. OPA Bundle</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#opa-bundle-generation">OPA Bundle Generation</a><ul>
+<li><a href="#creation-of-opa-bundles-manually">Creation of OPA bundles manually</a></li>
+<li><a href="#opa-bundle-tools">OPA Bundle Tools</a></li>
+</ul>
+</li>
+<li><a href="#signing-opa-bundle">Signing OPA Bundle</a><ul>
+<li><a href="#bundle-signing-and-verification-with-hmac">Bundle Signing and Verification with HMAC</a></li>
+<li><a href="#creating-bundle-signature-file-only">Creating Bundle Signature File Only</a></li>
+</ul>
+</li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<h2 id="contents">Contents</h2>
+<ul>
+<li>How to bundle OPA data and policies</li>
+<li>Generate Bundles with OPA Tools</li>
+<li>Signature and Validation of OPA bundles</li>
+</ul>
+<p>An OPA bundle is a tar.gz file with a specific format. The OPA bundle includes data files in JSON or YAML format, and rego files. OPA bundles make it easier to manage multiple data and policy files packaged into a single file. Manifest can also be used to specify the root or revision of a data file and to add a signature file to ensure its validity.</p>
+<h2 id="opa-bundle-generation">OPA Bundle Generation</h2>
+<h3 id="creation-of-opa-bundles-manually">Creation of OPA bundles manually</h3>
+<p>To manually create an OPA bundle:</p>
+<p>First, create a directory for bundles. Let&apos;s create a directory named bundletest.</p>
+<p>The data.json (or data.yaml) and each rego file must then be located in each directory. The name of the data file included in the bundle must always be data.json or data.yaml. Multiple data.json or data.yaml can exist because bundle directories can have multiple directories in their child.</p>
+<p>Created test/server/rest, users, and role subdirectories under the bundletest directory.
+Then, in the test/server/rest directory, policy.rego is located, and in the users and roles directory, a data.json file containing user information and role information created respectively. The test/server/rest/policy.rego is similar to the previous policy.rego, but some changes have been made to refer to users from users/data.json as data.users.users. For the actual source files used for bundle testing, refer to the contents of the chap6/bundletest directory. </p>
+<blockquote>
+<p><a id="chap6/bundletestopatool/test/server/rest/policy.rego
+" href="../code/chap6/bundletestopatool/test/server/rest/policy.rego">chap6/bundletestopatool/test/server/rest/policy.rego
+</a></p>
+</blockquote>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;text&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;chrome&quot;}">package test.server.rest
+
+default allowed = false
+
+allowed {
+    name := input.name
+    data.users.users[name].role == &quot;manager&quot;
+}<br></div></div>
+
+
+
+<p>The content of users/data.json is the same as that of users.json.</p>
+<blockquote>
+<p><a id="chap6/bundletestopatool/users/data.json
+" href="../code/chap6/bundletestopatool/users/data.json">chap6/bundletestopatool/users/data.json
+</a></p>
+</blockquote>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;json&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;chrome&quot;}">{
+    &quot;users&quot; : {
+        &quot;bob&quot;: {
+            &quot;role&quot;:&quot;manager&quot;
+        },
+        &quot;alice&quot;: {
+            &quot;role&quot;:&quot;staff&quot;
+        }
+    }
+}<br></div></div>
+
+
+
+
+<p>role/data.json is briefly written with the following:</p>
+<blockquote>
+<p><a id="chap6/bundletestopatool/role/data.json
+" href="../code/chap6/bundletestopatool/role/data.json">chap6/bundletestopatool/role/data.json
+</a></p>
+</blockquote>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;json&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;chrome&quot;}">{
+    &quot;role&quot; : [&quot;manager&quot;, &quot;staff&quot;]
+}<br></div></div>
+
+
+
+<p>To create a bundle, create a tarball (tar.gz) file as follows: The following command generates the bundle.tar.gz file, including the test, role, and users directories:</p>
+<pre><code>$ tar cvzf bundle.tar.gz test role users
+a test
+a test/server
+a test/server/rest
+a test/server/rest/policy.rego
+a role
+a role/data.json
+a users
+a users/data.json
+</code></pre><p>If bundle.tar.gz is created, let&apos;s load it from OPA and check it out. Instead of specifying the policy and data files individually, you can specify bundle.tar.gz when issuing OPA commands as follows: You can check the loaded content by outputting the result loaded with the data command.</p>
+<pre><code>$ opa run bundle.tar.gz
+OPA 0.23.2 (commit 661ec2f, built at 2020-08-24T18:49:53Z)
+
+Run &apos;help&apos; to see a list of commands and check for updates.
+
+&gt; data
+{
+  &quot;role&quot;: {
+    &quot;role&quot;: [
+      &quot;manager&quot;,
+      &quot;staff&quot;
+    ]
+  },
+  &quot;test&quot;: {
+    &quot;server&quot;: {
+      &quot;rest&quot;: {
+        &quot;allowed&quot;: false
+      }
+    }
+  },
+  &quot;users&quot;: {
+    &quot;users&quot;: {
+      &quot;alice&quot;: {
+        &quot;role&quot;: &quot;staff&quot;
+      },
+      &quot;bob&quot;: {
+        &quot;role&quot;: &quot;manager&quot;
+      }
+    }
+  }
+}
+</code></pre><p>If you look at the loaded content, you can see that users.role and others are added to the hierarchy. For example, in the previous example, information from a user named Alice could be accessed as data.users[alice] but after inclusion in the bundle, it should be accessed using data.users.users[alice]. If you want to access data.users[&quot;alice&quot;] as before, you can place data.json or data.yaml directly in the bundle top-level directory so that hierarchies are not included.</p>
+<p>Bundle may contain manifest files. The manifest file is named .manifest and is a JSON file in the following format: revision refers to a revision number that can distinguish bundles, either by the commit ID of the git repository or by the version given by the organization&apos;s policy. roots specifies the root directory of the package to be exposed externally. The default value for roots is [&#x201C;&quot;], which includes all directory structures in the bundle and does not have packages imported from outside. If there is a package imported from outside the bundle (such as HTTP), it must be declared in the root for additional packages to be used.</p>
+<pre><code>{
+  &quot;revision&quot; : &quot;6973caed1c345856387b5476d562897356dbe056&quot;,
+  &quot;roots&quot;: [&#x201C;test&#x201D;, &quot;roles&quot;, &#x201C;users&#x201C;]
+}
+</code></pre><p>To add a manifest, you can include .manifest in the list of files in the tar command.</p>
+<pre><code>$ tar cvzf bundle.tar.gz test role users .manifest
+a test
+a test/server
+a test/server/rest
+a test/server/rest/policy.rego
+a role
+a role/data.json
+a users
+a users/data.json
+a .manifest
+</code></pre><h3 id="opa-bundle-tools">OPA Bundle Tools</h3>
+<p>The OPA bundle generation tool provided by OPA makes it easier to generate bundles. However, the bundle generated by the OPA is provided with all the data combined and flattened into one file optimized for minimal traffic use.</p>
+<p>To generate an OPA bundle, run the following command from the bundle&apos;s top-level directory: For the actual source files used for bundle testing, refer to the contents of the chap6/bundletestopatool directory.</p>
+<pre><code>$ opa build .
+</code></pre><p>The command was executed with only the test, role, and users directories present, not including .manifest.</p>
+<p>Even if the manifest file exists in that directory, it is not included in the generated bundle. To include revisions and others in manifest, it must be passed to the arguments of the bundle tool.</p>
+<p>The bundle file name generated by executing the command above is bundle.tar.gz. First, let&apos;s create a temp directory, copy bundle.tar.gz, and release the tarball.</p>
+<pre><code>$ tar xvzf bundle.tar.gz
+tar: Removing leading &apos;/&apos; from member names
+x data.json
+x test\\server\\rest\\policy.rego
+x .manifest
+</code></pre><p>The data files in the role and users directories were merged to include a single data.json file, and the policy.rego file remained in place.</p>
+<p>First of all, if you check the manifest generated by the bundled tool, it is as follows. No revision or package root was specified as an argument, indicating that the manifest created with default values.</p>
+<pre><code>{&quot;revision&quot;:&quot;&quot;,&quot;roots&quot;:[&quot;&quot;]}
+</code></pre><p>If you look at the generated data.json, you can see that role/data.json and users/data.json have been merged to remove spaces.</p>
+<pre><code>{&quot;role&quot;:{&quot;role&quot;:[&quot;manager&quot;,&quot;staff&quot;]},&quot;users&quot;:{&quot;users&quot;:{&quot;alice&quot;:{&quot;role&quot;:&quot;staff&quot;},&quot;bob&quot;:{&quot;role&quot;:&quot;manager&quot;}}}}
+</code></pre><p>The contents of the test/server/rest/policy.rego file inside the bundle were included in the bundle without significant changes:</p>
+<pre><code>package test.server.rest
+
+default allowed = false
+
+allowed {
+  name := input.name
+  data.users.users[name].role == &quot;manager&quot;
+}
+</code></pre><p>The generated bundle is loaded with the opa run bundle.tar.gz command and tested to work the same as the manually created bundle.</p>
+<h2 id="signing-opa-bundle">Signing OPA Bundle</h2>
+<p>OPA supports HMAC, RSA and ECSDA for bundle signatures. The HMAC method is to verify the integrity of messages with hash values by sharing the same secret code for signature and verification. On the other hand, RSA and ECSDA use a public key encryption method to sign and verify with a private key. Let&apos;s use each method to sign the bundle and verify the signed bundle when loading it.</p>
+<h3 id="bundle-signing-and-verification-with-hmac">Bundle Signing and Verification with HMAC</h3>
+<p>To sign a bundle with HMAC, specify the HMAC-related signature algorithm such as HS256, HS384, HS512 in the singing-alg argument as the following command when creating the bundle, and enter the code to be used as a password in the signing-key. When signing a bundle, you should specify the --bundle argument rather than the target directory immediately. See the contents of the chap6/bundlehmac directory for the actual source files used for bundle testing.</p>
+<pre><code>$ opa build --signing-alg HS512 --signing-key secret --bundle .
+</code></pre><p>HS256, HS384, and HS512 are algorithms to be used for HMAC signatures, and the larger the number, the stronger the security and makes the signature larger. Codes specified by signing-key shall use the same code when verifying the signature.</p>
+<p>Copy the generated bundle file (bundle.tar.gz) to the directory you created temporarily, and then extract it. When extracted, the signature is recorded differently from the existing bundle.You can see the addition of .signatures.json.</p>
+<pre><code>$ tar xvzf bundle.tar.gz
+tar: Removing leading `/&apos; from member names
+x data.json
+x test\\server\\rest\\policy.rego
+x .manifest
+x .signatures.json
+</code></pre><p>The format of the .signature file is as follows: It has a string array value for a key called signatures, which can now contain only one signature in the file, so the array is always 1 in size. The signature value is a string in typical JWT format.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;signatures&quot;</span>: [
+    <span class="hljs-string">&quot;eyJhbGciOiJIUzUxMiIsImtpZCI6ImRlZmF1bHQifQ.eyJmaWxlcyI6W3sibmFtZSI6InRlc3Qvc2VydmVyL3Jlc3QvcG9saWN5LnJlZ28iLCJoYXNoIjoiYzVkNTM3MTg1NjBiNWYyMWE3ZDYwZjhkY2YyNzNmZTJkZjQ3YWYwNDdiMjRmYzNhZWQ4NzAzYWJlMDY1MDQxMiIsImFsZ29yaXRobSI6IlNIQS0yNTYifSx7Im5hbWUiOiJkYXRhLmpzb24iLCJoYXNoIjoiY2RmNjcxYzYwOTg2NDdlMWYxYTIxYTI1YTMzZmJkODQwNDNiNmJmZTIyODEyYTQyYmRiOGIyNWEyM2EwYWZhNCIsImFsZ29yaXRobSI6IlNIQS0yNTYifSx7Im5hbWUiOiIubWFuaWZlc3QiLCJoYXNoIjoiZDIwYTE4NTJjMTk1OGE0NDE5OGZhNmM5MDJjOWM5ZjNhNWJmMTZjNTY2MjVlZDVmN2EyMDQ0ODg4NjM3YjgxNiIsImFsZ29yaXRobSI6IlNIQS0yNTYifV0sImtleWlkIjoiZGVmYXVsdCJ9.yLpCjF0JCL7MsX3N8tEoYqMagL5HlpYG0o2mvbj0X5cwmXKAJLMTQl0w3HdimuheEWo7tOKA8Fwrc5jFujE-wA&quot;</span>
+  ]
+}
+</code></pre>
+<p>To verify this signature, you can access jwt.io and select the signature algorithm in the debugger as shown in Figure 6-1, enter the contents of the signature in the Encoded section, and enter the secret you specified by code in the Verification of Signature section. The .singnature.json itself, which contains the signature file without the code, is a jwt file, so you can see the content, but you need the code to verify that the content has not changed since signing.</p>
+<p>To verify the generated bundle, you can load it with the following command: The signing-alg argument can specify the same algorithm used for signing, and the run command takes over the signature code as the verification-key factor. Finally, if you do not specify the --bundle (or &#x2013;b) option, you load the bundle without verifying the signature, so if you want to verify it, you must specify the --bundle option.</p>
+<pre><code>$ opa run --signing-alg HS512 --verification-key secret --bundle bundle.tar.gz
+</code></pre><p>If the code for signature verification or signature algorithm is specified differently than when it is signed, the signature verification fails and the bundle does not load as follows:</p>
+<pre><code>$ opa run --signing-alg HS512 --verification-key nosecret --bundle bundle.tar.gz
+error: load error: bundle bundle.tar.gz: Failed to verify message: failed to match hmac signature
+</code></pre><p><img src="img/fig_6-1.png" alt=" Verification of bundle signatures signed with HS512"> </p>
+<p>Figure 6-1. Verification of bundle signatures signed with HS512</p>
+<p>Bundle signature and verification using asymmetric key signatures
+The basic behavior is the same as HMAC-based bundle signing and verification, except for algorithms that specify that private keys and public keys are used for signing and validation instead of the same signature code for signing and validation. It is recommended to use a version later than 0.25 because the bundle verification function using asymmetric key signatures does not work with bugs until version 0.24. For your information, the bug was found by the author while testing the book and reported to the <a href="https://github.com/open-policy-agent/opa/issues/2796" target="_blank">https://github.com/open-policy-agent/opa/issues/2796</a> issue. Readers are also encouraged to actively report on github issues if there is a function that does not work as expected among OPA functions.</p>
+<p>First, let&apos;s test RSA algorithm-based bundle signing and verification.</p>
+<p>Prior to the test, the public and private keys shall be generated using openssl. openssl will be installed by default in Linux or Mac OS environments. In a Windows environment, you can install the Git client for Windows and run the openssl command by utilizing the included gitbash. Let&apos;s first run the next openssl command to create it.</p>
+<pre><code>$ openssl genrsa -out private_key.pem 2048
+$ openssl rsa -in private_key.pem -out public_key.pem -pubout
+</code></pre><p>The first command generates an RSA private key named private_key.pem with a size of 2048 bits. The second command generates a public_key.pem matching the private_key.pem.</p>
+<p>When the public key and private key are generated, let&apos;s sign the bundle using the private key private_key.pem. As previously discussed, only the signing-alg and signing-key arguments need to be replaced and the private_key.pem and public_key.pem can be located in the bundled directory to generate signatures for those key files, so keep them in a different directory for reference. See the contents of the Chap6/bundlersa directory for the actual source files used for bundle testing.</p>
+<pre><code>$ opa build --signing-alg RS512 &#x2014;signing-key ../private_key.pem --bundle .
+</code></pre><p>When the bundle is generated, copy the bundle file to the directory you created temporarily and extract it with the tar xvzf bundle.tar.gz command. The JWT token contains .signing.json&apos;s contents, and if the contents of the file to be included in the bundle have not been modified, the header of the JWT and the last signature are different, but the data (or payload) containing the hash values of the file is the same as before.</p>
+<p>To verify the bundle, you can only change the signing-alg and verification-key to verify it in the same way as before.</p>
+<pre><code>$ opa run --signing-alg RS512 &#x2014;verification-key ../public_key.pem --bundle bundle.tar.gz
+</code></pre><p>Let&apos;s then sign and validate the ECSDA algorithm-based bundle. In the case of ECSDA algorithms, the signature and verification methods are similar. However, there is a difference in how keys are generated. The following command was used to create a public key ecpublic_key.pem that matches the private key ecprivate_key.pem.</p>
+<pre><code>$ openssl ecparam -name prime256v1 -genkey -noout -out ecprivate_key.pem
+$ openssl ec -in ecprivate_key.pem -pubout &#x2013;out ecpublic_key.pem
+</code></pre><p>While RSA keys set the number of bits at generation, the ECSDA algorithm sets the kind of elliptical curve to use. In the example above, prime256v1 is used, and the types of elliptical curves available can be determined by the command: The Go-based library used by the OPA does not support all elliptical curves, so if the key does not work, please recreate it with prime256v1 and confirm.</p>
+<pre><code>$ openssl ecparam &#x2013;list_curves
+secp112r1 : SECG/WTLS curve over a 112 bit prime field
+secp112r2 : SECG curve over a 112 bit prime field
+secp128r1 : SECG curve over a 128 bit prime field
+secp128r2 : SECG curve over a 128 bit prime field
+... (omitted) ...
+brainpoolP512r1: RFC 5639 curve over a 512 bit prime field
+brainpoolP512t1: RFC 5639 curve over a 512 bit prime field
+SM2 : SM2 curve over a 256 bit prime field
+</code></pre><p>To verify your signature on jwt.io, simply enter the contents of private_key.pem where you entered the code before, as shown in Figure 6-2.</p>
+<p>To generate a signed bundle based on an ECDSA, you can run the following command: From the previous commands, we can see that only the signing-alg and signing-key arguments are different. For the actual source files used for bundle testing, refer to the contents of the chap6/bundlecdsa directory.</p>
+<pre><code>$ opa build --signing-alg ES512 --signing-key ../ecprivate_key.pem --bundle .
+</code></pre><p><img src="img/fig_6-2.png" alt=" Verification of bundle signatures signed with RS512"> </p>
+<p>Figure 6-2. Verification of bundle signatures signed with RS512</p>
+<p>To load a bundle signed with ECDSA, you can run the following command:</p>
+<pre><code>$ opa run --signing-alg ES512 &#x2014;verification-key ../ecpublic_key.pem --bundle bundle.tar.gz
+</code></pre><h3 id="creating-bundle-signature-file-only">Creating Bundle Signature File Only</h3>
+<p>Only .signatures files can be created using the opa sign command. If only .signatures files are created separately and included in the tarball creation, the bundle generated by the tar cvzf command can also be signed. If you want to create a signature file only, you can change the opa command to sign instead of build as follows:</p>
+<pre><code>$ opa sign --signing-alg ES512 --signing-key ../ecprivate_key.pem --bundle .
+</code></pre><h2 id="summary">Summary</h2>
+<p>In this chapter, we examined the generation and signature of OPA bundles, and how to verify them. OPA bundles make it easy to package and manage files consisting of multiple data and policies, and manage version information of bundles through metadata. Signatures also allow us to verify that policies or data have not been tampered with fraudulently.</p>
+<p>In the next chapter, we discuss how to integrate OPA with other components of the system in various forms, and in this process, how to periodically poll and update bundles on separate remote servers.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../chap5/writingpolicy.html" class="navigation navigation-prev " aria-label="Previous page: Chap 5. Writing Policies Using OPA">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chap7/integrations.html" class="navigation navigation-next " aria-label="Next page: Chap 7. OPA Integrations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chap 6. OPA Bundle","level":"1.11","depth":1,"next":{"title":"Chap 7. OPA Integrations","level":"1.12","depth":1,"path":"chap7/integrations.md","ref":"chap7/integrations.md","articles":[]},"previous":{"title":"Chap 5. Writing Policies Using OPA","level":"1.10","depth":1,"path":"chap5/writingpolicy.md","ref":"chap5/writingpolicy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap6/bundle.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-15T18:21:35.886Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-etoc-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

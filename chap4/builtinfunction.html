@@ -1,0 +1,1307 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chap 4. Built-in Functions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-etoc-plus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chap5/writingpolicy.html" />
+    
+    
+    <link rel="prev" href="../chap3/rego.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../LICENSE.html">
+            
+                <a href="../LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../AUTHOR.html">
+            
+                <a href="../AUTHOR.html">
+            
+                    
+                    About Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ACKNOWLEGEMENT.html">
+            
+                <a href="../ACKNOWLEGEMENT.html">
+            
+                    
+                    Acknowledgement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../CONTRIBUTORS.html">
+            
+                <a href="../CONTRIBUTORS.html">
+            
+                    
+                    Contributors and Sponsors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chap1/introduction.html">
+            
+                <a href="../chap1/introduction.html">
+            
+                    
+                    Chap 1. Introduction to OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chap2/installandusage.html">
+            
+                <a href="../chap2/installandusage.html">
+            
+                    
+                    Chap 2. OPA Installation and Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chap3/rego.html">
+            
+                <a href="../chap3/rego.html">
+            
+                    
+                    Chap 3. Rego
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="builtinfunction.html">
+            
+                <a href="builtinfunction.html">
+            
+                    
+                    Chap 4. Built-in Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chap5/writingpolicy.html">
+            
+                <a href="../chap5/writingpolicy.html">
+            
+                    
+                    Chap 5. Writing Policies Using OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../chap6/bundle.html">
+            
+                <a href="../chap6/bundle.html">
+            
+                    
+                    Chap 6. OPA Bundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../chap7/integrations.html">
+            
+                <a href="../chap7/integrations.html">
+            
+                    
+                    Chap 7. OPA Integrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../chap8/monitoring.html">
+            
+                <a href="../chap8/monitoring.html">
+            
+                    
+                    Chap 8. Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../chap9/kubernetes.html">
+            
+                <a href="../chap9/kubernetes.html">
+            
+                    
+                    Chap 9. Using OPA in Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../chap10/extending.html">
+            
+                <a href="../chap10/extending.html">
+            
+                    
+                    Chap 10. Extending OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../chap11/wasm.html">
+            
+                <a href="../chap11/wasm.html">
+            
+                    
+                    Chap 11. OPA and Web Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chap 4. Built-in Functions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chap-4-built-in-functions">Chap 4. Built-in Functions</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#number-related-functions">Number Related Functions</a><ul>
+<li><a href="#round-floor-ceil">Round, Floor, Ceil</a></li>
+<li><a href="#absolute-value">Absolute Value</a></li>
+<li><a href="#create-an-array-of-integers-in-a-specific-range">Create an array of integers in a specific range</a></li>
+</ul>
+</li>
+<li><a href="#bit-manipulation">Bit Manipulation</a></li>
+<li><a href="#type-related-functions">Type-Related Functions</a><ul>
+<li><a href="#type-name">Type Name</a></li>
+<li><a href="#type-checking-functions">Type Checking Functions</a></li>
+<li><a href="#type-conversion-functions">Type Conversion Functions</a></li>
+</ul>
+</li>
+<li><a href="#aggregation-function">Aggregation Function</a><ul>
+<li><a href="#count">count</a></li>
+<li><a href="#sum-product-max-and-min">sum, product, max and min</a></li>
+<li><a href="#all-any">all, any</a></li>
+</ul>
+</li>
+<li><a href="#composite-value-related-functions">Composite Value Related Functions</a><ul>
+<li><a href="#array-related-functions">Array related functions</a></li>
+<li><a href="#set-related-functions">Set related Functions</a></li>
+<li><a href="#object-related-functions">Object related Functions</a><ul>
+<li><a href="#objectget">object.get</a></li>
+<li><a href="#objectremove">object.remove</a></li>
+<li><a href="#objectfilter">object.filter</a></li>
+<li><a href="#jsonfilter">json.filter</a></li>
+<li><a href="#jsonremove">json.remove</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#string-related-functions">String related Functions</a><ul>
+<li><a href="#string-test-functions">String Test Functions</a><ul>
+<li><a href="#contains">contains</a></li>
+<li><a href="#indexof">indexof</a></li>
+<li><a href="#startswith-endswith">startswith, endswith</a></li>
+</ul>
+</li>
+<li><a href="#format-string">Format String</a><ul>
+<li><a href="#sprintf">sprintf</a></li>
+<li><a href="#formatint">format_int</a></li>
+</ul>
+</li>
+<li><a href="#case-conversion">Case Conversion</a></li>
+<li><a href="#string-manipulation-functions">String Manipulation Functions</a><ul>
+<li><a href="#concat">concat</a></li>
+<li><a href="#split">split</a></li>
+<li><a href="#substring">substring</a></li>
+<li><a href="#replace">replace</a></li>
+<li><a href="#stringsreplacen">strings.replace_n</a></li>
+</ul>
+</li>
+<li><a href="#trim-string">Trim String</a><ul>
+<li><a href="#trimspace">trim_space</a></li>
+<li><a href="#trim-trimleft-and-trimright">trim, trim_left and trim_right</a></li>
+<li><a href="#trimprefix-trimsuffix">trim_prefix, trim_suffix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#regular-expression-related-functions">Regular Expression Related Functions</a><ul>
+<li><a href="#regexisvalid">regex.is_valid</a></li>
+<li><a href="#regexmatch">regex.match</a></li>
+<li><a href="#regexsplit">regex.split</a></li>
+<li><a href="#regexglobsmatch">regex.globs_match</a></li>
+<li><a href="#regextemplatematch">regex.template_match</a></li>
+<li><a href="#regexfindn">regex.find_n</a></li>
+<li><a href="#regexfindallstringsubmatchn">regex.find_all_string_submatch_n</a></li>
+</ul>
+</li>
+<li><a href="#glob-related-functions">Glob related Functions</a><ul>
+<li><a href="#glob-patterns">Glob Patterns</a></li>
+<li><a href="#glob-matching">Glob Matching</a></li>
+<li><a href="#escaping">Escaping</a></li>
+</ul>
+</li>
+<li><a href="#http-related-functions">HTTP related functions</a></li>
+<li><a href="#jwt-related-functions">JWT related functions</a><ul>
+<li><a href="#jwt-decoding-function">JWT Decoding Function</a></li>
+<li><a href="#jwt-signature-verification">JWT Signature Verification</a></li>
+</ul>
+</li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Basic built-in functions, such as type-related functions</li>
+<li>Built-in functions that handle strings, regular expressions, and globs</li>
+<li>Built-in HTTP and JWT functions for external system interworking</li>
+</ul>
+<p>OPA provides a variety of predefined built-in functions. OPA supports a variety of built-in functions needed to implement policies, such as encoding and JWT token processing, as well as built-in functions for basic functions such as type checking, strings, and regular expressions.</p>
+<p>This chapter mainly describes the various built-in functions of OPA that are often used in policy writing. We also use the grammar in the previous chapter to write functions that are frequently used but not provided by OPA. However, the operators that OPA also describes as built-in functions are omitted if already described in Chapter 3.</p>
+<p><img src="img/fig_4-1.png" alt="OPA built-in function reference"></p>
+<p>Figure 4-1. OPA built-in function reference</p>
+<p>For referencing built-in functions, see <a href="https://www.openpolicyagent.org/docs/latest/policy-reference/#built-in-function" target="_blank">https://www.openpolicyagent.org/docs/latest/policy-reference/#built-in-function</a> on the OPA official homepage, as shown in Figure 4-1.</p>
+<p>If the function described in the reference does not work, let&apos;s update the OPA version to the latest one. In other programming languages, built-in functions are documented from which version they are supported, but OPA does not provide information about which version they are supported. For example, the number.range() function is not supported in the version 0.19.x, the OPA version at the time this book was started, but it is supported in the latest version. These documentation details are a bit of a bummer for OPA.</p>
+<h2 id="number-related-functions">Number Related Functions</h2>
+<h3 id="round-floor-ceil">Round, Floor, Ceil</h3>
+<p>OPA provides a rounding function named round. The round function returns a rounded value by receiving one numeric argument as follows.</p>
+<pre><code># 4
+round(4.3)
+
+# 11
+round(10.9)
+
+# 3
+round(3)
+</code></pre><p>Although previously not provided by OPA, the function &quot;floor&quot; and &quot;ceil&quot; is available in version 0.26.0, which was released in January 2021. Below 0.25.x, the error occurs as follows.</p>
+<pre><code>$ opa run
+OPA 0.25.2 (commit 4c6e524, built at 2020-12-08T16:57:20Z)
+
+Run &apos;help&apos; to see a list of commands and check for updates.
+
+&gt; floor(1.2)
+1 error occurred: 1:1: rego_type_error: undefined function floor
+&gt;
+</code></pre><p>In versions 0.26.0 and above, floor and ceil functions are included.</p>
+<pre><code>$ opa run
+OPA 0.26.0 (commit 62d3900, built at 2021-01-20T18:56:12Z)
+
+Run &apos;help&apos; to see a list of commands and check for updates.
+
+&gt; floor(1.2)
+1
+</code></pre><p>If the OPA version of used cannot be changed, or if OPA versions below 0.25.x must be used, the floor or the ceil function are not provided, and should be defined directly if necessary.</p>
+<p>Let&apos;s define a floor function. The name of the function is floornew so that it does not conflict with the floor function of version 0.26.0 or higher. Since the rule body cannot write if or switch statement like  other generic programming language, the two rule bodies are linked with an else statement as follows</p>
+<pre><code>floornew(num) = round(num) { round(num) &lt;= num } else = (round(num) - 1)
+</code></pre><p>Running the floornew function yields the following integer values:</p>
+<pre><code># 4
+floornew(4.3)
+
+# 10
+floornew(10.9)
+
+# 3
+floornew(3)
+</code></pre><p>Similarly, the ceil function can be defined as:</p>
+<pre><code>ceilnew(num) = round(num) { round(num) &gt;= num } else = (round(num) + 1)
+</code></pre><h3 id="absolute-value">Absolute Value</h3>
+<p>The abs function allows the absolute value of a number.</p>
+<pre><code># 10.4
+abs(-10.4)
+
+# 3
+abs(3)
+</code></pre><h3 id="create-an-array-of-integers-in-a-specific-range">Create an array of integers in a specific range</h3>
+<p>The numbers.range function produces an array of integers in the specified range. Typical range of similar functions has scope from first number to last number - 1. However, numbers.range produces an array containing both the preceding and the latter digits. Also, if the preceding number is greater than the latter, an array is created in reverse order from the preceding to the latter. Because the Rego language used by OPA does not have a direct for loop, the use of nubmers.range to create an integer array can similarly implement the for loop.</p>
+<pre><code># [9, 8, 7, 6, 5, 4, 3, 2, 1]
+numbers.range(9, 1)
+
+# [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers.range(1, 9)
+</code></pre><h2 id="bit-manipulation">Bit Manipulation</h2>
+<p>OPA supports bit manipulation functions as built-in functions rather than operators. The functions associated with bit operations provided are shown in Table 4-1.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bits.or(x, y)</td>
+<td>Calculate the bit OR of the two arguments</td>
+</tr>
+<tr>
+<td>bits.and(x, y)</td>
+<td>Calculate the bit AND of the two arguments</td>
+</tr>
+<tr>
+<td>bits.negate(x)</td>
+<td>Flip the bit. When called for integer arguments, return 2&#x2019;s complement</td>
+</tr>
+<tr>
+<td>bits.xor(x, y)</td>
+<td>Calculate the bit XOR of the two arguments</td>
+</tr>
+<tr>
+<td>bits.lsh(x, s)</td>
+<td>Shift x to the left by s</td>
+</tr>
+<tr>
+<td>bits.rsh(x, s)</td>
+<td>Shift x to the right by s</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4-1. Built-in Bit Manipulation Functions provided by OPA.</p>
+<h2 id="type-related-functions">Type-Related Functions</h2>
+<h3 id="type-name">Type Name</h3>
+<p>By using the type_name function, the type of variable passed as an argument can be obtained. Because type_name returns the result of a string type, type names can be easily compared using the == operator and etc.</p>
+<p>An example of a function type_name is shown below. In the case of a composite value such as an array or set, the type is only known as &quot;set&quot;, &quot;array&quot;, and so on, so in order to know the specific type, the component of the composite value must be referenced and checked again.</p>
+<pre><code># &quot;number&quot;
+type_name(3.14)
+
+# &quot;array&quot;
+type_name([&quot;apple&quot;,&quot;banana&quot;,&quot;pineaplle&quot;])
+
+# &quot;set&quot;
+type_name({&quot;apple&quot;,&quot;banana&quot;,&quot;pineaplle&quot;})
+
+# &quot;object&quot;
+type_name({&quot;weight&quot;:80, &quot;height&quot;:180})
+
+# &#x201C;boolean&#x201D;
+default allowed = true
+type_name(allowed)
+
+# undefined
+alwayswrong = { 1 == 2 }
+type_name(alwayswrong)
+</code></pre><p>Invoking the type_name function for a rule returns the type for the evaluated result value of the rule. If the rule is not evaluated and the result is undefined, it becomes undefined.</p>
+<p>However, the function type_name cannot use the function itself as a target. An error occurs in REPL when the following code is entered.</p>
+<pre><code>func(a) = r { r := a + 1}
+type_name(func)
+
+2 errors occurred:
+1:11: rego_type_error: undefined ref: data.repl.func
+data.repl.func
+^^^^^^^^^^^^^^
+have: number =&gt; number
+1:1: rego_type_error: type_name: invalid argument(s)
+have: (number =&gt; number)
+want: (any&lt;any&gt;, string)
+</code></pre><p>If you look at the contents of the error, you can see that type_name cannot be executed for the function. However, if the function is called and the resulting value is assigned to a variable, the resulting value will have a scalar value or complex value, so type_name for the variable containing the resulting value can be called.</p>
+<pre><code># &quot;number&quot;
+type_name(func(3))
+</code></pre><h3 id="type-checking-functions">Type Checking Functions</h3>
+<p>OPA provides built-in functions in the form is_<type name=""> as shown in Table 4-2. These functions return true if an argument is of that type and undefined if not of that type.</type></p>
+<p>| Function         | Description                             |
+| is_number(x)     | Examine whether x is a numeric type     |
+| is_string(x)     | Examine whether x is a string type      |
+| is_boolean(x)    | Examine whether x is a boolean type     |
+| is_array(x)      | Examine whether x is an array type      |
+| is_set(x)        | Examine whether x is a set type         |
+| is_object(x)     | Examine whether x is a objecttype       |
+| is_null(x)       | Examine whether x is null               |</p>
+<p>Table 4-2. Type Checking Built-in Functions Provided by OPA.</p>
+<p>An example of the use of type-check functions is as follows. Note that it returns undefined rather than false if it is not of that type.</p>
+<pre><code># undefined
+is_null(1)
+
+# true
+is_null(null)
+
+# undefined
+is_set({})
+
+# true
+is_set(set())
+
+# true
+is_object({})
+
+# true
+is_set({1,2,3})
+
+# true
+is_string(&quot;hello&quot;)
+</code></pre><h3 id="type-conversion-functions">Type Conversion Functions</h3>
+<p>The only type conversion function OPA currently supports is to_number. To_number returns 0 for a null or false and returns 1 for a true. If a string factor is passed, it returns the numerical value that the string represents. For example, if &quot;123&quot; is passed, it returns to 123. If the number type is passed, it is returned without being converted. An error occurs when a string is passed, not a numeric representation, and values other than the defined value are returned undefined.</p>
+<pre><code># 0
+to_number(null)
+
+# 0
+to_number(false)
+
+# undefined
+to_number(&quot;abc&quot;)
+
+# 1234.45
+to_number(1234.45)
+
+#1234.45
+to_number(&quot;1234.45&quot;)
+</code></pre><h2 id="aggregation-function">Aggregation Function</h2>
+<p>An aggregation function of an OPA performs an aggregate operation on an array or set. Among aggregation functions, only counts receive strings or objects as an argument, while other aggregation functions can only use sets or arrays as an argument. Note that in OPA, strings are not an array of characters.</p>
+<p>Note again that in OPA, {} represents an object with no <key>:<value> pairs, so an empty set must be represented as a set(). </value></key></p>
+<h3 id="count">count</h3>
+<p>The count function can be used for strings, objects, sets, and arrays. When used for a string, it returns the length of the string, and when used for an object, it returns the number of <key>:<value> pairs. When used for a set or array, it returns the number of items that the set or array contains.</value></key></p>
+<p>Examples of use of the count function are as follows. count({}) returned 0 because {} is an object with a zero number of <key>:<value> pairs, and the count for the empty set(set()) was also returned 0.</value></key></p>
+<pre><code># 2
+count({&quot;width&quot;:1024, &quot;height&quot;:768})
+
+# 12
+count(&quot;hello woirld&quot;)
+
+# 0
+count([])
+
+# 0
+count({})
+
+# 0
+count(set()})
+
+# 3
+count({1,2,3})
+</code></pre><h3 id="sum-product-max-and-min">sum, product, max and min</h3>
+<p>The sum, product, max, and min functions return the total sum, total product, maximum value, and minimum value of each element in an array or set taken over by an argument. An example of the use of each function is as follows:</p>
+<pre><code># -0.5
+sum({1, 0.5, -2})
+
+# -105
+product([1, 3, -5, 7])
+
+# -1
+min({-1, 0, 1})
+
+# 3000.11
+max( {10, 100, 3000.11 } )
+</code></pre><p>Note that if you run each function on an empty set or array, sum returns 0, product returns 1, min and max undefined, as follows.</p>
+<pre><code># 0
+sum(set())
+
+# 1
+product([])
+
+# undefined
+min(set())
+
+# undefined
+max([])
+</code></pre><h3 id="all-any">all, any</h3>
+<p>The all function and any function return whether the elements in the array or set are all true or at least one true, respectively. Thus, if the resulting values of the associated rules are checked by all or any in a set or array, all rules can be checked for whether  all or any rule is satisfied.</p>
+<p>Before looking at examples of the use of all or any, we define rules that are always judged to be true, always false, and undefined, respectively:</p>
+<pre><code>#  It&apos;s always true.
+alwaystrue = true { true }
+
+# It&apos;s always false.
+alwaysfalse = false { true }
+
+# A rule that would be undefined if the default value was not declared, but it did not declare default.
+maybeundefined { false }
+</code></pre><p>An example of the use of all or any of the above rules is shown below. all returns true if the target array or set is all true or empty; any returns true only if any of the target arrays or sets contains true; and false if empty. Also, if an array or set contains undefined, all or any will be undefined.</p>
+<pre><code># true
+all([alwaystrue, alwaystrue])
+
+# false
+all([alwaystrue, alwaysfalse])
+
+# false
+all([true, 1])
+
+# true
+any([alwaystrue, alwaysfalse])
+
+# false
+any([alwaysfalse, alwaysfalse])
+
+# undefined
+all([alwaystrue, maybeundefined])
+
+# undefined
+any([alwaystrue, maybeundefined])
+
+# true
+all([])
+
+# false
+any([])
+</code></pre><h2 id="composite-value-related-functions">Composite Value Related Functions</h2>
+<h3 id="array-related-functions">Array related functions</h3>
+<p>OPA provides functions that manipulatest arrays as shown in Table 4-3.</p>
+<p>| Function                                  | Description                                                                          |
+| array.concat(array1, array2)              | Returns the array that concatenates the two arrays that are passed  to the arguments   |
+| array.slice(array, startIndex, stopIndex) | Returns an array containing components ranging from startIndex to stopIndex(exclusive) |</p>
+<p>Table 4-3. Array manipulation built-in functions provided by OPA.</p>
+<p>An example of the use of array related functions is as follows.</p>
+<pre><code># [1,2,3,4,5,4,5,6]
+array.concat([1,2,3,4,5],[4,5,6])
+
+# [0, 1, 2]
+array.slice([0,1,2,3,4,5], 0, 3)
+
+# [&#x201C;c&#x201D;]
+array.slice([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;], 2, 3)
+</code></pre><h3 id="set-related-functions">Set related Functions</h3>
+<p>OPA provides intersection and union functions for the set in addition to the infix operators &amp;(intersection), |(aggregation), and -(subset). The intersection function represents the intersection, and the union function represents the union, which, unlike the infix operator, is also possible to obtain the intersection and union for multiple sets at a time.</p>
+<p>Note that the sets to be passed to an intersection or union as arguments must be regrouped before passed. For example, to obtain a combination of {1,2} and {3,4}, you must call intersection { {1,2}, {3,4} } instead of intersection ( {1,2}, {3,4} ).</p>
+<pre><code># { 1, 3, 2, 4, 5, 6 }
+union({ {1,3}, {2,4}, {5,6} })
+
+# { 1 }
+intersection({ {1,2}, {1,3}, {1,4}, {1,6} })
+
+# { 1, 2, 3, 4, 6 }
+union({ {1,2}, {1,3}, {1,4}, {1,6} })
+</code></pre><h3 id="object-related-functions">Object related Functions</h3>
+<p>OPA provides a variety of functions to manipulate objects.</p>
+<h4 id="objectget">object.get</h4>
+<p>object.get has the form object.get(object, key, default) and returns the value with that key in the object.If there is no value (i.e., an object does not have a value for that key), it returns the value specified by default. An example of the use of object,get is as follows.</p>
+<pre><code>obj := {&quot;key1&quot;:&quot;val1&quot;, &quot;key2&quot;:&quot;val2&quot;}
+
+# &#x201C;val1&#x201D;
+object.get(obj, &quot;key1&quot;, null)
+
+# &#x201C;val3&#x201D;
+object.get(obj, &quot;key3&quot;, &quot;val3&quot;)
+</code></pre><p>Reference using [] or . will result in an error if the key does not exist in the object as follows. Although object.get always has to set a default value, there is a difference that no error occurs even if the key does not exist.</p>
+<pre><code>&gt; obj[&#x201C;key3&#x201D;]
+1 error occurred: 1:1: rego_type_error: undefined ref: data.repl.obj.key3
+data.repl.obj.key3
+^
+have: &quot;key3&quot;
+want (one of): [&quot;key1&quot; &quot;key2&quot;]
+
+&gt; obj.key3
+1 error occurred: 1:1: rego_type_error: undefined ref: data.repl.obj.key3
+data.repl.obj.key3
+^
+have: &quot;key3&quot;
+want (one of): [&quot;key1&quot; &quot;key2&quot;]
+</code></pre><h4 id="objectremove">object.remove</h4>
+<p>object.remove takes the form of object.remove(object, keys) and returns a new object that excludes keys and values corresponding to specific keys from the object. The keys argument has the form of a set or array. An example of using object.remove is as follows.</p>
+<pre><code>obj := {&quot;name&quot;:&quot;bob&quot;, &quot;password&quot;:&quot;1234&quot;, &quot;role&quot;:&quot;admin&quot;, &quot;point&quot;:1000}
+
+# { &quot;name&quot;: &quot;bob&quot;, &quot;point&quot;: 1000 }
+object.remove(obj, [&quot;password&quot;,&quot;role&quot;])
+
+object.union
+object.union has the form  object.union(objectA, objectB) and combines the two objects to return a new object. If two objects have values for the same key, they are updated to the value of the second object.
+
+# { &quot;a&quot;: &quot;c&quot;, &quot;x&quot;: { &quot;k&quot;: &quot;v&quot;, &quot;x&quot;: 0 } }
+object.union({&quot;a&quot;:&quot;b&quot;, &quot;x&quot;:{&quot;k&quot;:&quot;v&quot;,&quot;x&quot;:0}},{&quot;a&quot;:&quot;c&quot;})
+</code></pre><h4 id="objectfilter">object.filter</h4>
+<p>object.filter has the form object.filter(object, keys) and returns a new object containing only values corresponding to that key, as opposed to object.remove excluding values for the specified key</p>
+<pre><code>obj := {&quot;name&quot;:&quot;bob&quot;, &quot;password&quot;:&quot;1234&quot;, &quot;role&quot;:&quot;admin&quot;, &quot;point&quot;:1000}
+
+# { &quot;password&quot;: &quot;1234&quot;, &quot;role&quot;: &quot;admin&quot; }
+object.filter(obj, [&quot;password&quot;,&quot;role&quot;])
+</code></pre><h4 id="jsonfilter">json.filter</h4>
+<p>json.filter has the form of json.filter(object,paths), which behaves similarly to object.filter, but can also be specified as a path, not as a top-level key. An example of the use of json.filter is as follows..</p>
+<pre><code>obj := {&quot;a&quot;:{&quot;x&quot;:100, &quot;y&quot;:200}, &quot;b&quot;:{&quot;x&quot;:400,&quot;y&quot;:300}}
+
+# { &quot;a&quot;: { &quot;x&quot;: 100 }, &quot;b&quot;: { &quot;x&quot;: 400, &quot;y&quot;: 300 } }
+json.filter(obj, [&quot;a/x&quot;, &quot;b&quot;])
+</code></pre><h4 id="jsonremove">json.remove</h4>
+<p>json.remove has the form of json.remove(object,paths), which behaves similarly to object.remove, but also has a non-top key specified as a path. An example of the use of json.remove is as follows.</p>
+<pre><code>obj := {&quot;a&quot;:{&quot;x&quot;:100, &quot;y&quot;:200}, &quot;b&quot;:{&quot;x&quot;:400,&quot;y&quot;:300}}
+
+# { &quot;a&quot;: { &quot;y&quot;: 200 } }
+json.remove(obj, [&quot;a/x&quot;, &quot;b&quot;])
+</code></pre><h2 id="string-related-functions">String related Functions</h2>
+<h3 id="string-test-functions">String Test Functions</h3>
+<h4 id="contains">contains</h4>
+<p>contains has the form of contains(string, search) and returns true if the string to be searched is included in the target string and false if not included.</p>
+<pre><code># true
+contains(&quot;Hello, world&quot;, &quot;Hello&quot;)
+
+# false
+contains(&quot;Hello, world&quot;, &quot;hello&quot;)
+</code></pre><h4 id="indexof">indexof</h4>
+<p>indexof has the form indexof (string, search), returns the index of the starting point where the string to be searched appears in the target string, and returns &#x2013;1 if the string to be searched is not included in the target string.</p>
+<pre><code># 0
+indexof(&quot;Hello, world&quot;, &quot;Hello&quot;)
+
+# -1
+indexof(&quot;Hello, world&quot;, &quot;hello&quot;)
+
+# 7
+indexof(&quot;Hello, world&quot;, &quot;world&quot;)
+</code></pre><h4 id="startswith-endswith">startswith, endswith</h4>
+<p>startwith and endwith have the form startwith(string, search) and endwith(string, search), respectively, and return true or false if the target string begins or ends with that string.</p>
+<pre><code># true
+startswith(&quot;Hello, world&quot;, &quot;Hello&quot;)
+
+# false
+startswith(&quot;Hello, world&quot;, &quot;hello&quot;)
+
+# true
+endswith(&quot;Hello, world&quot;, &quot;world&quot;)
+</code></pre><h3 id="format-string">Format String</h3>
+<h4 id="sprintf">sprintf</h4>
+<p>sprintf has the form of sprintf(format, values). It generates strings that reflect the format, similar to the sprintf in other languages, such as the C language. Since OPA&apos;s Rego does not support variadic arguements, values passed to sprintf must be placed in an array.</p>
+<pre><code># &quot;hex (c9) == decimal (201)\n&quot;
+sprintf(&quot;hex (%x) == decimal (%d)\n&quot;, [201,201])
+</code></pre><h4 id="formatint">format_int</h4>
+<p>format_int receives number and base to use, and returns a string that reflects the base of the numeric value. An example of using format_int is as follows.</p>
+<pre><code># &quot;b20&quot;
+format_int(2848,16)
+
+# &quot;11110&quot;
+format_int(30,2)
+</code></pre><h3 id="case-conversion">Case Conversion</h3>
+<p>The upper and lower functions allow for easy case conversion. upper and lower take over the string to be converted and return the string converted to uppercase and lowercase, respectively.</p>
+<pre><code># &quot;HELLO&quot;
+upper(&quot;Hello&quot;)
+
+# &quot;hello&quot;
+lower(&quot;Hello&quot;)
+</code></pre><h3 id="string-manipulation-functions">String Manipulation Functions</h3>
+<h4 id="concat">concat</h4>
+<p>concat has a concat (delimiter, array_or_set) format, and concatenate strings passed to an array or set into one using a specified separator. A delimiter is a string format as the first factor, and an array or set must contain only strings. Examples of uses include:</p>
+<pre><code># &quot;hello****world****!&quot;
+concat(&quot;****&quot; , [&quot;hello&quot;, &quot;world&quot;, &quot;!&quot;])
+
+# &quot;apple.banana.pineapple&quot;
+concat(&quot;.&quot; , [&quot;apple&quot;, &quot;banana&quot;, &quot;pineapple&quot;])
+</code></pre><h4 id="split">split</h4>
+<p>split is the form of split (string, delimiter) and, as opposed to concat, splits the string by separator and returns the string array. Examples of uses include:</p>
+<pre><code># [&quot;hello&quot;, &quot;world&quot;, &quot;!&quot;])
+split(&quot;hello****world****!&quot;, &quot;****&quot;)
+
+# [&quot;apple&quot;, &quot;banana&quot;, &quot;pineapple&quot;]
+split(&quot;apple.banana.pineapple&quot;, &quot;.&quot;)
+
+# [&quot;apple.banana.pineaplle&quot;]
+split(&quot;apple.banana.pineaplle&quot;, &quot; &quot;)
+</code></pre><h4 id="substring">substring</h4>
+<p>A substring has the form of a substring (string, start, length) and returns a string from which a portion is extracted. The starting position starts at zero, and an error occurs if it is negative. It returns a string of length from the start position, and a zero indicates an empty string, and if length of a negative means start from to end of the string.</p>
+<pre><code># &quot;1234&quot;
+substring(&quot;123456789&quot;, 0, 4)
+
+# &quot;4567&quot;
+substring(&quot;123456789&quot;, 3, 4)
+
+# &quot;456789&quot;
+substring(&quot;123456789&quot;, 3, -1)
+
+# 1 error occurred: substring(&quot;123456789&quot;, -1, 4): eval_builtin_error: substring: negative offset
+substring(&quot;123456789&quot;, -1, 4)
+</code></pre><h4 id="replace">replace</h4>
+<p>replace takes the form of replace (string, old, new) and changes certain parts of a string to other content. Simply put, everything in the editor works like finding and replacing. Since they are all found and replaced, regular expressions should be used in situations such as changing only when first discovered. Examples of uses of replace include:</p>
+<pre><code># &quot;1X1X111XXX111111111&quot;
+replace(&quot;1010111000111111111&quot;,&quot;0&quot;,&quot;X&quot;)
+
+# &quot;applepie&quot;
+replace(&quot;applebanana&quot;,&quot;banana&quot;,&quot;pie&quot;)
+</code></pre><h4 id="stringsreplacen">strings.replace_n</h4>
+<p>strings.replace_n has the form of strings.replace_n (patterns, strings), and the difference with replace is that multiple strings can be replaced at once by creating a key and a value object. If multiple strings need to be replaced, it is more efficient than calling replace multiple times. Examples of uses of strings.replace_n include:</p>
+<pre><code># &quot;Pine_Apple&#x201C;
+strings.replace_n( {&quot;pine&quot;:&quot;Pine&quot;, &quot;apple&quot;:&quot;Apple&quot;}, &quot;pine_apple&quot;)
+</code></pre><h3 id="trim-string">Trim String</h3>
+<h4 id="trimspace">trim_space</h4>
+<p>trim_space has the form of trim_space (string) and removes spaces at the front and back of the string (such as space characters, tab characters, open characters, and so on). Examples of uses include:</p>
+<pre><code># &quot;this is trim test&quot;
+trim_space(&quot; this is trim test\n&quot;)
+</code></pre><h4 id="trim-trimleft-and-trimright">trim, trim_left and trim_right</h4>
+<p>trim, trim_left, trim_right has trim(string, cutset), trim_left(string, cutset), and trim_right(string, cutset) formats, respectively, eliminating characters belonging to strings handed to the cutset part. Trim is removed from both sides, trim_left and trim_right from the left. Because OPA does not have a character type and does not treat a string as an array of characters, the cutset argument that uses a string as a set of characters is a special case only in the trim function and requires attention. Examples of uses include:</p>
+<pre><code># &quot;Hello, world&#x201C;
+trim(&quot;Hello, world&quot;, &quot;, &quot;)
+
+# &quot;this is trim test&quot;
+trim(&quot; this is trim test\n&quot;, &quot;\n &quot;)
+
+# &quot;this is trim test&quot;
+trim(&quot;.... this is trim test\n&quot;, &quot;.\n &quot;)
+
+# &quot;this is trim test&#x201C;
+trim(&quot;.... \nthis is trim test\n&quot;, &quot;.\n &quot;)
+
+# &quot;this is trim test\n&#x201C;
+trim_left(&quot;.... \nthis is trim test\n&quot;, &quot;.\n &quot;)
+
+# &quot;.... \nthis is trim test&quot;
+trim_right(&quot;.... \nthis is trim test\n&quot;, &quot;.\n &quot;)
+</code></pre><h4 id="trimprefix-trimsuffix">trim_prefix, trim_suffix</h4>
+<p>trim_prefix and trim_suppix have the form trim_prefix(string, prefix) and trim_suppix(string, prefix), respectively, and remove the specified prefix or suffix (postfix). If the prefix or suffix pattern does not match, the original string is returned. Examples of uses include:</p>
+<pre><code># &quot;** message *****&#x201C;
+trim_prefix(&quot;***** message *****&quot;, &quot;***&quot;)
+
+# &quot; message *****&quot;
+trim_prefix(&quot;***** message *****&quot;, &quot;*****&quot;)
+
+# &quot;***** message *&#x201C;
+trim_suffix(&quot;***** message *****&quot;, &quot;****&quot;)
+</code></pre><h2 id="regular-expression-related-functions">Regular Expression Related Functions</h2>
+<p>Since the runtime of OPA is implemented in the Go language, the regular expression grammar used is the same as the regular expression used in the Go language, and for accurate grammar, see <a href="https://github.com/google/re2/wiki/Syntax" target="_blank">https://github.com/google/re2/wiki/Syntax</a>. This book does not deal directly with regular expression grammar.</p>
+<h3 id="regexisvalid">regex.is_valid</h3>
+<p>regex.is_valid checks if a string passed over to an argument fits the regular expression format supported by OPA. If the format is supported by OPA, it will return true and return false if it is not supported, but if the format cannot be recognized as regular expression at all, it will result in an illegal token error. Because OPA does not support all regular expression formats, if the regular expression does not behave as expected, it can be used to determine whether the regular expression itself is a supported format. However, since the regular expression format supported by OPA and the interpretation in some sense are different, you should check <a href="https://github.com/google/re2/wiki/Syntax" target="_blank">https://github.com/google/re2/wiki/Syntax</a> if the format works differently even if it matches. Examples of use of regex.is_valid include:</p>
+<pre><code># true
+regex.is_valid(&quot;[[:alpha:]][[:alnum:]]+&quot;)
+
+# 1:16: rego_parse_error: illegal token
+regex.is_valid(&quot;\d+&quot;)
+
+# true
+regex.is_valid(&quot;\\d+&quot;)
+
+# false
+regex.is_valid(&quot;\\o+&quot;)
+</code></pre><h3 id="regexmatch">regex.match</h3>
+<p>regex.match has the form regex.match (pattern, value) and checks whether a particular string satisfies the corresponding regular expression pattern. For example, [:alpha:]][:al num:]* is a regular expression that begins with an alphabet and can be followed by more than 0 arbitrary numbers or characters. If this expression is examined with regex.match, a1000000 and abcde are matched, but not 9ab0000 or 30000. Regex.match allows you to check whether the data entered is appropriate for the desired format. Examples of uses of regex.match include:</p>
+<pre><code># true
+regex.match(&quot;[[:alpha:]][[:alnum:]]*&quot;, &quot;a100000&quot;)
+
+# true
+regex.match(&quot;[[:alpha:]][[:alnum:]]*&quot;, &quot;abcde&quot;)
+
+# false
+regex.match(&quot;[[:alpha:]][[:alnum:]]*&quot;, &quot;10000&quot;)
+</code></pre><h3 id="regexsplit">regex.split</h3>
+<p>regex.split returns the result of splitting a string into an array, using a regular expression pattern as a separator, rather than a simple string as a separator. Examples of uses of regex.split include:</p>
+<pre><code># [ &quot;&quot;, &quot;12234&quot;, &quot;9999&quot; ]
+regex.split(&quot;[\\*|\\+|\\-|x]+&quot;, &quot;****12234xxxxx9999&quot;)
+
+# [ &quot;111&quot;, &quot;111&quot;, &quot;4444&quot;, &quot;5555&quot; ]
+regex.split(&quot;[\\*|\\+|\\-|x]+&quot;, &quot;111-111*4444x5555&quot;
+</code></pre><h3 id="regexglobsmatch">regex.globs_match</h3>
+<p>regex.globs_match compares two simple regular expressions at the Glob level to examine whether one is a relationship that is included in the other. For example, a+ matches &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, ... with at least one a, but a<em> matches empty strings and includes all that a+ matches such as   &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, ... .  Relationships show that a+ is a subset of a</em>. It returns true if these relationships are satisfied, and true even if they are identical (subset to each other). The OPA official document states that it only supports glob symbols such as .(dot), *, +, [, -, ], \, etc., and is only applicable to very simple forms of regular expressions. Examples of uses of regex.globs_match include: </p>
+<pre><code># false
+regex.globs_match(&quot;a+&quot;,&quot;ab&quot;)
+
+# true
+regex.globs_match(&quot;ab+&quot;,&quot;ab&quot;)
+
+# true
+regex.globs_match(&quot;ab+&quot;,&quot;ab*&quot;)
+</code></pre><h3 id="regextemplatematch">regex.template_match</h3>
+<p>regex.template_match has the form of regex.template_match (pattern, string, delimiter_start, delimiter_end), matching only the parts between the two arguments(delimiter_start, delimiter_end) as regular expressions, and matching the rest as regular strings. The entire matching can be expressed as a regular expression, but matching only between delimiters as a regular expression also increases readability, and the rest will be handled much more efficiently because simple string comparisons are performed. It is not allowed to use blank characters or :(colons) as delimiters, and it is safe to use parentheses. Examples of uses of regex.template_match include:</p>
+<pre><code># true
+regex.template_match(&quot;t-(10+)-235&quot;, &quot;t-10000-235&quot;, &quot;(&quot;, &quot;)&quot;)
+
+# false
+regex.template_match(&quot;t-(10+)-235&quot;, &quot;t-20000-235&quot;, &quot;(&quot;, &quot;)&quot;)
+
+# true
+regex.template_match(&quot;ast-[ab+]-235&quot;, &quot;ast-abbbb-235&quot;, &quot;[&quot;, &quot;]&quot;)
+
+# true
+regex.template_match(&quot;ast-(ab+]-235&quot;, &quot;ast-abbbb-235&quot;, &quot;(&quot;, &quot;]&quot;)
+</code></pre><h3 id="regexfindn">regex.find_n</h3>
+<p>regex.find_n has the form regex.find_n (pattern, string, number), returns the matching part of the regular expression by the number argument, and returns the entire number if the number is &#x2013;1. Examples of uses of regex.find_n include:</p>
+<pre><code># [ &quot;abc&quot;, &quot;bbb&quot; ]
+regex.find_n(&quot;[[:alpha:]]+&quot;, &quot;123abc00bbb1111ccc&quot;, 2)
+
+# [ &quot;ABC&quot;, &quot;CCC&quot;, &quot;XX&quot; ]
+regex.find_n(&quot;[A-Z]+&quot;, &quot;ABC0000abCCCabcXX222&quot;, 3)
+</code></pre><h3 id="regexfindallstringsubmatchn">regex.find_all_string_submatch_n</h3>
+<p>regex.find_all_string_submatch_n has the format regex.find_all_string_submatch_n(pattern, string, number) and returns a list of submatching including capture groups of regular expressions. The regular expression used in OPA is recognized as a capture group if the part of the regular expression is wrapped in ( ) and must be wrapped in (?: and ) for escape. Let&apos;s first look at an example to illustrate the capture group. Suppose you have a regular expression such as a(b<em>)c(f</em>)d, and call regex.find_all_string_submatch_n for each string &quot;acd&quot;, &quot;abcfffffd&quot; that matches the regular expression. In the example, the number factor is set to &#x2013;1 to match the whole.</p>
+<pre><code># [ [ &quot;acd&quot;, &quot;&quot;, &quot;&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(b*)c(f*)d&quot;, &quot;acd&quot;, -1)
+
+# [ [ &quot;abcd&quot;, &quot;b&quot;, &quot;&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(b*)c(f*)d&quot;, &quot;abcd&quot;, -1)
+
+# [ [ &quot;abbcfffffd&quot;, &quot;bb&quot;, &quot;fffff&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(b*)c(f*)d&quot;, &quot;abbcfffffd&quot;, -1)
+</code></pre><p>In the case of &quot;acd&quot;, the first capture group (b<em>) is matched to b is repeated more than 0 times and the second capture group (f</em>) is also matched  f* is matched to f is repeated more than 0 times.  [&quot;acd&quot;, &quot;&quot;, &quot;&quot; ] was returned because the matching string was &quot;acd&quot; and two capture groups were matched to  empty strings.  In the case of &quot;abcd&quot;, the matching string is &quot;abcd&quot; and the first capture group matched to &quot;b&quot;,  and the second capture group matched the empty string, so  [&quot;abcd&quot;, &quot;b&quot;, &quot;&quot;] was returned. For &quot;abbcfffffd&quot;, [abbcfffffd&quot;, &quot;bb&quot;, &quot;fffff&quot;] was returned because &#x201C;bb&#x201D; were matched in the first capture group and &#x201C;fffff&#x201D; in the second capture group.</p>
+<p>Let&apos;s escape the capture groups one by one and look at the results. As expected, we can confirm that the escaped part is not recognized as a capture group, and that the content about that part is excluded in the results.</p>
+<pre><code># [ [ &quot;abbcfffffd&quot;, &quot;bb&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(b*)c(?:f*)d&quot;, &quot;abbcfffffd&quot;, -1)
+
+# [ [ &quot;abcd&quot;, &quot;&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(?:b*)c(f*)d&quot;, &quot;abcd&quot;, -1)
+</code></pre><p>If the strings to be matched are matched by multiple regular expressions, the matched strings and capture groups for each part are returned in an array.</p>
+<pre><code># [ [ &quot;acd&quot;, &quot;&quot;, &quot;&quot; ], [ &quot;abcd&quot;, &quot;b&quot;, &quot;&quot; ], [ &quot;abbcfffffd&quot;, &quot;bb&quot;, &quot;fffff&quot; ] ]
+regex.find_all_string_submatch_n(&quot;a(b*)c(f*)d&quot;, &quot;acd__abcd0000abbcfffffd&quot;, 3)
+</code></pre><h2 id="glob-related-functions">Glob related Functions</h2>
+<p>Glob is a widely used pattern for file path matching and is a feature provided by almost any programming language. For example, use <em>.jpg to refer to files with the extension jpg, or use  ./**/</em>.java to specify all java files in the subdirectory of the current directory.Using java is the glob pattern. Because organizations and permissions have hierarchical structures like files, glob can also be useful in implementing permissions and policies. </p>
+<h3 id="glob-patterns">Glob Patterns</h3>
+<p>The Glob patterns used in Glob matching are shown in Table 4-4.</p>
+<table>
+<thead>
+<tr>
+<th>Wildcard</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>?</td>
+<td>Match one character</td>
+<td>?at matches cat and bat, but not at</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Match at least 0 characters</td>
+<td>*kg matches both 1 kg and 10000 kg</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Match at least 0 characters across delimiter boundaries</td>
+<td><em>*/</em>.rego matches both chap1/sample.rego book/source/chap1/sample.rego if separator is /</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>Match one of the characters in [ ]</td>
+<td>[bh]at matches bat and hat, but not cat</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>Match the range of characters in [ ]</td>
+<td>[1-3]g matches 1g, 2g, 3g, etc., but does not match 6g</td>
+</tr>
+<tr>
+<td>[!abc]</td>
+<td>Any of the characters in [! ] do not match</td>
+<td>[!c]at matches bat but cat doesn&apos;t match</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4-4. Glob patterns used by OPA.</p>
+<h3 id="glob-matching">Glob Matching</h3>
+<p>It is important for OPA to match glob patterns with specific strings because comparisons to implement policies are the main purpose of the OPA. Functions to handle glob matching are provided in the form of glob.match (pattern, delayers, match). What is unusual is that the delimiters argument that specifies the separator is passed as an array, and if you pass [], &quot;.&quot; is used. Examples of uses include:</p>
+<pre><code># true
+glob.match(&quot;?at&quot;, [], &quot;bat&quot;)
+
+# false
+glob.match(&quot;[bh]at&quot;, [], &quot;cat&quot;)
+
+# true
+glob.match(&quot;[!bh]at&quot;, [], &quot;cat&quot;)
+
+# false
+glob.match(&quot;[1-4]kg&quot;, [], &quot;6kg&quot;)
+
+# false
+glob.match(&quot;*.com&quot;, [&quot;.&quot;], &quot;test.example.com&quot;)
+
+# true
+glob.match(&quot;*.com&quot;, [&quot;/&quot;], &quot;test.example.com&quot;)
+
+# true
+glob.match(&quot;**.com&quot;, [&quot;.&quot;], &quot;test.example.com&quot;)
+
+# true
+glob.match(&quot;**.com&quot;, [&quot;.&quot;,&quot;/&quot;], &quot;test/example.com&quot;)
+
+#false
+glob.match(&quot;*.com&quot;, [&quot;.&quot;,&quot;/&quot;], &quot;test/example.com&quot;)
+</code></pre><h3 id="escaping">Escaping</h3>
+<p>Although it is a string in the form of a glob pattern, there may be occasions when you want to treat the content as a string itself, not as a glob pattern. To this end, OPA provides a function for escape processing. The glob.quote_meta function has the form of glob.quote_meta(pattern)  and returns an escaped string. Examples of uses include:</p>
+<pre><code># &quot;\\*.test.com&quot;
+glob.quote_meta(&quot;*.test.com&quot;)
+
+# &quot;\\*\\*/\\*.rego&quot;
+glob.quote_meta(&quot;**/*.rego&quot;)
+</code></pre><h2 id="http-related-functions">HTTP related functions</h2>
+<p>http.send function has response := http.It has a send(request) format. Both request and response are objects and each has the required fields for HTTP requests and responses. An example of the use of http.send is as follows. The test used a popular public server, httpbin.org, for HTTP testing.</p>
+<pre><code>&gt; http.send({&quot;url&quot;:&quot;http://httpbin.org/post&quot;, &quot;method&quot;:&quot;post&quot;, &quot;timeout&quot;:&quot;3s&quot;, &quot;headers&quot;:{&quot;token&quot;:&quot;111&quot;}, &quot;body&quot;:{&quot;key&quot;: &quot;val&quot;}})
+{
+  &quot;body&quot;: {
+    &quot;args&quot;: {},
+    &quot;data&quot;: &quot;{\&quot;key\&quot;:\&quot;val\&quot;}&quot;,
+    &quot;files&quot;: {},
+    &quot;form&quot;: {},
+    &quot;headers&quot;: {
+      &quot;Accept-Encoding&quot;: &quot;gzip&quot;,
+      &quot;Content-Length&quot;: &quot;13&quot;,
+      &quot;Host&quot;: &quot;httpbin.org&quot;,
+      &quot;Token&quot;: &quot;111&quot;,
+      &quot;User-Agent&quot;: &quot;Open Policy Agent/0.35.0 (linux, amd64)&quot;,
+      &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-61cff125-334989227ad1766c0afef490&quot;
+    },
+    &quot;json&quot;: {
+      &quot;key&quot;: &quot;val&quot;
+    },
+    &quot;origin&quot;: &quot;220.88.72.55&quot;,
+    &quot;url&quot;: &quot;http://httpbin.org/post&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;access-control-allow-credentials&quot;: [
+      &quot;true&quot;
+    ],
+    &quot;access-control-allow-origin&quot;: [
+      &quot;*&quot;
+    ],
+    &quot;content-length&quot;: [
+      &quot;440&quot;
+    ],
+    &quot;content-type&quot;: [
+      &quot;application/json&quot;
+    ],
+    &quot;date&quot;: [
+      &quot;Sat, 01 Jan 2022 06:13:57 GMT&quot;
+    ],
+    &quot;server&quot;: [
+      &quot;gunicorn/19.9.0&quot;
+    ]
+  },
+  &quot;raw_body&quot;: &quot;{\n  \&quot;args\&quot;: {}, \n  \&quot;data\&quot;: \&quot;{\\\&quot;key\\\&quot;:\\\&quot;val\\\&quot;}\&quot;, \n  \&quot;files\&quot;: {}, \n  \&quot;form\&quot;: {}, \n  \&quot;headers\&quot;: {\n    \&quot;Accept-Encoding\&quot;: \&quot;gzip\&quot;, \n    \&quot;Content-Length\&quot;: \&quot;13\&quot;, \n    \&quot;Host\&quot;: \&quot;httpbin.org\&quot;, \n    \&quot;Token\&quot;: \&quot;111\&quot;, \n    \&quot;User-Agent\&quot;: \&quot;Open Policy Agent/0.35.0 (linux, amd64)\&quot;, \n    \&quot;X-Amzn-Trace-Id\&quot;: \&quot;Root=1-61cff125-334989227ad1766c0afef490\&quot;\n  }, \n  \&quot;json\&quot;: {\n    \&quot;key\&quot;: \&quot;val\&quot;\n  }, \n  \&quot;origin\&quot;: \&quot;220.88.72.55\&quot;, \n  \&quot;url\&quot;: \&quot;http://httpbin.org/post\&quot;\n}\n&quot;,
+  &quot;status&quot;: &quot;200 OK&quot;,
+  &quot;status_code&quot;: 200
+}
+</code></pre><p>The required fields of the request object in http.send are url and method, and if the method is POST, the contents can be passed to the body field, and the headers field allows the HTTP header to pass tokens and so on for API calls. You can also use the timeout field to change the default timeout of 5 seconds. Since the result of http.send calls is returned to the object, assigning the result of http.send to a variable makes it easier to access the object&apos;s fields and process only the necessary information. For more information on the fields of request and response objects, see the official document (<a href="https://www.openpolicyagent.org/docs/latest/policy-reference/#http" target="_blank">https://www.openpolicyagent.org/docs/latest/policy-reference/#http</a>).</p>
+<pre><code>&gt; response := http.send({&quot;url&quot;:&quot;http://httpbin.org/post&quot;, &quot;method&quot;:&quot;post&quot;, &quot;timeout&quot;:&quot;3s&quot;, &quot;headers&quot;:{&quot;token&quot;:&quot;111&quot;}, &quot;body&quot;:{&quot;key&quot;: &quot;val&quot;}})
+Rule &apos;response&apos; defined in package repl. Type &apos;show&apos; to see rules.
+&gt; response.status_code
+200
+&gt; response.body
+{
+  &quot;args&quot;: {},
+  &quot;data&quot;: &quot;{\&quot;key\&quot;:\&quot;val\&quot;}&quot;,
+  &quot;files&quot;: {},
+  &quot;form&quot;: {},
+  &quot;headers&quot;: {
+    &quot;Accept-Encoding&quot;: &quot;gzip&quot;,
+    &quot;Content-Length&quot;: &quot;13&quot;,
+    &quot;Host&quot;: &quot;httpbin.org&quot;,
+    &quot;Token&quot;: &quot;111&quot;,
+    &quot;User-Agent&quot;: &quot;Open Policy Agent/0.35.0 (linux, amd64)&quot;,
+    &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-61cff15a-17b45a6d2f3bbd71229a7a78&quot;
+  },
+  &quot;json&quot;: {
+    &quot;key&quot;: &quot;val&quot;
+  },
+  &quot;origin&quot;: &quot;220.88.72.55&quot;,
+  &quot;url&quot;: &quot;http://httpbin.org/post&quot;
+}
+</code></pre><h2 id="jwt-related-functions">JWT related functions</h2>
+<p>OPA provides built-in functions for JWT&apos;s signature, decoding, and verification. Since it is not often necessary to sign JWT within a policy, this book only introduces functions related to decoding and validation. Signing functions can also be useful when writing test codes, such as unit tests, so refer to official documents for interested readers. First, let&apos;s go to jwt.io and create a JWT for the test. As shown in Figure 4-2, the signature algorithm HS512, the header is {&quot;alg&quot;: &quot;HS512&quot;, &quot;type&quot;: &quot;JWT&quot;}, the payload is {&quot;sub&quot;:&quot;1234567890&quot;, &quot;name&quot;:&quot;OPA Test&quot;, &quot;iat&quot;: 1516239022}. Secret code is set to secret.</p>
+<p><img src="img/fig_4-2.png" alt="Creating a JWT for testing"> </p>
+<p>Figure 4-2. Creating a JWT for testing</p>
+<p>The resulting code appears in the Encoded section in the following form.</p>
+<p>eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9QQSBUZXN0IiwiaWF0IjoxNTE2MjM5MDIyfQ.962LwX8r2s-pGHgD1JlITvEtaLnNjXrssZAiLoelx2AOjN8Ch7HXxaH38312vLwk_FlE5VoESB3FxFswLnD8dQ</p>
+<h3 id="jwt-decoding-function">JWT Decoding Function</h3>
+<p>JWT can be decoded by calling io.jwt.decode(token). The token argument is in string format, and JWT itself is separated by a . and consists of header, payload and signature, each encoded in an enhanced Base64 encoding available for URLs. The JWT decoding function performs only decoding and does not validate the signature itself. For example, the io.jwt.decode result was returned as an array, with the first part being the header of the JWT and the second part being the payload, both of which being objects. The last is a string containing the signature part.</p>
+<pre><code>&gt; io.jwt.decode(&quot;eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9QQSBUZXN0IiwiaWF0IjoxNTE2MjM5MDIyfQ.962LwX8r2s-pGHgD1JlITvEtaLnNjXrssZAiLoelx2AOjN8Ch7HXxaH38312vLwk_FlE5VoESB3FxFswLnD8dQ&quot;)
+[
+  {
+    &quot;alg&quot;: &quot;HS512&quot;,
+    &quot;typ&quot;: &quot;JWT&quot;
+  },
+  {
+    &quot;iat&quot;: 1516239022,
+    &quot;name&quot;: &quot;OPA Test&quot;,
+    &quot;sub&quot;: &quot;1234567890&quot;
+  },
+  &quot;f7ad8bc17f2bdacfa9187803d499484ef12d68b9cd8d7aecb190222e87a5c7600e8cdf0287b1d7c5a1f7f37d76bcbc24fc5944e55a04481dc5c45b302e70fc75&quot;
+]
+</code></pre><h3 id="jwt-signature-verification">JWT Signature Verification</h3>
+<p>Functions validating JWT signatures have the form io.jwt.verify_<algorithm> (string, secret_or_certificate). To verify JWT signed by the HS512 algorithm, the function io.jwt.verfiy_hs512 can be used. If the signature algorithm is RS512, io.jwt.verify_rs512 can be used. The secret_or_certificate argument is either a secret code or a string containing the public key, depending on the algorithm. If verification is successful, the true is returned.</algorithm></p>
+<p>In the previous example, we validate the JWT generated by the HS512 algorithm, the secret code &quot;secret&quot;, and the results are as follows.</p>
+<pre><code>&gt; io.jwt.verify_hs512(&quot;eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9QQSBUZXN0IiwiaWF0IjoxNTE2MjM5MDIyfQ.962LwX8r2s-pGHgD1JlITvEtaLnNjXrssZAiLoelx2AOjN8Ch7HXxaH38312vLwk_FlE5VoESB3FxFswLnD8dQ&quot;, &quot;secret&quot;)
+true
+</code></pre><p>OPA provides an io.jwt.decode_verify function that simultaneously handles decoding and validation of tokens. io.jwt.decode_verify has the form of io.jwt.decode_verify(string, constraints) and argument constraints is an object. Examples of uses of the function io.jwt.decode_verify are as follows. The results confirm the success of the verification and the return of the decoded headers and payloads.</p>
+<pre><code>&gt; io.jwt.decode_verify(&quot;eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9QQSBUZXN0IiwiaWF0IjoxNTE2MjM5MDIyfQ.962LwX8r2s-pGHgD1JlITvEtaLnNjXrssZAiLoelx2AOjN8Ch7HXxaH38312vLwk_FlE5VoESB3FxFswLnD8dQ&quot;, {&quot;alg&quot;:&quot;HS512&quot;,&quot;secret&quot;:&quot;secret&quot;})
+[
+  true,
+  {
+    &quot;alg&quot;: &quot;HS512&quot;,
+    &quot;typ&quot;: &quot;JWT&quot;
+  },
+  {
+    &quot;iat&quot;: 1516239022,
+    &quot;name&quot;: &quot;OPA Test&quot;,
+    &quot;sub&quot;: &quot;1234567890&quot;
+  }
+]
+</code></pre><p>Constraints of the function io.jwt.decode_verify can also be checked at a time by selectively passing the validity of JWT&apos;s issuer (iss field), exp field (exp field indicating the time of extinction, and nbf field indicating the effective start time), and JWT&apos;s specified audience(aud field). Using these features will reduce the code that rechecks on the decoded token. For more information, see the official document (<a href="https://www.openpolicyagent.org/docs/latest/policy-reference/#token-verification" target="_blank">https://www.openpolicyagent.org/docs/latest/policy-reference/#token-verification</a>).</p>
+<h2 id="summary">Summary</h2>
+<p>This chapter focuses on the various built-in functions provided by OPA that can be useful in policy writing. Built-in functions allow a variety of operations, such as extracting values from objects and transforming values, to compare policies beyond simple comparisons using the median operator. Complex pattern matching such as regular expressions and globs can also be performed. </p>
+<p>In the next chapter, we use the Rego grammar described in the previous chapter and the built-in functions described in this chapter to write policies that could be used in the actual development process.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../chap3/rego.html" class="navigation navigation-prev " aria-label="Previous page: Chap 3. Rego">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chap5/writingpolicy.html" class="navigation navigation-next " aria-label="Next page: Chap 5. Writing Policies Using OPA">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"next":{"title":"Chap 5. Writing Policies Using OPA","level":"1.10","depth":1,"path":"chap5/writingpolicy.md","ref":"chap5/writingpolicy.md","articles":[]},"previous":{"title":"Chap 3. Rego","level":"1.8","depth":1,"path":"chap3/rego.md","ref":"chap3/rego.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap4/builtinfunction.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-15T18:21:35.886Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-etoc-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

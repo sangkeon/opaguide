@@ -1,0 +1,1058 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chap 7. OPA Integrations · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-etoc-plus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chap8/monitoring.html" />
+    
+    
+    <link rel="prev" href="../chap6/bundle.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../LICENSE.html">
+            
+                <a href="../LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../AUTHOR.html">
+            
+                <a href="../AUTHOR.html">
+            
+                    
+                    About Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ACKNOWLEGEMENT.html">
+            
+                <a href="../ACKNOWLEGEMENT.html">
+            
+                    
+                    Acknowledgement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../CONTRIBUTORS.html">
+            
+                <a href="../CONTRIBUTORS.html">
+            
+                    
+                    Contributors and Sponsors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chap1/introduction.html">
+            
+                <a href="../chap1/introduction.html">
+            
+                    
+                    Chap 1. Introduction to OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chap2/installandusage.html">
+            
+                <a href="../chap2/installandusage.html">
+            
+                    
+                    Chap 2. OPA Installation and Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chap3/rego.html">
+            
+                <a href="../chap3/rego.html">
+            
+                    
+                    Chap 3. Rego
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chap4/builtinfunction.html">
+            
+                <a href="../chap4/builtinfunction.html">
+            
+                    
+                    Chap 4. Built-in Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chap5/writingpolicy.html">
+            
+                <a href="../chap5/writingpolicy.html">
+            
+                    
+                    Chap 5. Writing Policies Using OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../chap6/bundle.html">
+            
+                <a href="../chap6/bundle.html">
+            
+                    
+                    Chap 6. OPA Bundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="integrations.html">
+            
+                <a href="integrations.html">
+            
+                    
+                    Chap 7. OPA Integrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../chap8/monitoring.html">
+            
+                <a href="../chap8/monitoring.html">
+            
+                    
+                    Chap 8. Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../chap9/kubernetes.html">
+            
+                <a href="../chap9/kubernetes.html">
+            
+                    
+                    Chap 9. Using OPA in Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../chap10/extending.html">
+            
+                <a href="../chap10/extending.html">
+            
+                    
+                    Chap 10. Extending OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../chap11/wasm.html">
+            
+                <a href="../chap11/wasm.html">
+            
+                    
+                    Chap 11. OPA and Web Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chap 7. OPA Integrations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chap-7-opa-integrations">Chap 7. OPA Integrations</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#opa-rest-api-server">OPA REST API Server</a><ul>
+<li><a href="#running-an-opa-server-with-https">Running an OPA server with HTTPS</a></li>
+</ul>
+</li>
+<li><a href="#configure-opa-rest-api-server">Configure OPA REST API Server</a><ul>
+<li><a href="#structure-of-the-opa-configfile">Structure of the OPA Configfile</a></li>
+<li><a href="#apply-configurations-when-starting-rest-server">Apply configurations when starting REST server</a></li>
+<li><a href="#run-in-a-docker-environment">Run in a Docker Environment.</a></li>
+<li><a href="#run-in-a-kubernetes-environment">Run in a Kubernetes Environment</a></li>
+</ul>
+</li>
+<li><a href="#integrate-opa-into-the-application-with-the-go-client-libraries">Integrate OPA into the Application with the Go Client Libraries</a></li>
+<li><a href="#how-to-integrate-opa-with-external-data">How to integrate OPA with external data.</a><ul>
+<li><a href="#jwt-based-method">JWT-based Method</a></li>
+<li><a href="#input-overloading">Input Overloading</a></li>
+<li><a href="#bundle">Bundle</a></li>
+<li><a href="#push">Push</a></li>
+<li><a href="#evaluation-pull">Evaluation Pull</a></li>
+<li><a href="#manage-policy-using-a-database">Manage Policy using a Database</a></li>
+</ul>
+</li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Utilize OPA REST API server</li>
+<li>How to run the OPA REST API server in a docker and Kubernetes environment</li>
+<li>OPA Go Client Library</li>
+<li>How to link OPA with external data</li>
+</ul>
+<p>Methods for integrating OPA with other systems include running separate servers with REST APIs, integrating them with Go libraries into programs written in Go, and using modules compiled as Web assemblies(WASM).</p>
+<p>The comparison of each method is shown in Table 7-1.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>REST API</th>
+<th>Go Lib</th>
+<th>WASM (WIP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evaluation</td>
+<td>Fast</td>
+<td>Faster</td>
+<td>Fastest</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>Any</td>
+<td>Only Go</td>
+<td>Any with WASM</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Update just OPA</td>
+<td>Update entire service</td>
+<td>Update service rarely</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Must secure API</td>
+<td>Enable only what is needed</td>
+<td>Enable only what is needed</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7-1. A comparison of the different integration choices for OPA<sup><a href="#fn_4" id="reffn_4">4</a></sup></p>
+<p><sup><a href="#fn_4" id="reffn_4">4</a></sup> (Source: <a href="https://www.openpolicyagent.org/docs/latest/integration/#comparison" target="_blank">https://www.openpolicyagent.org/docs/latest/integration/#comparison</a>)</p>
+<p>This chapter discusses how to utilize the REST API and how to utilize the Go client library. Web assemblies are described separately in a later chapter.</p>
+<h2 id="opa-rest-api-server">OPA REST API Server</h2>
+<p>The OPA REST API server is developed in the Go language. And all tools provided by OPA including REPL, REST API server, and bundle generation tools, are available in a single binary of opa or opa.exe, depending on the platform.</p>
+<p>The simplest way to run an OPA REST server is as follows.</p>
+<pre><code>$opa run &#x2013;s &lt;List of files/directories containing policies and data&gt;
+</code></pre><p>Let&apos;s test the OPA REST API server by generating simple rules and data. Let&apos;s test the OPA REST API server by generating simple rules and data. Briefly describe the contents of policy.rego, assign the name field of the input JSON object to the name variable, and then import the object whose key is the value of the name variable from the data.users object. True is assigned to allowed if the role field of the object is equal to the string &quot;manager&quot;. If the role field is different from &quot;manager&quot;, the value of allowed is the default value false.</p>
+<pre><code>package test.server.rest
+
+default allowed = false
+
+allowed {
+    name := input.name
+    data.users[name].role == &quot;manager&quot;  
+}
+</code></pre><p>Let&apos;s create a data file that stores the data.users values. Then save the contents as users.json.</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;users&quot;</span> : {
+        <span class="hljs-string">&quot;bob&quot;</span>: {
+            <span class="hljs-string">&quot;role&quot;</span>:<span class="hljs-string">&quot;manager&quot;</span>
+        },
+        <span class="hljs-string">&quot;alice&quot;</span>: {
+            <span class="hljs-string">&quot;role&quot;</span>:<span class="hljs-string">&quot;staff&quot;</span>
+        }
+    }
+}
+</code></pre>
+<p>To verify that the stored data is loaded normally, you can run the opa run command to output the data as follows: If the data file is written properly, the contents are printed as follows:</p>
+<pre><code>$ opa run policy.rego users.json
+OPA 0.23.2 (commit 661ec2f, built at 2020-08-24T18:49:53Z)
+
+Run &apos;help&apos; to see a list of commands and check for updates.
+
+&gt; data
+{
+  &quot;test&quot;: {
+    &quot;server&quot;: {
+      &quot;rest&quot;: {
+        &quot;allowed&quot;: false
+      }
+    }
+  },
+  &quot;users&quot;: {
+    &quot;alice&quot;: {
+      &quot;role&quot;: &quot;staff&quot;
+    },
+    &quot;bob&quot;: {
+      &quot;role&quot;: &quot;manager&quot;
+    }
+  }
+}
+</code></pre><p>To see if policy.rego works properly, let&apos;s assign an object with the name field &quot;bob&quot; to input as follows: After allocating input, you can see that the data.test.server.rest.allowed has been changed to true.</p>
+<pre><code>&gt; input := {&quot;name&quot;:&quot;bob&quot;}
+Rule &apos;input&apos; defined in package repl. Type &apos;show&apos; to see rules.
+&gt; data.test.server.rest.allowed
+true
+</code></pre><p>If both data and policy files are ready, add the &#x2013;s option to the opa run command to float the REST API server.</p>
+<pre><code>$ opa run -s policy.rego users.json
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;insecure_addr&quot;:&quot;&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2020-10-07T22:07:37+09:00&quot;}
+</code></pre><p>Since the OPA server started with 8181 ports, let&apos;s run the query using a browser as shown in Figure 7-1. You can access the OPA server by typing localhost:8181 as a URL in the browser window (if localhost does not work, you can access it at 127.0.0.1:8181). Let&apos;s enter {&quot;name&quot;:&quot;bob&quot;} assigned by REPL in the Input Data section and allowed = data.test.server.rest.allowed in the Query section. Unlike Repl, the result value must be assigned to the variable to be included in the result object, and the result is the same even if the allocation speaker := is used instead of =.</p>
+<p>After input is entered, click the [Submit] button to see the result value in the result field of the JSON object.</p>
+<p><img src="img/fig_7-1.png" alt="Connecting to the OPA server from a web browser"> </p>
+<p>Figure 7-1. Connecting to the OPA server from a web browser</p>
+<p>This time, let&apos;s request a query with the REST API on the OPA server using curl. The same result can be obtained by executing the command.</p>
+<pre><code>$ curl localhost:8181/v1/data/test/server/rest/allowed &#x2013;d {\&quot;input\&quot;:{\&quot;name\&quot;:\&quot;bob\&quot;}}
+{&quot;result&quot;:true}
+</code></pre><p>In order to pass the input object to the curl, the input objects can be saved to a file if the escaping is uncomfortable or the input objects are too large. Let&apos;s save the following as input.json and call the API in the same curl.</p>
+<pre><code>{&quot;input&quot;:{&quot;name&quot;:&quot;bob&quot;}}
+</code></pre><p>To call a curl with contents of a file as input stream, you can specify the &#x2013;d factor in the form @ <filename> as follows: The execution results are the same as when the JSON object is passed into the input.</filename></p>
+<pre><code>$ curl -d @input.json localhost:8181/v1/data/test/server/rest/allowed
+{&quot;result&quot;:true}
+</code></pre><h3 id="running-an-opa-server-with-https">Running an OPA server with HTTPS</h3>
+<p>In most cases, the OPA server will run on the internal network within the firewall. In recent micro-service environments, security is often applied between services in internal networks, and HTTPS must be applied unconditionally if it is required to be disclosed to external networks. In the future, HTTPS application to API servers is essential because regular HTTP connections will not be available in web browsers at all. For sources related to HTTPS applications, see chap7/https.</p>
+<p>HTTPS application requires a TLS certificate. HTTPS validates TLS certificates through the Certificate Authority (CA). It is convenient to use a self-signed certificate signed with a private key in a test environment, because a typical TLS certificate may require the cost of issuing the certificate and an internet connection to the certificate authority. However, it should be noted that using self-signed certificates for commercial services can lead users to misunderstand that they are required to accept unverified certificates unconditionally, and that commercial services should not use self-signed certificates because browsers show warning messages. Let&apos;s use self-signed certificates for testing purposes only.</p>
+<p>First of all, let&apos;s issue a self-signed certificate as follows. The following openssl genrsa command generated a private key with a size of 2048 bits to sign the certificate: Private keys are generated randomly, so deleting and re-generating them produces keys with different values. After the key was generated, the certificate was generated, and the expiration date was set to 10 years (3650 days) for readers to use the source provided by the book. When generating the certificate, many questions were asked, but the country was set to KR, the common name was set to localhost, and the remaining fields were left blank. The generic name of the credential is typically set to the fully qualified domain name (FQDN), which most specifically represents the host address, and the email of the certificate manager is set together.</p>
+<pre><code>$ openssl genrsa -out private.key 2048
+Generating RSA private key, 2048 bit long modulus (2 primes)
+.............................................................+++++
+.................................................................................................+++++
+e is 65537 (0x010001)
+
+$ openssl req -new -x509 -sha256 -key private.key -out public.crt -days 3650
+... (ellipsis) ...
+-----
+Country Name (2 letter code) [AU]:KR
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:localhost
+Email Address []:
+</code></pre><p>When you start the server using the issued certificate, you can specify the certificate file and the private key file used to generate the certificate in the tls-cert-file and tls-private-key-file arguments as follows: Even if the certificate is issued and used by an authorized certificate authority, only the process of issuing it is different, but the key file and the certificate file used to generate the certificate are specified.</p>
+<pre><code>$ opa run -s --tls-cert-file public.crt --tls-private-key-file private.key policy.rego users.json
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2021-01-30T22:20:21+09:00&quot;}
+</code></pre><p>Let&apos;s open another shell, change the curl request address from localhost to <a href="https://localhost" target="_blank">https://localhost</a>, and send the request to the server. Contrary to expectations, an error complaining a self-signed certificate will occur.</p>
+<pre><code>$ curl -d @input.json https://localhost:8181/v1/data/test/server/rest/allowed
+curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+</code></pre><p>In HTTPS operation, the operating system or browser basically has a list of top certification authorities (Symantec, Digicert, etc.) and it trusts only the certification authorities or certificates signed by them. Because a self-signed certificate is a certificate signed with a randomly generated key, curl et al. cannot verify them by default. Therefore, self-signed certificates can encrypt communications, but they cannot verify the identity of the certificates used for communications. Therefore, if it is not clear that the certificate file is provided by a trusted target, it should not be allowed recklessly, but it can be used for testing purposes.</p>
+<p>The &#x2013;k option (long as the --insecure option) for curl allows access to HTTPS even if the certificate is not verifiable. Certificates from authorized certification bodies are verifiable and do not require the &#x2013;k option. If you add the &#x2013;k option to the curl, you will see the following results:</p>
+<pre><code>$ curl -k -d @input.json https://localhost:8181/v1/data/test/server/rest/allowed
+{&quot;result&quot;:true}
+</code></pre><h2 id="configure-opa-rest-api-server">Configure OPA REST API Server</h2>
+<h3 id="structure-of-the-opa-configfile">Structure of the OPA Configfile</h3>
+<p>OPA config files can be written in JSON or YAML, and YAML provides better readability. The OPA config file has the following structure: The services section first contains connection information when external HTTP services need to be accessed for bundle polling, etc. in OPA. The example declares a service called example, URL <a href="http://localhost:8080/policy/v1" target="_blank">http://localhost:8080/policy/v1</a>, and the timeout waiting for a response is 5 seconds. While the services section seems to declare which ports OPA services will use, the ports that OPA servers will use can only be set by an argument when running operrun &#x2013;s, and the services declared in the services section define endpoints for the bundled servers or the state servers that update the OPA server status.</p>
+<p>The labels section is used to label the OPA server for management. In the labels section, you can define the desired label, and the contents of the label are included in the policy evaluation result log or status information. Therefore, recording information on the operating environment, development environment, and management department using labels will greatly help analyze logs and status information in the future, and if there are multiple servers, information on servers related to each other can be filtered through labels.</p>
+<p>The bundle section contains settings for updating policies and data of the OPA server by polling bundles in external services. In the example, we declared a bundle called example, which downloads a resource called bundle/example/bundle.tar.gz of the example service. The URL to be actually polled is <a href="http://localhost:8080/policy/v1/bundles/example/bundle.tar.gz" target="_blank">http://localhost:8080/policy/v1/bundles/example/bundle.tar.gz</a>, which combines the URL of the service and the path of the resource. The polling cycle is at least 60 seconds and up to 120 seconds, and the bundle is polled and updated once every 60 to 120 seconds.
+The persist sets whether to store the polling bundle on disk, and unless the storage location is set separately, it is stored in the bundles directory under the .opa directory where the OPA server was executed. If the signature contains a signature from the bundle downloaded from the remote service, you can specify a key to verify the signature. The verification key is defined in the keys section and may refer to the corresponding key in the keys section as the key_id. In the keys section, a public key to be used to verify the bundle can be defined. In this example, the algorithm was set to RS512 because the bundle signed with the RS512 algorithm was used, and the contents of the previously generated public_key.pem were opened and copied with a text editor. To specify a string consisting of multiple lines in YAML as a value, write | (a character used as an OR or Unix pipe symbol in a programming language) to recognize the value from the next line to the front of the blank line.</p>
+<pre><code>services:
+  example:
+    url: http://localhost:8080/policy/v1
+    response_header_timeout_seconds: 5
+
+lables:
+  region: prod
+  depart: dev1
+  service: example
+
+bundles:
+  example:
+    service: example
+    resource: bundles/example/bundle.tar.gz
+    persist: true
+    polling:
+      min_delay_seconds: 60
+      max_delay_seconds: 120
+    signing:
+      keyid: example_key
+
+keys:
+  example_key:
+    algorithm: RS512
+    key: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxtXx9HIydGa90/0SIlyi
+      G6uJS3xTZqr+IfIA1YZrgdhpIJSIW4Wj19R56X6tzr5AMw4Z/FfcR7E+5/9Q30y9
+      8bvCDMM+58RPIhL4fyHLZeLR2ysMHgXt3aQ1epTKJA+AP2ndQu7nzYJ/ZgIzQkGO
+      3AR9IfYva5D9x9d5KxsBS6S5FyAfT9zspWtN9OO2Vu8jH9G/vWnLagYD8hXfTiaa
+      U+ujkB0OSlOOWDVbXPO0Aw/z7GKyc9Zg/TF2Vq8/SJjw0j1FlgJCC+tXBx8SYXuQ
+      TxsjpMHAGiWg5slt+FpvSQEcZjPlvUN+tnvsUxfnVpyMDmxKMvdRtzAy0BaL/wpe
+      GQIDAQAB
+      -----END PUBLIC KEY-----
+
+decision_logs:
+  console: true
+
+caching:
+  inter_query_builtin_cache:
+    max_size_bytes: 10000000
+</code></pre><p>The decision_logs section sets the contents of the OPA&apos;s policy evaluation result log. The log may be transmitted to a remote server defined in the service, or the policy result log may be output to the console. Here, logs are set to be output to the console.</p>
+<p>In addition, there is a status section that sets the state of the OPA server to be transmitted to an external server, and a discovery section that integrates external bundles, policy decision logs, and status servers to dynamically find them.</p>
+<h3 id="apply-configurations-when-starting-rest-server">Apply configurations when starting REST server</h3>
+<p>To specify the OPA configuration file (opaconf.yaml in this example) when starting the REST server, use the &#x2013;c option to run as follows.</p>
+<p>$ opa run &#x2013;s &#x2013;c opaconf.yaml</p>
+<p>Currently, opaconf.yaml receives bundles from <a href="http://localhost:8080/policy/v1" target="_blank">http://localhost:8080/policy/v1</a>, so if executed as above, an error occurs because the bundle cannot be found. Let&apos;s set aside the HTTP server that provides the bundle and try to polling the bundle periodically through the REST API. A server that serves bundles can be easily started with a simple command. Python 3.x is used to execute the command, so Python must be installed first, and Python installation is simple, so it is not covered in this book.</p>
+<p>First, in order to ensure that the bundle is located in the policy/v1 path, a path is created so that the v1 directory is located under the policy directory. If you are using a window cmd shell, it is easy to create a directory at once using the &#x201C;mkdir -p policy\v1&#x201D; command, and in Linux or MacOS, use the &#x201C;mkdir -p policy/v1&#x201D;. After the directory is created, do not move it, but copy the bundle to use under that policy/v1 directory. In this book, bundle signed RS512 was used for opaconf.yaml, so bundle.tar.gz signed RS512 was copied. When you finish copying, let&apos;s do it as follows.</p>
+<p>$ python3 -m http.server --bind localhost 8080 --directory .
+Serving HTTP on ::1 port 8080 (<a href="http://[::1]:8080/" target="_blank">http://[::1]:8080/</a>) ...</p>
+<p>If it works properly, the policy directory looks at the top when accessed by browser as shown in Figure 7-2. Let&apos;s click on the policy directory and v1 directory one by one to see if a bundle file exists.</p>
+<p><img src="img/fig_7-2.png" alt="Accessing the Bundle Server using Web browser"> </p>
+<p>Figure 7-2. Accessing the Bundle Server using Web browser</p>
+<p>For simplicity, we started the bundle server as it was guided on the OPA usage page, but when applied in production, it is recommended to configure web servers such as Apache and nginx or to develop and use simple web servers in programming languages such as node.js.</p>
+<p>If the bundle server works well, let&apos;s launch the OPA server as follows. It can be seen that the OPA server starts and bundles are periodically polled.</p>
+<pre><code>$ opa run -s -c opaconf.yaml
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2020-11-05T10:19:10+09:00&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Starting bundle downloader.&quot;,&quot;name&quot;:&quot;example&quot;,&quot;plugin&quot;:&quot;bundle&quot;,&quot;time&quot;:&quot;2020-11-05T10:19:10+09:00&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Starting decision logger.&quot;,&quot;plugin&quot;:&quot;decision_logs&quot;,&quot;time&quot;:&quot;2020-11-05T10:19:10+09:00&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Log upload skipped.&quot;,&quot;plugin&quot;:&quot;decision_logs&quot;,&quot;time&quot;:&quot;2020-11-05T10:19:10+09:00&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Bundle downloaded and activated successfully.&quot;,&quot;name&quot;:&quot;example&quot;,&quot;plugin&quot;:&quot;bundle&quot;,&quot;time&quot;:&quot;2020-11-05T10:19:10+09:00&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Bundle downloaded and activated successfully.&quot;,&quot;name&quot;:&quot;example&quot;,&quot;plugin&quot;:&quot;bundle&quot;,&quot;time&quot;:&quot;2020-11-05T10:21:08+09:00&quot;}
+...
+</code></pre><p>Let&apos;s open another shell and send the request to the OPA server in curl. The request is the same as the request sent earlier in this chapter.</p>
+<pre><code>$ curl localhost:8181/v1/data/test/server/rest/allowed -d {\&quot;input\&quot;:{\&quot;name\&quot;:\&quot;bob\&quot;}}
+{&quot;decision_id&quot;:&quot;f7b082e5-16b5-4368-bae3-6752ebf4179a&quot;,&quot;result&quot;:true}
+</code></pre><p>As a response, we can see that the result:true has been returned the same as before, and that the decision_id has been returned together in the form of uuid.</p>
+<p>If you look at the shell that started the OPA server, you can see that the following contents have been output.</p>
+<pre><code>{&quot;client_addr&quot;:&quot;[::1]:61080&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Received request.&quot;,&quot;req_id&quot;:1,&quot;req_method&quot;:&quot;POST&quot;,&quot;req_path&quot;:&quot;/v1/data/test/server/rest/allowed&quot;,&quot;time&quot;:&quot;2020-11-05T10:34:01+09:00&quot;}
+{&quot;client_addr&quot;:&quot;[::1]:61080&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Sent response.&quot;,&quot;req_id&quot;:1,&quot;req_method&quot;:&quot;POST&quot;,&quot;req_path&quot;:&quot;/v1/data/test/server/rest/allowed&quot;,&quot;resp_bytes&quot;:68,&quot;resp_duration&quot;:8.0402,&quot;resp_status&quot;:200,&quot;time&quot;:&quot;2020-11-05T10:34:01+09:00&quot;}
+</code></pre><p>We briefly checked how to set up the OPA server. For more information on settings, see the official document at <a href="https://www.openpolicyagent.org/docs/latest/configuration/" target="_blank">https://www.openpolicyagent.org/docs/latest/configuration/</a>).</p>
+<p>Run OPA server in Docker and Kubernetes Environment
+OPA provides an official docker image, so you can easily float the OPA server using docker or Kubernetes. If you search for openpolicyagent/opa in the docker hub, you can find the OPA docker image as shown in Figure 7-3. If you check the description of the OPA official docker image, the images shown in Table 7-2 are provided.  In the development process, openpolicy agent/opa:latest-debug with a built-in shell for debugging can be used. openpolicyagent/opa:latest-rootless can be used rather than openpolicyagent/opa:latest for application in the production environment. However, it is better to use a rootless image that operates as a server with an account other than root because security check tools can complain of it as a security vulnerability.</p>
+<p><img src="img/fig_7-3.png" alt="OPA docker image (hub.docker.com/r/openpolicyagent/opa)"> </p>
+<p>Figure 7-3. OPA docker image (hub.docker.com/r/openpolicyagent/opa)</p>
+<table>
+<thead>
+<tr>
+<th>Image Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openpolicyagent/opa:<version></version></td>
+<td>The standard OPA image</td>
+</tr>
+<tr>
+<td>openpolicyagent/opa:<version>-debug</version></td>
+<td>Includes a shell and is based on the lightweight distroless images</td>
+</tr>
+<tr>
+<td>openpolicyagent/opa:<version>-rootless</version></td>
+<td>Sets the USER to a non-root value</td>
+</tr>
+<tr>
+<td>openpolicyagent/opa:<version>-static</version></td>
+<td>Contains a statically linked OPA executable</td>
+</tr>
+<tr>
+<td>openpolicyagent/opa:<version>-envoy</version></td>
+<td>Include an Envoy External Authorization server</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7-2. Types of OPA docker images provided through docker hubs. (source: <a href="https://hub.docker.com/r/openpolicyagent/opa" target="_blank">https://hub.docker.com/r/openpolicyagent/opa</a>)</p>
+<h3 id="run-in-a-docker-environment">Run in a Docker Environment.</h3>
+<p>Although it is simple to execute OPA through dockers, it is necessary to consider ways to deliver policies and data so that OPA containers can recognize them. The easiest way is to connect the local directory to the container and then allow the OPA container to load the file.</p>
+<p>Docker installation is required first to run the OPA server on the docker. To use docker, you can install the docker desktop in the Windows or Mac OS environment, and the docker engine package in the Linux environment. Hyper-V must be enabled to install docker desktops in a Windows environment, but unless it is the latest update of Windows 10, Hyper-V is not enabled in the Home version and the docker desktop is not available. If you are a Windows 10 Home version user, let&apos;s update to the latest build. This book will not cover detailed docker installation instructions, so see <a href="https://www.docker.com/get-started" target="_blank">https://www.docker.com/get-started</a>.</p>
+<p>Let&apos;s run OPA on docker. For related sources, refer to the chap7/docker directory. First of all, the directory (c:\opabook\chap7\docker\rest in this example) containing the two files, which is policy.rego and users.json, was mounted on /rest of the container, and ran the container using openpolicyagent/opa:late-rootless image. In addition, run/rest/policy.rego/rest/users.json was handed over as an argument in the image, and the standard input/output of the container was connected to the shell with the &#x2013;it option. When the container is executed, you can see the same OPA shell as when the OPA is directly executed as a binary as follows.</p>
+<pre><code>$ docker run -it &#x2013;v c:\opabook\chap7\docker\rest:/rest openpolicyagent/opa:latest run /rest/policy.rego /rest/users.json
+OPA 0.23.2 (commit 661ec2f, built at 2020-08-24T18:49:17Z)
+
+Run &apos;help&apos; to see a list of commands and check for updates.
+&gt;
+
+Enter the data command and the result will be output if the file is loaded normally. If you enter Ctrl + D to terminate the shell, you can see the following prompt, and pressing y ends the process.
+
+Do you want to exit ([y]/n)? y
+</code></pre><p>Let&apos;s run the OPA container with the REST API server. The OPA server may be started by running with open-s <files> in the same manner as when running with binary. When running with REST API, the &#x2013;p option must be added to expose the port of the container to the outside, and the &#x2013;it option is not required because it is in server mode. The results of applying all of these contents are as follows.</files></p>
+<pre><code>$ docker run &#x2013;p 8100:8181 -v c:\opabook\chap7\docker\rest:/rest  openpolicyagent/opa:latest-rootless run -s /rest/policy.rego /rest/users.json
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;insecure_addr&quot;:&quot;&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2020-10-11T11:52:20Z&quot;}
+</code></pre><p>In the above example, the 8181 port was mapped to the 8000 port of the host in the container. When tested with curl as follows, the same results as when the server was run with binary without container will be returned.</p>
+<pre><code>$ curl localhost:8000/v1/data/test/server/rest/allowed -d {\&quot;input\&quot;:{\&quot;name\&quot;:\&quot;bob\&quot;}}
+{&quot;result&quot;:true}
+</code></pre><p>Even if you enter Ctrl + C from the shell connected to the OPA server container and get out of the shell, it will still work well if you request the same in curl again because it was operated in daemon mode with the opa run -s command.</p>
+<p>To shut down the running server, you can check the running container with the docker ps command as follows, stop the container with the docker stop, and delete the container with the docker rm command. In the example below, 8dc8394f6058 is a container identifier and is a randomly generated value, so it depends on the environment. Therefore, when you execute, the container identifier that is handed over to the docker stop or docker rm must be changed according to the container identifier output as a result of the docker ps command.</p>
+<pre><code>$ docker ps
+CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                    NAMES
+8dc8394f6058        openpolicyagent/opa:latest-rootless   &quot;/opa run -s /rest/p&#x2026;&quot;   9 minutes ago       Up 9 minutes        0.0.0.0:8000-&gt;8181/tcp   thirsty_bartik
+
+$ docker stop 8dc8394f6058
+8dc8394f6058
+
+$ docker rm 8dc8394f6058
+8dc8394f6058
+</code></pre><p>By executing the docker ps command again, it can be confirmed that the container has been deleted. Following the example, if the port is already occupied, it is highly likely that another container was previously started on the same port, so let&apos;s check with the docker ps command.</p>
+<pre><code>$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</code></pre><h3 id="run-in-a-kubernetes-environment">Run in a Kubernetes Environment</h3>
+<p>In a Kubernetes environment, it is more convenient to set policies and data files to be imported through bundles rather than copied and connected to volumes. This book briefly explains how to operate an OPA server in a Kubernetes environment. For related sources, refer to the chap7/kubernetes directory.</p>
+<p>In the previous example, the bundle server was started by binding to the localhost address, and the bundle server&apos;s binding address should be specified as an IP that can be routed from the pods in the Kubernetes. If you test on a PC, you can specify the IP returned with the ifconfig (Linux or MacOS) or ipconfig (Window) command, and if you test on an external server, check the IP address of the server operating the bundle server. In the case of the author, since it is a PC connected through an Internet router and the IP of the PC is 192.168.0.10, the bundle server was executed as follows. To verify that the specified IP is correct, enter it in the form of <a href="http://192.168.0.10:8080" target="_blank">http://192.168.0.10:8080</a> to access it. (It needs to be changed to suit the IP of the PC you use)</p>
+<pre><code>$ python3 -m http.server --bind 192.168.0.10 8080 --directory .
+</code></pre><p>If the bundle server works well, try running the OPA server in Kubernetes with the kubectl command. First, a namespace that can separate and manage resources related to the OPA server is created under the name opa.</p>
+<pre><code>$ kubectl create namespace opa
+</code></pre><p>Once the namespace is created, copy the opaconf.yaml used in the previous example and replace the IP with the bundle server IP.</p>
+<pre><code>services:
+  example:
+    url: http://192.168.0.10:8080/policy/v1
+    response_header_timeout_seconds: 5
+....
+</code></pre><p>Then create a configmap named opaconf so that opaconf.yaml can be used in Kubernetis. In this case, the previously created namespace is designated with the &#x2013;n option.</p>
+<pre><code>$ kubectl -n opa create configmap opaconf --from-file opaconf.yaml
+</code></pre><p>To ensure that the configmap is properly created, try executing the following command.</p>
+<pre><code>$ kubectl &#x2013;n opa describe configmap opaconf
+Name:         opaconf
+Namespace:    opa
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+
+Data
+====
+opaconf.yaml:
+----
+services:
+  example:
+    url: http://localhost:8080/policy/v1
+    response_header_timeout_seconds: 5
+...
+</code></pre><p>If a configmap has been created, a service for the OPA server must be created. Write and save the following contents under the name of service.yaml. In this book, services were exposed through Cluster IP, but if there is a load balancer available in Kubernetis, it is better to expose the service port with Load Balancer.</p>
+<pre><code>kind: Service
+apiVersion: v1
+metadata:
+  name: opa
+  labels:
+    app: opa
+spec:
+  type: ClusterIP
+  selector:
+    app: opa
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8181
+      targetPort: 8181
+</code></pre><p>You can create a service by executing the following command.</p>
+<pre><code>$ kubectl &#x2013;n opa apply &#x2013;f service.yaml
+</code></pre><p>Let&apos;s check if the service is well created with the following command.</p>
+<pre><code>$ kubectl -n opa get svc
+NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+opa    ClusterIP   10.107.90.72   &lt;none&gt;        8181/TCP   15s
+</code></pre><p>When a service is created, a deployment for the OPA server container must be created. Write the following and save it as deployment.yaml.</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opa
+  labels:
+    app: opa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opa
+  template:
+    metadata:
+      labels:
+        app: opa
+      name: opa
+    spec:
+      containers:
+      - name: opa
+        image: openpolicyagent/opa:latest
+        ports:
+        - name: http
+          containerPort: 8181
+        args:
+        - &quot;run&quot;
+        - &quot;--ignore=.*&quot;
+        - &quot;-s&quot;
+        - &quot;-c&quot;
+        - &quot;/opaconf/opaconf.yaml&quot;
+        volumeMounts:
+        - readOnly: true
+          mountPath: /opaconf
+          name: opaconf
+      volumes:
+      - name: opaconf
+        configMap:
+          name: opaconf
+</code></pre><p>You can create an OPA deployment by executing the following command.</p>
+<pre><code>$ kubectl &#x2013;n opa apply &#x2013;f deployment.yaml
+</code></pre><p>Once the deployment is created, check with the following command to see if a pod containing a container has been properly created in Kubernetes.</p>
+<pre><code>$ kubectl -n opa get pod
+NAME                  READY   STATUS    RESTARTS   AGE
+opa-d78bf44fc-5t9nv   1/1     Running   0          15m
+</code></pre><p>The log can be checked with the kubectl logs command using the pod name that appears as a result of the kubectl get pod command. If the server operates normally, a log similar to the previous example will appear.</p>
+<pre><code>$ kubectl -n opa logs opa-d78bf44fc-5t9nv
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2020-11-05T12:36:21Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Starting bundle downloader.&quot;,&quot;name&quot;:&quot;example&quot;,&quot;plugin&quot;:&quot;bundle&quot;,&quot;time&quot;:&quot;2020-11-05T12:36:21Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Starting decision logger.&quot;,&quot;plugin&quot;:&quot;decision_logs&quot;,&quot;time&quot;:&quot;2020-11-05T12:36:21Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Log upload skipped.&quot;,&quot;plugin&quot;:&quot;decision_logs&quot;,&quot;time&quot;:&quot;2020-11-05T12:36:21Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Bundle downloaded and activated successfully.&quot;,&quot;name&quot;:&quot;example&quot;,&quot;plugin&quot;:&quot;bundle&quot;,&quot;time&quot;:&quot;2020-11-05T12:36:21Z&quot;}
+</code></pre><p>Currently, the service exposes the port to Cluster IP, so it cannot be accessed from outside Kubernetes from the OPA server. Let&apos;s perform port forwarding in the opa service with the next command.</p>
+<pre><code>$ kubectl -n opa port-forward service/opa 8181:8181
+Forwarding from 127.0.0.1:8181 -&gt; 8181
+Forwarding from [::1]:8181 -&gt; 8181
+</code></pre><p>Let&apos;s open another shell and test it with curl to see if the service works well. It can be seen that it works well.</p>
+<pre><code>$ curl localhost:8181/v1/data/test/server/rest/allowed -d {\&quot;input\&quot;:{\&quot;name\&quot;:\&quot;bob\&quot;}}
+{&quot;decision_id&quot;:&quot;bfa3be4a-66d8-4c5b-bd38-444bd99b34f0&quot;,&quot;result&quot;:true}
+</code></pre><p>Once the test is complete, enter Ctrl+C on the shell running the kubectl port-forward to stop port forwarding, and delete the generated kubernetes resources using the following commands. If all commands have been successfully completed, all resources generated by Kubernetis during the test process will be deleted. If an error occurs on the way, correct the problem, delete the resources, and retest.</p>
+<pre><code>$ kubectl &#x2013;n opa delete deployment opa
+deployment.apps &quot;opa&quot; deleted
+
+$ kubectl &#x2013;n opa delete service opa
+service &quot;opa&quot; deleted
+
+$ kubectl &#x2013;n opa delete configmap opaconf
+configmap &quot;opaconf&quot; deleted
+
+$ kubectl delete namespace opa
+namespace &quot;opa&quot; deleted
+</code></pre><h2 id="integrate-opa-into-the-application-with-the-go-client-libraries">Integrate OPA into the Application with the Go Client Libraries</h2>
+<p>This time, let&apos;s run OPA using the Go client library. First of all, the Go compiler should be installed, and it is recommended to install the version above 1.13 as much as possible. Go compilers can download the latest versions for each platform by accessing <a href="https://golang.org/dl" target="_blank">https://golang.org/dl</a>.</p>
+<p>First, let&apos;s create a directory to use as a project. After creating the opa_go_hello directory, the opa_go file was created with the following contents using an editor.</p>
+<pre><code>package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;log&quot;
+
+    &quot;github.com/open-policy-agent/opa/rego&quot;
+)
+
+func main() {
+
+    input := map[string]interface{}{
+        &quot;name&quot;: &quot;bob&quot;,
+    }
+
+    opaFiles := []string{
+        &quot;policy.rego&quot;,
+        &quot;users.json&quot;,
+    }
+
+    queryStr := &quot;data.test.server.rest.allowed&quot;
+
+    r := rego.New(
+        rego.Query(queryStr),
+        rego.Load(opaFiles, nil),
+    )
+
+    ctx := context.Background()
+
+    query, err := r.PrepareForEval(ctx)
+    if err != nil {
+        log.Fatalf(&quot;unable to prepare for eval: %s&quot;, err)
+    }
+
+    rs, err := query.Eval(ctx, rego.EvalInput(input))
+    if err != nil {
+        log.Fatalf(&quot;unable to eval: %s&quot;, err)
+    }
+
+    fmt.Printf(&quot;rs = %+v\n&quot;, rs)
+
+    fmt.Printf(&quot;query result = %+v\n&quot;, rs[0].Expressions[0].String())
+}
+</code></pre><p>The contents of the code are as follows. First, &quot;context&quot;, &quot;fmt&quot;, and &quot;log&quot; are modules basically provided in the Go language. Then, the OPA module &quot;github.com/open-policy-agent/opa/rego&quot; was imported.</p>
+<p>Input variables were declared and assigned as a map, and the key type of the map is string and the value type of the map is interface{}  (which can indicate any type of variable similar to Java&apos;s object type or C/C++&apos;s void*). The Go language basically provides a module for JSON parsing, which returns to the map [string] interface{} when unmarshalling the JSON. That is, the input variable contains the value obtained by unmarshalling the input.json of the previous example. Similarly, oppaFiles is an array of strings containing policies and data file paths to load. Finally, the queryStr variable is a string containing a query to be requested from the OPA.</p>
+<p>Then call rego.New to initialize the rego, which passes the query string to rego.Query to generate a query and loads the policy and data files using rego.Load. The second argument of rego.Load is a filtering function that can only filter functions that satisfy conditions such as specific extensions in the file list, and in this example, filtering is not required, so it has passed nil. For how to use functions such as rego.New, refer to the godoc page about opa modules, <a href="https://godoc.org/github.com/open-policy-agent/opa/rego" target="_blank">https://godoc.org/github.com/open-policy-agent/opa/rego</a>.</p>
+<p>Next, the context is created, and if settings such as timeout are not required, create a basic context using context.Background(). Pass the context created by the initialized Rego engine and complete preparations for evaluation are completed.</p>
+<p>Finally, the evaluation is performed, the result is assigned to the rs variable, and then call fmt.Printf to format and output the results. The printf&apos;s %+v indicator is an indicator that cannot be seen in the printf series of rough numbers in other languages, with %v outputting in a format suitable for each type, and %+v outputting structures including field names.</p>
+<p>Once the code has been written, let&apos;s run it. Before executing the code, the OPA module must be installed, and it can be managed as project dependency through the go module, or it can be installed locally through the go get command.</p>
+<p>After saving the source, the go module is initialized by executing the following command.</p>
+<pre><code>$ go mod init example.com/opahello
+</code></pre><p>After the module is initialized, the result can be confirmed by executing it as follows. If there is an error, let&apos;s check the code again.</p>
+<pre><code>$ go run opahello.go
+rs = [{Expressions:[true] Bindings:map[]}]
+query result = true
+</code></pre><p>If you look at the execution results, the results are included in the Expressions section. Bindings is the part where the variable name is the key if a variable to contain the query result is specified, such as when accessing the OPA server through the web. Let&apos;s change the query in the source code from &quot;data.test.server.rest.allowed&quot; to &quot;x = data.server.rest.allowed&quot; and try again. It may be seen that the value of key x is set to true in the Bindings map.</p>
+<pre><code>$ go run opahello.go
+rs = [{Expressions:[true] Bindings:map[x:true]}]
+query result = true
+</code></pre><p>It is recommended that managing dependencies with the go module that the code to be applied in the production environment. However, if it is simply for test purposes, it would be more convenient to install a library locally. If you want to install it without managing it as a go module, let&apos;s install it as follows with go get.</p>
+<pre><code>$ go get &#x2013;u github.com/open-policy-agent/opa/rego
+</code></pre><p>After installing the library, let&apos;s run it with the following command. The execution result is the same as the case of applying the go module.</p>
+<pre><code>$ go run opahello.go
+rs = [{Expressions:[true] Bindings:map[x:true]}]
+query result = true
+</code></pre><h2 id="how-to-integrate-opa-with-external-data">How to integrate OPA with external data.</h2>
+<p>The official OPA documentation presents five ways to integrate OPA with external data as shown in the following table. Let&apos;s look at each method.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Perf/Avail</th>
+<th>Limitations</th>
+<th>Recommended Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JWT</td>
+<td>High</td>
+<td>Updates only when user logs back in</td>
+<td>User attributes</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>High</td>
+<td>Coupling between service and OPA</td>
+<td>Local, dynamic</td>
+</tr>
+<tr>
+<td>Bundle</td>
+<td>High</td>
+<td>Updates to policy/data at the same time. Size is an issue</td>
+<td>Static, medium</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>High</td>
+<td>Control data refresh rate. Size is an issue</td>
+<td>Dynamic, medium</td>
+</tr>
+<tr>
+<td>Evaluation Pull</td>
+<td>Dependent on network</td>
+<td>Perfectly up to date. No size limit</td>
+<td>Dynamic or large</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7-3. Comparison by Method Integrating External Data to OPA <sup><a href="#fn_5" id="reffn_5">5</a></sup></p>
+<p><sup><a href="#fn_5" id="reffn_5">5</a></sup> Source: <a href="https://www.openpolicyagent.org/docs/latest/external-data/" target="_blank">https://www.openpolicyagent.org/docs/latest/external-data/</a></p>
+<h3 id="jwt-based-method">JWT-based Method</h3>
+<p>This is a method of passing JWT tokens to one field of input delivered to OPA. After verifying and decoding the signature of the JWT token passed by input used as basic data for policy evaluation. The JWT token described in the chapter related to the builtin function and the builtin function for verification may be called and implemented in the Rego file.</p>
+<h3 id="input-overloading">Input Overloading</h3>
+<p>This is a method of handing over the data necessary for policy making to the fields of the input. Assuming that the information that can be obtained from JWT is handed over to Input overloading, it may be possible to perform decoding of JWT tokens in the application code before handing them over to OPA. Among the decoded information, only information necessary for policy and authority judgment can be added to Input and handed over, and this method of adding necessary information to Input and handing it over as a field is called Input Overloading. It is a method used in integration through the Go client library.</p>
+<h3 id="bundle">Bundle</h3>
+<p>It is a method of bundling data and policies to be used and periodically polling bundles in an OPA server. The integration method through bundles has already been dealt with in the OPA server configuration section.</p>
+<h3 id="push">Push</h3>
+<p>Whenever external data changes, changes are pushed to the OPA server using the API provided by the OPA server. The OPA server updates the contents of the pushed portion of the data. Let&apos;s briefly find out how to push data to the server using the API of the OPA server.</p>
+<p>First of all, let&apos;s open the shell and start the OPA server without any data or policy as the following command.</p>
+<pre><code>$ opa run &#x2013;s
+{&quot;addrs&quot;:[&quot;:8181&quot;],&quot;diagnostic-addrs&quot;:[],&quot;insecure_addr&quot;:&quot;&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Initializing server.&quot;,&quot;time&quot;:&quot;2020-11-09T22:01:42+09:00&quot;}
+</code></pre><p>When you open another shell and get the data with curl, the empty object is returned as the result without any data as follows.</p>
+<pre><code>$ curl localhost:8181/v1/data
+{&quot;result&quot;:{}}
+</code></pre><p>If JSON is passed through PUT to the sub-URL of /v1/data of the OPA server, the entire object will be updated if it exists, and if it does not exist, it will be newly created.</p>
+<pre><code>$ curl -X PUT localhost:8181/v1/data/test/push -d {\&quot;key1\&quot;:\&quot;val1\&quot;,\&quot;key2\&quot;:\&quot;val2\&quot;}
+$ curl localhost:8181/v1/data
+{&quot;result&quot;:{&quot;test&quot;:{&quot;push&quot;:{&quot;key1&quot;:&quot;val1&quot;,&quot;key2&quot;:&quot;val2&quot;}}}}
+</code></pre><p>If you want to modify only a part of the data, you can use PATCH. The content to be patched in the OPA is not a general JSON, but a JSON Patch format defined as RFC 6902.</p>
+<p>First, let&apos;s create a JSON file in JSON Patch format and save it as patch.json.</p>
+<pre><code>[ { &quot;op&quot;:&quot;replace&quot;, &quot;path&quot;:&quot;/key1&quot;, &quot;value&quot;:&quot;newval1&quot; } ]
+</code></pre><p>The top end of the JSON patch document is an array of objects, and each object has an op specifying an action to be performed, a path specifying a path to a key on the document, and a value field specifying a value. Each field is not explained in detail, and readers who want more information will be able to understand easily by referring to <a href="https://docs.microsoft.com/ko-kr/aspnet/core/web-api/jsonpatch?view=aspnetcore-3.1" target="_blank">https://docs.microsoft.com/ko-kr/aspnet/core/web-api/jsonpatch?view=aspnetcore-3.1</a>.</p>
+<p>If you have written patch.json, call the API to PATCH and change the value of key1 as follows.</p>
+<pre><code>$ curl -X PATCH localhost:8181/v1/data/test/push -d @patch.json
+</code></pre><p>If you look up the data again after calling the API, you can see that the value has changed well.</p>
+<pre><code>$ curl -X GET localhost:8181/v1/data/test/push
+{&quot;result&quot;:{&quot;key1&quot;:&quot;newval1&quot;,&quot;key2&quot;:&quot;val2&quot;}}
+</code></pre><h3 id="evaluation-pull">Evaluation Pull</h3>
+<p>This is a method of importing external data each time a policy is evaluated using built-in functions that can invoke the HTTP API within the rego code defining the OPA policy. This is an applicable method if the data is too large to load at once or if dynamically changing data must always be reflected up to date.</p>
+<p>Performance can be reduced because it uses built-in functions inside the policy code to call HTTP every time, but memory usage decreases because it allows you to read the latest data at the moment of calling HTTP every time and does not continue to store and recycle what you read. Built-in function http.Send can be called within the Rego file to import external data into HTTP.</p>
+<h3 id="manage-policy-using-a-database">Manage Policy using a Database</h3>
+<p>OPA does not directly provide the ability to store and read data from a database. Let&apos;s think about how to link OPA to the database.</p>
+<p>Among the five OPA external data integration methods discussed earlier, JWT and input overloading are about input rather than data, and input is not suitable for integration with the database because it is closer to session information than data read from the database.</p>
+<p>Examples of the available methods are as follows.</p>
+<p>1)  A method of generating a bundle by reading data from a database
+The necessary databases may be periodically batch-processed, or a database change may be detected, a data file may be generated, a bundle may be created, and provided to HTTP. In this case, it is recommended to re-download the bundle only if the change occurs using a version and timestamp to confirm the change in the data. By changing the configuration file of the OPA server, it is possible to periodically check and download the bundle.</p>
+<p>2) A method using push
+Whenever a database is updated in a policy management service, the HTTP API provided by the OPA server is used to push it to the OPA server. The OPA server provides an API that faithfully follows the REST style, and when an API using the PUT method is applied, it creates new data if there is no existing data, and overwrites it with new content. The PATCH operates differently from the PUT and changes only a specified portion of the data.</p>
+<p>3) A method using poll
+The method of developing and operating a service that inquires policies stored in a database into HTTP APIs and calling APIs from a rego file within an OPA server as an HTTP-related embedded function can always reflect the latest data stored in the database.</p>
+<h2 id="summary">Summary</h2>
+<p>This chapter examines various methods for integrating OPA with other components of the system or external systems. It explained how to integrate OPA into an application written in Go as a client library and how to use OPA as a separate REST server. In addition, a method of packaging policies and data in bundles and a method of sharing data with the outside while preventing modulation through signature and verification of bundles were also presented with examples. Finally, various methods applicable to integrating policy data into external data in the OPA server were also discussed. Through the contents of this chapter, readers will be able to sketch how to integrate OPA with systems that are actually being developed/operated.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../chap6/bundle.html" class="navigation navigation-prev " aria-label="Previous page: Chap 6. OPA Bundle">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chap8/monitoring.html" class="navigation navigation-next " aria-label="Next page: Chap 8. Monitoring">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chap 7. OPA Integrations","level":"1.12","depth":1,"next":{"title":"Chap 8. Monitoring","level":"1.13","depth":1,"path":"chap8/monitoring.md","ref":"chap8/monitoring.md","articles":[]},"previous":{"title":"Chap 6. OPA Bundle","level":"1.11","depth":1,"path":"chap6/bundle.md","ref":"chap6/bundle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap7/integrations.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-15T18:21:35.886Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-etoc-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
