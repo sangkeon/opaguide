@@ -546,13 +546,13 @@ empty-set       ::= &quot;set(&quot; &quot;)&quot;<br></div></div>
 <p>Let&apos;s take a closer look at the grammar of the Rego module.</p>
 <h3 id="module">Module</h3>
 <p>The top unit of Rego is the module. One Rego file can be viewed as one module. The railing diagram of the module shows Figure 3-3.</p>
-<p><img src="img/fig_3-3.png" alt="Structure of the Module"></p>
+<p><img src="img/fig_3-3.png" width="50%"></p>
 <p>Figure 3-3. Structure of the Module</p>
 <p>The railroad diagram shows that the module consists of a package declaration, an import policy for an arbitrary number of modules (which may not exist). Unscramble the contents of Figure 3-3, the module consists of packages and policies, and can have import statements to include the contents of other modules.</p>
 <p>The modules in OPA are similar to modules in general-purpose languages such as Go, but can be seen as policies instead of code, and the policies themselves can be viewed as code, so it is almost identical to modules in general-purpose languages.
 Package
 Let&apos;s look at the package declaration this time. A package declaration consists of a keyword package and a name that can be referenced by other modules, as shown in Figure 3-4.</p>
-<p><img src="img/fig_3-4.png" alt="Structure of Package Declaration"></p>
+<p><img src="img/fig_3-4.png" width="33%"></p>
 <p>Figure 3-4. Structure of Package Declaration</p>
 <p>A package declaration is similar to a package declaration in a typical programming language, for example:</p>
 <pre><code>package hello
@@ -561,7 +561,7 @@ Let&apos;s look at the package declaration this time. A package declaration cons
 </code></pre><p>Declared packages are used to isolate different modules when loading the contents of that module, and different package names can have different namespaces, so variables with the same name and functions can exist in different packages.</p>
 <h3 id="import">Import</h3>
 <p>Imports are used to import and use modules from other Rego files. Import has the form of import <package name=""> and is used to include the contents of modules in other packages in the module. In the Rego grammar, the import keyword is represented as followed by a package, as shown in Figure 3-5, but it would be accurate to see a name (reference) that can refer to the package rather than to the package itself.</package></p>
-<p><img src="img/fig_3-5.png" alt="Structure of the Import"></p>
+<p><img src="img/fig_3-5.png" width="50%"></p>
 <p>Figure 3-5. Structure of the Import</p>
 <p>For example, the following declaration brings up the contents of a module called data.test.example.</p>
 <pre><code>import data.test.example
@@ -572,16 +572,16 @@ import data.run.teample as drexample
 </code></pre><p>Imports are primarily used to load modules that store policy data.</p>
 <h3 id="policy">Policy</h3>
 <p>A policy consists of an arbitrary number of rules, as shown in Figure 3-6. In extreme cases, you may not have any rules, but it is not practical to create a module that does not have any rules, so this case is unlikely to be seen. For the purpose of a placeholder that pre-books the package names of parts that users can redefine and use in the future, it seems that there can be a file consisting only of comments without rules.</p>
-<p><img src="img/fig_3-6.png" alt="Structure of Policies"></p>
+<p><img src="img/fig_3-6.png" width="25%"></p>
 <p>Figure 3-6. Structure of Policies</p>
 <p>The OPA official document describes the rule before the module. However, the reason for first describing the module in this book is to emphasize that almost everything is a rule in Rego. When you listen to the explanation of the OPA official document, there are a lot of confusing parts that seem to be rules, but not rules in some areas, and let&apos;s first think of these as rules.</p>
 <h3 id="term">Term</h3>
 <p>Before we take a closer look at the rules, let&apos;s look at the term, a basic element of the Rego language. Terms can be seen as basic data structures representing data in the Rego language. The term consists of a comprehensive set of references, variables, scalar values, arrays, objects, sets, etc., array comprehensions, object comprehensions, and set comprehensions, as shown in Figure 3-7. First, let&apos;s look at the basic data structures except for variables and references.</p>
-<p><img src="img/fig_3-7.png" alt="Structure of Terms"></p>
+<p><img src="img/fig_3-7.png" width="33%"></p>
 <p>Figure 3-7. Structure of Terms</p>
 <h3 id="scala-value">Scala Value</h3>
 <p>Rego&apos;s scalar value represents a simple value that is not grouped into complex values and can be of string, number, boolean, or null type. Both strings and numbers are identical to the JSON type (i.e., JavaScript type). The structure of scalar values is shown in Figure 3-8.</p>
-<p><img src="img/fig_3-8.png" alt="Structure of scalar values"></p>
+<p><img src="img/fig_3-8.png" width="33%"></p>
 <p>Figure 3-8. Structure of scalar values</p>
 <p>An example of allocating scalar values is shown below.</p>
 <pre><code>s : = &#x201C;hello, world&#x201D;
@@ -592,12 +592,12 @@ ret := null
 <p>Since the number has the same type as the Java script, there is no type distinction between an integer and a floating point, so even if treated as an integer, minimal space is needed to store the exponent. Therefore, let us note that the integer representable range is slightly narrow compared to the typical programming language. Based on 64 bits, the number of integer digits that can be expressed is about three digits smaller.</p>
 <h4 id="string">String</h4>
 <p>There are two types of strings in Rego, a regular string and a raw string, as shown in Figure 3&#x2013;9.</p>
-<p><img src="img/fig_3-9.png" alt="Structure of the string"></p>
+<p><img src="img/fig_3-9.png" width="33%"></p>
 <p>Figure 3-9. Structure of the string</p>
 <p>A regular string is a string surrounded by &quot;&quot; (double quotes). \t (tab), \n (new line), etc. in double quotes are recognized as special characters, such as typical programming languages. For example, if you output the following string, World is displayed on the next line of Hello.</p>
 <pre><code>&#x201C;Hello\nWorld&#x201D;
 </code></pre><p>A raw string is a string surrounded by a <code>(backtick, located to the left of the number key 1 on the keyboard), as shown in Figure 3-10. Unlike regular  strings, it is displayed as it is except for</code> itself. For example, \t represents a tab-special character in a normal string, but remains \ and t characters in the raw string.</p>
-<p><img src="img/fig_3-10.png" alt="Structure of the raw string"></p>
+<p><img src="img/fig_3-10.png" width="50%"></p>
 <p>Figure 3-10. Structure of the raw string</p>
 <p>For example, if we output the following string, Hello\nWorld will be displayed as it is.</p>
 <pre><code>`Hello\nWorld`
@@ -605,13 +605,13 @@ ret := null
 <p>A composite value has the form of an object, array, set, etc.</p>
 <h4 id="object">Object</h4>
 <p>First of all, objects are easy when you think of JSON objects. The structure of the object is repeated by separating the object entries into , between {}, as shown in Figure 3-11. Object entries are in the form of a <key>:<value> pair, as shown in Figure 3-12.</value></key></p>
-<p><img src="img/fig_3-11.png" alt="Structure of the objects"></p>
+<p><img src="img/fig_3-11.png" width="50%"></p>
 <p>Figure 3-11. Structure of the objects</p>
-<p><img src="img/fig_3-12.png" alt="Structure of the object items"></p>
+<p><img src="img/fig_3-12.png" width="50%"></p>
 <p>Figure 3-12. Structure of object items</p>
 <p>In Rego&apos;s EBNF grammar, at least one pair of <key>:<value> should exist, but in reality there can be {} without any <key>:<value>. </value></key></value></key></p>
 <p>The exact grammar of the object is expected to be  object ::= &apos;{&apos; ( object-item ( &apos;,&apos; object-item )<em> )? &apos;}&apos; in Figure 3-13 rather than object ::= &apos;{&apos; object-item ( &apos;,&apos; object-item )</em> &apos;}&apos; in Figure 3-11. In addition, {} can be mistaken for representing an empty set, which in Rego is represented as a set(). The name of the type can be found by calling the type_name function described in Chapter 4, which returns &quot;object&quot;.</p>
-<p><img src="img/fig_3-13.png" alt="Accurate structure of objects"></p>
+<p><img src="img/fig_3-13.png" width="50%"></p>
 <p>Figure 3-13. Accurate  Structure of objects</p>
 <pre><code>&gt; type_name({})
 &#x201C;object&#x201D;
@@ -630,7 +630,7 @@ ret := null
 <pre><code>{&#x201C;name1&#x201D;:&#x201D;value1&#x201D;, &#x201C;name2&#x201D;:&#x201D;value2&#x201D;} == { &#x201C;name2&#x201D;:&#x201D;value2&#x201D;, &#x201C;name1&#x201D;,&#x201D;value1&#x201D;}
 </code></pre><h4 id="array">Array</h4>
 <p>Arrays are ordered by a set of terms, such as values and references, and can be referenced by an index. An array is represented by elements surrounded by [] and separated by ,.</p>
-<p><img src="img/fig_3-14.png" alt="Structure of an array"></p>
+<p><img src="img/fig_3-14.png" width="50%"></p>
 <p>Figure 3-14. Structure of an array</p>
 <p>If an array of strings has been assigned under the name numbers as shown below, the entries in the array can be referenced in the form numbers[0], numbers[1].</p>
 <pre><code>numbers := [&#x201C;zero&#x201D;, &#x201C;one&#x201D;, &#x201C;two&#x201D;, &#x201C;three&#x201D;, &#x201C;four&#x201D;]
@@ -638,17 +638,17 @@ ret := null
 <p>Empty arrays can also be declared as follows, but Rego&apos;s EBNF grammar states that at least one element is needed.</p>
 <pre><code>empty_array := [ ]
 </code></pre><p>This appears to be an error in EBNF grammar posted on the OPA website. Also, the correct grammar would be array ::= &apos;[&apos; ( term ( &apos;,&apos; term )<em> )?  as shown in Figure 3-15, not  array ::= &apos;[&apos; ( term ( &apos;,&apos; term )</em> )? &apos;]&apos; as shown in Figure 3-14.</p>
-<p><img src="img/fig_3-15.png" alt="Accurate structure of an array"></p>
+<p><img src="img/fig_3-15.png" width="50%"></p>
 <p>Figure 3-15. Accurate structure of an array</p>
 <h4 id="set">Set</h4>
 <p>A set is a complex value consisting only of terms without a key. Unlike arrays, there is no order and only one duplicate value is stored. There are two sets, empty set and non empty set, as shown in Figure 3-16.</p>
-<p><img src="img/fig_3-16.png" alt="Structure of the set"></p>
+<p><img src="img/fig_3-16.png" width="50%"></p>
 <p>Figure 3-16. Structure of the set</p>
 <p>An empty set is represented by set(), not by {}, as shown in Figure 3-17. Since {} means an empty object without a <key>:<value> pair, we express the empty set as set() to distinguish it from this.</value></key></p>
 <pre><code>empty_set := set()
-</code></pre><p><img src="img/fig_3-17.png" alt="Structure of an empty set"></p>
+</code></pre><p><img src="img/fig_3-17.png" width="33%"></p>
 <p>Figure 3-17. Structure of an empty set</p>
-<p><img src="img/fig_3-18.png" alt="Structure of a non-empty set"></p>
+<p><img src="img/fig_3-18.png" width="50%"></p>
 <p>Figure 3-18. Structure of a non-empty set</p>
 <p>If it is not an empty set, the underlying elements are separated by , and surrounded by {}, as shown in Figure 3-18. The following is a collection of frequently used encodings for Korean language.</p>
 <pre><code>encodings := { &#x201C;euc_kr&#x201D;, &#x201C;cp949&#x201D;, &#x201C;utf-8&#x201D; }
@@ -660,7 +660,7 @@ true
 <p>You will occasionally encounter comprehension when learning programming languages or mathematics. Rego has three types of comprehension. In mathematics, a comprehension may be easy to understand if you think of such a form of expression as {x | x is an integer greater than 3 } and so on.</p>
 <h4 id="object-comprehension">Object Comprehension</h4>
 <p>An object comprehension represents the rule that the <key> : <value> that constitutes the object must satisfy. The structure of the object comprehensive expression is shown in Figure 3-19 and has the form of { <key> : <value> | <rule for="" generating="" keys="" and="" values=""> }.</rule></value></key></value></key></p>
-<p><img src="img/fig_3-19.png" alt="Structure of the object comprehension"></p>
+<p><img src="img/fig_3-19.png" width="50%"></p>
 <p>Figure 3-19. Structure of object comprehension</p>
 <p>Let&apos;s look at an example of object comprehension. Let&apos;s enter the following code in REPL.</p>
 <pre><code>$opa run
@@ -683,7 +683,7 @@ Rule &apos;strlength&apos; defined in package repl. Type &apos;show&apos; to see
 </code></pre><p>First, we created an array called fruits with three items: banana, apple, and pineapple. An object called strlength was then declared as an object comprehension, with the key st and the value count function to return the length of the string. The rule part of the comprehension st = fruits[_] iteratively assigns each element of the fruit array to st as it travels. In the last line, the contents of the object were printed by inputting strlength from the REPL. As a result, it can be seen that an object is created in which an item in the fruit array becomes a key and the string length of the key becomes a value.</p>
 <h4 id="set-comprehension">Set Comprehension</h4>
 <p>A set comprehension declares a set by expressing the rules that the set must satisfy. The structure of the set comprehension is shown in Figure 3-20 and has the form of { <items> | <rules for="" generating="" items=""> }.</rules></items></p>
-<p><img src="img/fig_3-20.png" alt="Structure of the set comprehension"></p>
+<p><img src="img/fig_3-20.png" width="50%"></p>
 <p>Figure 3-20. Structure of the set comprehension</p>
 <p>Let&apos;s look at an example of a collective formula. Let&apos;s enter the following code in REPL.</p>
 <pre><code>$opa run
@@ -716,7 +716,7 @@ want (type): string
 &gt;
 </code></pre><h4 id="array-comprehension">Array Comprehension</h4>
 <p>An array comprehension declares an array by expressing the rules that the array must satisfy. The structure of the array comprehensive expression is shown in Figure 3-21, and has the form of [ <items> | <rules for="" generating="" items=""> ].</rules></items></p>
-<p><img src="img/fig_3-21.png" alt="Structure of the array comprehension"></p>
+<p><img src="img/fig_3-21.png" width="50%"></p>
 <p>Figure 3-21. Structure of the array comprehension</p>
 <p>Let&apos;s look at an example of an array comprehension. Let&apos;s enter the following code in REPL.</p>
 <pre><code>$opa run
@@ -746,7 +746,7 @@ Rule &apos;under7char&apos; defined in package repl. Type &apos;show&apos; to se
 <p>Variables can be used as inputs and outputs. If a variable has a value assigned to it and is used as a parameter, it can be used as an input to pass the value, and if a variable that does not have a value assigned passed as parameter, it can receive an output value from that variable. This is the main factor that confuses Rego, as it can be input or output even if used in the same position. For example, when evaluating a[i] == 3, if you assign a value of 2 to a, you will find that a[2] has a value of 3, and if you evaluate the above value without assigning i, you will collect the indices of those with a value of 3 in the array and assign them to i.</p>
 <p>In REPL, the input is treated as an assignment to the input variable, which will change the result for the same query, which will lead to questions about whether the value of the variable will change. In this case, if a new policy evaluation is performed by passing new inputs, a new context is created, and the variables in this contact are different from the previous context.</p>
 <p>The name of the variable has the same format as Figure 3-22. In other words, it starts with an alphabet (including both upper and lower case letters) or an underscore (_) and repeats the underscore, number, and alphabetic characters.</p>
-<p><img src="img/fig_3-22.png" alt="Format of variable names"></p>
+<p><img src="img/fig_3-22.png" width="50%"></p>
 <p>Figure 3-22. Format of variable names</p>
 <p>Let&apos;s actually check out the concept of variables. Run opa run to run REPL, then enter the following input line by line.</p>
 <pre><code>a := [1,2,3]
@@ -768,17 +768,17 @@ undefined
 </code></pre><p>Note that variables described in sections [Introduction/Rego/Variables] (<a href="https://www.openpolicyagent.org/docs/latest/#variables" target="_blank">https://www.openpolicyagent.org/docs/latest/#variables</a>) and [Policy Language/Variables] (<a href="https://www.openpolicyagent.org/docs/latest/policy-language/#variables" target="_blank">https://www.openpolicyagent.org/docs/latest/policy-language/#variables</a>) of the OPA Official document are described from different perspectives, which can be confusing. In this book, we tried to interpret the contents of the two parts as much as possible so that the reader could understand them best, but if the description of the relevant part of the official document is rewritten more clearly in the future, the interpretation may change, so we recommend you to check it once more.</p>
 <h3 id="reference">Reference</h3>
 <p>References provide a means of accessing the hierarchical structure when variables, arrays, objects, function call results, etc. have hierarchical structure, as shown in Figure 3-23.</p>
-<p><img src="img/fig_3-23.png" alt="Structure of the reference"></p>
+<p><img src="img/fig_3-23.png" width="66%"></p>
 <p>Figure 3-23. Structure of the reference</p>
 <p>The things that can be the top hierarchies of references are variables, arrays, objects, sets and array comprehension, object comprehension, set comprehension, and function calls, as shown in Figure 3-23. Comprehensions and function calls are not references to the representation itself, but references to arrays, objects, sets, etc. produced as a result of the representation. Once the top-level reference target is determined, the child element can be referenced via a reference argument. In addition, if the referenced child element has a child element again (e.g., an object is specified again for a particular key of the object), it can be accessed again through a reference argument.</p>
 <p>The reference argument can access the sub-elements of the target through two methods, using . and naming variables between [ ], as shown in Figure 3-24.</p>
-<p><img src="img/fig_3-24.png" alt="Structure of the reference argument"></p>
+<p><img src="img/fig_3-24.png" width="33%"></p>
 <p>Figure 3-24. Structure of the reference argument</p>
 <p>The approach using . is shown in Figure 3-25. It can then be referenced via a key that satisfies the variable name format.</p>
-<p><img src="img/fig_3-25.png" alt="Reference using ."></p>
+<p><img src="img/fig_3-25.png" width="33%"></p>
 <p>Figure 3-25. Reference using .</p>
 <p>Approaches using [ ] are referenced using scalar values, variables, arrays, objects, sets, and _ between [ ], as shown in Figure 3-26.</p>
-<p><img src="img/fig_3-26.png" alt="Reference using []"></p>
+<p><img src="img/fig_3-26.png" width="50%"></p>
 <p>Figure 3-26. Reference using [ ]</p>
 <p>Let&apos;s look at an example of a reference. First, the array can be referenced using [], giving an index starting from zero between [].</p>
 <pre><code>fruits := [&#x201C;apple&#x201D;, &#x201C;banana&#x201D;, &#x201C;pineapple&#x201D;]
@@ -830,12 +830,12 @@ fruitexists = true { fruits[_] == &quot;apple&quot; }
 </code></pre><h2 id="rule">Rule</h2>
 <p>It is no exaggeration to say that the declaration of rules is everything of Rego. Rules vary from rules that assign values directly to them, rules that assign values if the content of the rule body is true, rules that assign part of the rule&apos;s evaluation value, and final evaluation values define them as sets or objects, and functions that modularize the rule.</p>
 <p>The structure of the rules is shown in Figure 3-27. At the beginning of the rule, the default keyword is optionally placed, and a rule head exists. There may be several rule bodies behind the rule head, and no rule body may exist. Rules, such as value assignment and function, are separated by the form of the rule head, which is described in detail by examining by rule form.</p>
-<p><img src="img/fig_3-27.png" alt="Structure of the rule"></p>
+<p><img src="img/fig_3-27.png" width="50%"></p>
 <p>Figure 3-27. Structure of the rule</p>
 <h3 id="value-assignment">Value Assignment</h3>
 <p>The most basic rule of the Rego language is assignment of values and has the structure shown in Figure 3-28. Value assignment is similar to constant declaration in other languages. It makes certain values easier to read elsewhere, such as naming 3.14 pi.</p>
 <p>Value assignment is a form of rule in which only rule heads exist without the default keyword and rule body. Value allocation has a syntax of <variable name=""> := <base element="">. For example, hello := the form &quot;world&quot;.</variable></p>
-<p><img src="img/fig_3-28.png" alt="Structure of the value assignment"></p>
+<p><img src="img/fig_3-28.png" width="80%"></p>
 <p>Figure 3-28. Structure of the value assignment</p>
 <p>A term that can be a value(right-hand side) of a value assignment can be a scalar value, an array, a set, an object, etc., or a comprehension that simply represents a composite value. In addition, the type of value is not specified separately and is automatically inferred.</p>
 <h3 id="properties-of-value-assignment">Properties of Value Assignment</h3>
@@ -904,10 +904,10 @@ a := 5
 }
 </code></pre><p>The <rule name=""> = <rule value=""> part is the rule head, and the rule literals surrounded by {} are the rule bodies. The rule name is assigned a rule value only when all the syntaxes in the rule body are satisfied with AND, but the order of the rule body literals is irrelevant.</rule></rule></p>
 <p>If we look at the structure of the complete rules we have looked at so far, it is shown in Figure 3-29.</p>
-<p><img src="img/fig_3-29.png" alt="Structure of the complete rule"></p>
+<p><img src="img/fig_3-29.png" width="80%"></p>
 <p>Figure 3-29. Structure of the complete rule</p>
 <p>A complete rule has a rule body, and the structure of the rule body is shown in Figure 3-30.</p>
-<p><img src="img/fig_3-30.png" alt="Structure of the rule bodies"></p>
+<p><img src="img/fig_3-30.png" width="50%"></p>
 <p>Figure 3-30. Structure of the rule bodies</p>
 <p>The front part of the rule body can have optional else statements, and essentially a single query block surrounded by {}. In addition, the query part is repeated with more than 0 literals, which are separated by semicolon (;) or line-changing open characters (\n or \r\n depending on the platform). In other words, if you want to express multiple  literals in a line, you can separate them into semicolons, and if you divide them into lines, they are recognized as multiple  literals. When expressed in multiple lines and finished with a semicolon, it is the same as adding an empty line, so nothing changes in the code. Therefore, the following three forms are identical in content. Literals are later described with operators.</p>
 <pre><code>{
@@ -981,7 +981,7 @@ a := 5
 <p>By default, when a rule satisfies its literals in the rule body, the value of the rule name is assigned to the specified value. If the rule body is not satisfied, it is undefined, in which case the default value is assigned if the default value is specified. The default statement is used to specify the default value, which is also a form of rule. The default statement does not necessarily have the same value type as other rules with the same name, but it is recommended to use the same type to reduce errors. A default statement has the following form:</p>
 <pre><code>default &lt;rule name&gt; = &lt;value&gt;
 </code></pre><p>The structure of the default statement is shown in Figure 3-31.</p>
-<p><img src="img/fig_3-31.png" alt="Structure of default statement"></p>
+<p><img src="img/fig_3-31.png" width="80%"></p>
 <p>Figure 3-31. Structure of default statement</p>
 <h3 id="examples-of-rules">Examples of Rules</h3>
 <p>Let&apos;s look at an example of a rule. The allow rule defined in the following has a default value of false. The first rule is that if input has a role value of &quot;admin&quot;, allow becomes true. The second rule is true if both values are true if the input&apos;s roll value is &quot;user&quot; and the input&apos;s has_permission value is true at the same time.</p>
@@ -1012,7 +1012,7 @@ allow = 1 {
 </code></pre><h3 id="partial-rule">Partial Rule</h3>
 <p>A Partial Rule is a rule that assigns values that conform to the rules set in the rule body to a variable as a set or object. Since objects can also be viewed as a set of <key>:<value> pairs depending on the perspective, a partial rule can be seen as a rule to generate sets temporarily. Writing Rego rules often involves multiple steps of assigning a set temporarily and filtering out parts of the set that meet the conditions. Refactoring code to generate new sets by filtering them temporarily into sub-rules enables recycling of partial rules regardless of several other rules (complete rules, partial rules, functions, etc.).</value></key></p>
 <p>After the rule name in the variable name format, there is a base element surrounded by [], which results in a set of basic elements that make the rule body true.</p>
-<p><img src="img/fig_3-32.png" alt="Rule head structure for partial rules that generate sets"></p>
+<p><img src="img/fig_3-32.png" width="80%"></p>
 <p>Figure 3-32. Rule head structure for partial rules that generate sets</p>
 <p>Let&apos;s look at an example of a partial rule that generates a set. Let&apos;s enter the nonapplefruits into REPL that define a set of the nonapplefruits in the fruit array as follows. Then you can see the expected result.</p>
 <pre><code>&gt; fruits :=[&quot;apple&quot;,&quot;banana&quot;, &quot;pineapple&quot;]
@@ -1025,7 +1025,7 @@ Rule &apos;nonapplefruits&apos; defined in package repl. Type &apos;show&apos; t
     &quot;pineapple&quot;
 ]
 </code></pre><p>Partial rules that create objects have rule heads as shown in Figure 3-33. We can see that the = <base element=""> part is attached to the back of the [ ] part compared to the case of generating a set. The element in [ ] relates to the part of the object&apos;s attribute key, and the <base element=""> after = corresponds to the part of the value for that key.</p>
-<p><img src="img/fig_3-33.png" alt="Rule head structure of partial rules that create objects"></p>
+<p><img src="img/fig_3-33.png" width="80%"></p>
 <p>Figure 3-33. Rule head structure of partial rules that create objects</p>
 <p>Let&apos;s look at an example of a rule that creates an object. We defined an object called bob, which has properties such as age, height, and weight. We define bobwithoutage to create a new object that removes the age part of Bob&apos;s attribute. If you enter it as it is in REPL, you can see that it works as you expected.</p>
 <pre><code>&gt; bob := { &quot;age&quot;:30, &quot;height&quot;:180, &quot;weight&quot;:100}
@@ -1045,7 +1045,7 @@ Rule &apos;bobwithoutage&apos; defined in package repl. Type &apos;show&apos; to
 ...
 }
 </code></pre><p>Since the function is also a rule, the structure of the rule body is the same as the other rules, and the structure of the rule head is shown in Figure 3-34. Grammatical features alone suggest that a rule has a list of rule arguments separated by , surrounded by a variable name format function name followed by ( ). A function without any rule factor is also possible, which is also expressed as ( ).</p>
-<p><img src="img/fig_3-34.png" alt="Rule head structure of the function"></p>
+<p><img src="img/fig_3-34.png" width="80%"></p>
 <p>Figure 3-34. Rule head structure of the function</p>
 <p>Let&apos;s define a function and use it. In VSCode, enter the following code and save it with the desired name such as function.rego.</p>
 <blockquote>
@@ -1123,13 +1123,13 @@ testRule = result {
 </code></pre><p>If values are directly used as arguments, lookup tables and others can be implemented. However, there is a caveat: if a function is performed with the same name several times, there is no problem if only values exist at the same argument location, but if values and variables are mixed, problems arise. For example, a problem arises when one of the two functions with the same name receives a value and one receives a variable.</p>
 <h2 id="literals">Literals</h2>
 <p>A look at the structure of the literal used to write rules in the rule body is shown in Figure 3-35.</p>
-<p><img src="img/fig_3-35.png" alt="Structure of the literals"></p>
+<p><img src="img/fig_3-35.png" width="50%"></p>
 <p>Figure 3-35. Structure of the literals</p>
 <p>literal can be a &quot;some&quot; statement or expression, and expressions can optionally have a &quot;not&quot; in front or a &quot;with&quot; statement in tail. Grammarly, it seems that a &quot;some&quot; door can also be attached to a &quot;some&quot; statement, but a &quot;some&quot; statement doesn&apos;t mean much.</p>
 <h3 id="some-statement">Some Statement</h3>
 <p>Some statements are used to explicitly declare variables that are used locally within the rule body. It is used to clarify that a variable is a local variable, regardless of the existence of an external variable, because if it is not clarified that the statement is a local variable, then an external variable can be referenced if there is a variable with the same name outside the rule. Therefore, it is always recommended to declare a local variable as a &quot;some&quot; statement unless it is clearly: = value allocation (the local variable on the left side is declared at the same time as the value allocation).</p>
 <p>The structure of some statement is shown in Figure 3-36. The &quot;some&quot; statement declares a comma-separated list of variable names after the &quot;some&quot; keyword. Since variables with that name are declarations of local variables, there is no particular complexity.</p>
-<p><img src="img/fig_3-36.png" alt="Structure of some statements"></p>
+<p><img src="img/fig_3-36.png" width="33%"></p>
 <p>Figure 3-36. Structure of some statements</p>
 <p>Let&apos;s look at an example of using some statements.</p>
 <pre><code>find_apple = index {
@@ -1149,7 +1149,7 @@ find_apple = index {
 </code></pre><p>When tested in REPL, the value of find_apple is undefined. Since the index is declared, the evaluation results are false and the rule undefined because the variable index satisfying fruits[index] == &quot;apple&quot; is evaluated without finding the variable index satisfying fruits[1000] == &quot;apple&quot;. Thus, local variables should always be declared &quot;some&quot; to prevent them from behaving differently because a variable with the same name exists externally.</p>
 <h3 id="with-statement">With Statement</h3>
 <p>The with statement is used in the syntax to override input or data with specific data. The with statement is usually used when writing unit tests, and its structure is shown in Figure 3-37.</p>
-<p><img src="img/fig_3-37.png" alt="Structure of with statements"></p>
+<p><img src="img/fig_3-37.png" width="50%"></p>
 <p>Figure 3-37. Structure of with statements</p>
 <p>The OPA official document warns that if a statement is used with data, it should not be used with subparts of data created as virtual documents by partial rules.</p>
 <p>Examples of use of statements are as follows.</p>
@@ -1157,10 +1157,10 @@ find_apple = index {
 </code></pre><p>The with statement will be examined in more detail when writing test codes in later chapters.</p>
 <h3 id="expression">Expression</h3>
 <p>The structure of the expression is shown in Figure 3-38. An expression can be a term, a function call, or an expression containing an infix operator.</p>
-<p><img src="img/fig_3-38.png" alt="Structure of the expression"></p>
+<p><img src="img/fig_3-38.png" width="33%"></p>
 <p>Figure 3-38. Structure of the expression</p>
 <p>Let&apos;s look at the expression for function call, since we&apos;ve already looked at the term earlier. The structure of the expression for function  is shown in Figure 3-39. As expected, it is in the form of a function name (an argument of the term, ...). </p>
-<p><img src="img/fig_3-39.png" alt="Structure of the expression of function call"></p>
+<p><img src="img/fig_3-39.png" width="80%"></p>
 <p>Figure 3-39. Structure of the expression of function call</p>
 <p>In grammar, a function name is represented as such that only one . can be added between the variable name formats, which in fact appear to be an error in grammar as a function name separated by several .. The OPA official document also recommends distinguishing names from functions in other modules, such as org.example.special_func, to avoid name conflicts when defining functions to be used by other modules.</p>
 <p>An example of a function call is as follows:</p>
@@ -1185,10 +1185,10 @@ wrongapplenotinfruits { fruit = fruits[_]; not fruit == &quot;apple&quot; }
 applenotinfruits { not appleinfruits }
 </code></pre><h3 id="expression-with-infix-operator">Expression with Infix Operator</h3>
 <p>The expression with infix operator is in the form of <basic element=""> = <basic element=""> <basic element=""> or <basic element=""> <modal operator=""> <basic element=""> and its structure is shown in Figure 3-40.</basic></modal></basic></basic></basic></basic></p>
-<p><img src="img/fig_3-40.png" alt="Structure of the infix operator expression"></p>
+<p><img src="img/fig_3-40.png" width="50%"></p>
 <p>Figure 3-40. Structure of the infix operator expression</p>
 <p>In Rego, there exists three infix operators: comparison operators, arithmetic operators, and set operators, as shown in Figure 3-41. A bin-operator may seem like an operator for logic, but it is actually an operator for a set.</p>
-<p><img src="img/fig_3-41.png" alt="Structure of the infix operator"></p>
+<p><img src="img/fig_3-41.png" width="33%"></p>
 <p>Figure 3-41. Structure of the infix operator</p>
 <p>The structure of the comparison operators is shown in Figure 3-42, and each operator is briefly described in Table 3-1.The result of the comparison operator is true or false.</p>
 <table>
@@ -1226,14 +1226,14 @@ applenotinfruits { not appleinfruits }
 </tbody>
 </table>
 <p>Table 3-1. Rego Comparison Operators</p>
-<p><img src="img/fig_3-42.png" alt="Structure of comparison operators"></p>
+<p><img src="img/fig_3-42.png" width="25%"></p>
 <p>Figure 3-42. Structure of comparison operators</p>
 <p>The types of arithmetic operators are shown in Figure 3-43. Like a typical programming language, +, -, *, / means addition, subtraction, multiplication, and division, respectively. The % operator that obtains the remainder, commonly called the modulo operator, is not represented in the grammar, but exists</p>
-<p><img src="img/fig_3-42.png" alt="Structure of arithmetic operators"></p>
+<p><img src="img/fig_3-43.png" width="25%"></p>
 <p>Figure 3-43. Structure of arithmetic operators</p>
 <h3 id="set-operator">Set Operator</h3>
 <p>The structure of the set operator is shown in Figure 3-44, and supports intersection (&amp;) and join (|) operations. It is not grammatically indicated, but a minus(-) operator for set is also available.</p>
-<p><img src="img/fig_3-44.png" alt="Structure of the set operator"></p>
+<p><img src="img/fig_3-44.png" width="25%"></p>
 <p>Figure 3-44. Structure of the set operator</p>
 <p>Let&apos;s test the set operators. The expected results can be seen by typing in REPL as follows..</p>
 <pre><code>&gt; {1,2,3} &amp; {1,2}
@@ -1335,7 +1335,7 @@ with
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 3. Rego","level":"1.8","depth":1,"next":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"path":"chap4/builtinfunction.md","ref":"chap4/builtinfunction.md","articles":[]},"previous":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap3/rego.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-15T18:21:35.886Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 3. Rego","level":"1.8","depth":1,"next":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"path":"chap4/builtinfunction.md","ref":"chap4/builtinfunction.md","articles":[]},"previous":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap3/rego.md","mtime":"2022-01-16T16:55:45.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1354,10 +1354,6 @@ with
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
