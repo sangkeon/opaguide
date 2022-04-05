@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -637,7 +650,7 @@ ret := null
 </code></pre><p>If you attempt to refer to a negative number or a value greater than the actual index of the array, an undefined ref error occurs because the reference target is not defined.</p>
 <p>Empty arrays can also be declared as follows, but Rego&apos;s EBNF grammar states that at least one element is needed.</p>
 <pre><code>empty_array := [ ]
-</code></pre><p>This appears to be an error in EBNF grammar posted on the OPA website. Also, the correct grammar would be array ::= &apos;[&apos; ( term ( &apos;,&apos; term )<em> )?  as shown in Figure 3-15, not  array ::= &apos;[&apos; ( term ( &apos;,&apos; term )</em> )? &apos;]&apos; as shown in Figure 3-14.</p>
+</code></pre><p>This appears to be an error in EBNF grammar posted on the OPA website. Also, the correct grammar would be array ::= &apos;[&apos; ( term ( &apos;,&apos; term )<em> )? &apos;]&apos;  as shown in Figure 3-15, not  array ::= &apos;[&apos; term ( &apos;,&apos; term )</em> &apos;]&apos; as shown in Figure 3-14.</p>
 <p><img src="img/fig_3-15.png" width="50%"></p>
 <p>Figure 3-15. Accurate structure of an array</p>
 <h4 id="set">Set</h4>
@@ -1162,7 +1175,7 @@ find_apple = index {
 <p>Let&apos;s look at the expression for function call, since we&apos;ve already looked at the term earlier. The structure of the expression for function  is shown in Figure 3-39. As expected, it is in the form of a function name (an argument of the term, ...). </p>
 <p><img src="img/fig_3-39.png" width="80%"></p>
 <p>Figure 3-39. Structure of the expression of function call</p>
-<p>In grammar, a function name is represented as such that only one . can be added between the variable name formats, which in fact appear to be an error in grammar as a function name separated by several .. The OPA official document also recommends distinguishing names from functions in other modules, such as org.example.special_func, to avoid name conflicts when defining functions to be used by other modules.</p>
+<p>In grammar, a function name is represented as such that only one . can be added between the variable name formats, which in fact appear to be an error in grammar as a function name separated by several. The OPA official document also recommends distinguishing names from functions in other modules, such as org.example.special_func, to avoid name conflicts when defining functions to be used by other modules.</p>
 <p>An example of a function call is as follows:</p>
 <pre><code>contains(fruits, &#x201C;banana&#x201D;)
 glob.match(&quot;*:github:com&quot;, [&quot;:&quot;], &quot;api:github:com&quot;)
@@ -1235,7 +1248,7 @@ applenotinfruits { not appleinfruits }
 <p>The structure of the set operator is shown in Figure 3-44, and supports intersection (&amp;) and join (|) operations. It is not grammatically indicated, but a minus(-) operator for set is also available.</p>
 <p><img src="img/fig_3-44.png" width="25%"></p>
 <p>Figure 3-44. Structure of the set operator</p>
-<p>Let&apos;s test the set operators. The expected results can be seen by typing in REPL as follows..</p>
+<p>Let&apos;s test the set operators. The expected results can be seen by typing in REPL as follows.</p>
 <pre><code>&gt; {1,2,3} &amp; {1,2}
 [
     1,
@@ -1262,7 +1275,7 @@ applenotinfruits { not appleinfruits }
 <p>Examples of the same results for assignment operators and unification operators are shown below. Both of the following lines create a variable called a and assign a value of 3.</p>
 <pre><code>a := 3
 a = 3
-</code></pre><p>Let&apos;s also look at examples of the same comparison and unification operators, and both of the following lines return true..</p>
+</code></pre><p>Let&apos;s also look at examples of the same comparison and unification operators, and both of the following lines return true.</p>
 <pre><code>3 == 3
 3 = 3
 </code></pre><p>The OPA official document describes the assignment operator and the comparison operator as grammatical sugar for the unification operator. Eventually, assignment operators and comparison operators are replaced by unification operators and compiled. However, the compiler encourages the use of high readability assignment operators and comparison operators over unification operators as error messages are clearer and can reduce confusion.</p>
@@ -1335,7 +1348,7 @@ with
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 3. Rego","level":"1.8","depth":1,"next":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"path":"chap4/builtinfunction.md","ref":"chap4/builtinfunction.md","articles":[]},"previous":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap3/rego.md","mtime":"2022-01-16T16:55:45.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 3. Rego","level":"1.8","depth":1,"next":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"path":"chap4/builtinfunction.md","ref":"chap4/builtinfunction.md","articles":[]},"previous":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap3/rego.md","mtime":"2022-03-05T15:23:29.544Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1354,6 +1367,10 @@ with
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

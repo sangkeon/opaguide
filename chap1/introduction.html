@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -461,7 +474,7 @@ Unittest can be easily executed if only policy files and data written in Rego ar
 <h4 id="detail-of-documentation">Detail of Documentation</h4>
 <p>Although the official document covers a wide range of content, some items lack the detail of documentation. In particular, the explanation of the grammar of the Rego language or the code is rather difficult. In order to implement it in practice, it is often necessary to find and refer to related blogs or source codes.</p>
 <h2 id="opa-use-cases">OPA use cases</h2>
-<p>A single sentence definition of OPA is a policy engine that defines rules for policies and determines the outcome of applying rules in current inputs and circumstances. Considering what situations these policy engines will be useful in, we can predict what situations OPA is suitable for. In addition, experienced readers of authority or policy will be able to compare OPA and related technologies in the following sections to understand specifically what situations OPA should be applied to. This section describes the various use cases of OPA..</p>
+<p>A single sentence definition of OPA is a policy engine that defines rules for policies and determines the outcome of applying rules in current inputs and circumstances. Considering what situations these policy engines will be useful in, we can predict what situations OPA is suitable for. In addition, experienced readers of authority or policy will be able to compare OPA and related technologies in the following sections to understand specifically what situations OPA should be applied to. This section describes the various use cases of OPA.</p>
 <h3 id="user-authorization">User Authorization</h3>
 <p>A typical policy that applies to almost all systems among the various policies is the management of user privileges. Rights management, which manages what permissions a user has and what permissions a system can perform, is the most important and basic policy. It is a scenario in which OPA takes over the user&apos;s authority, desired behavior, etc. and determines acceptance/denial according to defined rules. Because the rules for judgment are fully administered by OPA, other parts of the system can delegate the authority check to the rights management system implemented by OPA.</p>
 <h3 id="managing-system-policies-and-constraints">Managing system policies and constraints</h3>
@@ -521,8 +534,8 @@ Figure 1-2. JWT debugger provided by jwt.io <sup><a href="#fn_2" id="reffn_2">2<
 <p>OpenID Connect&apos;s access tokens and ID tokens are generally JSON processable, so OPA can be applied to OpenID Connect.</p>
 <h2 id="lets-try-opa">Let&#x2019;s try OPA</h2>
 <p>Before installing OPA, try using OPA through OPA Playground. OPA Playground is available at <a href="https://play.openpolicyagent.org" target="_blank">https://play.openpolicyagent.org</a>. If the OPA playground does not work well in a browser, it may be a browser compatibility issue, so use Chrome to access the OPA playground.</p>
-<p><img src="img/fig_1-3.png" alt="OPA plaground">
-Figure 1-3. OPA plaground</p>
+<p><img src="img/fig_1-3.png" alt="OPA playground">
+Figure 1-3. OPA playground</p>
 <p>When accessing the OPA Playground, the Hello World example is loaded by default, as shown in Figure 1-3. Let&apos;s follow the example&apos;s notes. When the Evaluate button is clicked, the Output window displays the results as shown in Figure 1-4.</p>
 <p><img src="img/fig_1-4.png" alt="Running Hello, World in the OPA playground" title="Figure 1-4. Running Hello, World in the OPA playground"></p>
 <p>Figure 1-4. Running Hello, World in the OPA playground</p>
@@ -542,7 +555,7 @@ hello {
 
 
 <p>In short, a package called play is declared, defines hello and its default value is false, and the rule that determines hello is whether the value read from the message field of the input object matches &quot;world&quot;.</p>
-<p>Initial input is {&quot;message&quot;: &quot;world&quot;}. Therefore, the execution result was {&quot;hello&quot;:&quot;true&quot;. Let&apos;s change the message value in the Input section to something else, such as &quot;world!!!&quot; and then click the Evaluate button again. This would change the resulting value to false, as shown in Figure 1-5.</p>
+<p>Initial input is {&quot;message&quot;: &quot;world&quot;}. Therefore, the execution result was {&quot;hello&quot;:&quot;true&quot;}. Let&apos;s change the message value in the Input section to something else, such as &quot;world!!!&quot; and then click the Evaluate button again. This would change the resulting value to false, as shown in Figure 1-5.</p>
 <p><img src="img/fig_1-5.png" alt="Results of execution according to input.message value change"></p>
 <p>Figure 1-5. Results of execution according to input.message value change.</p>
 <p>Next, change default hello = false to default hello = 1. Contrary to expectations, if input.message is &quot;world&quot;, true comes out, and if not &quot;world&quot;, 1 comes out. There will be some confusion. If hello is specified as 1, isn&apos;t hello specified as an integer in a typical programming language? If you return the boolean value as a result, you may think that if it is a static type language, an error occurs, and if it is a dynamic type language, the value 1 should be rewritten as false.</p>
@@ -599,7 +612,7 @@ hello {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 1. Introduction to OPA","level":"1.6","depth":1,"next":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"previous":{"title":"Contributors and Sponsors","level":"1.5","depth":1,"path":"CONTRIBUTORS.md","ref":"CONTRIBUTORS.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap1/introduction.md","mtime":"2022-01-09T14:04:17.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 1. Introduction to OPA","level":"1.6","depth":1,"next":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"path":"chap2/installandusage.md","ref":"chap2/installandusage.md","articles":[]},"previous":{"title":"Contributors and Sponsors","level":"1.5","depth":1,"path":"CONTRIBUTORS.md","ref":"CONTRIBUTORS.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap1/introduction.md","mtime":"2022-03-05T15:23:29.544Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -618,6 +631,10 @@ hello {
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

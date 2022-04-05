@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -397,7 +410,7 @@
 <li>Gatekeeper Policy Library</li>
 <li>Other Tools available in the Kubernetes</li>
 </ul>
-<p>OPA provides an OPA gatekeeper for policy management of Kubernetes itself in a Kubernetes environment. Chapter 7 has already looked at how to operate the OPA server in a Kubernetes environment, but what we looked at earlier is not for Kubernetis&apos; policy management, but for application policy management.</p>
+<p>OPA provides an OPA gatekeeper for policy management of Kubernetes itself in a Kubernetes environment. Chapter 7 has already looked at how to operate the OPA server in a Kubernetes environment, but what we looked at earlier is not for Kubernetes&apos; policy management, but for application policy management.</p>
 <p>OPA has explained that it is useful for authorization and policy management for microservice environments and cloud-native environments (which can be regarded as a Kubernetes  environment). This chapter describes OPA gatekeepers that enable OPA to be used for managing Kubernetes policies required in CI/CD pipelines and DevOps environments.</p>
 <h2 id="opa-gatekeeper">OPA Gatekeeper</h2>
 <h3 id="opa-gatekeeper-overview">OPA Gatekeeper Overview</h3>
@@ -448,7 +461,7 @@ deployment.apps/gatekeeper-controller-manager 3/3 3 3 28s
 NAME DESIRED CURRENT READY AGE
 replicaset.apps/gatekeeper-audit-54b5f86d57 1 1 1 28s
 replicaset.apps/gatekeeper-controller-manager-5b96bd668 3 3 3 28s
-</code></pre><p>If you want to delete the OPA gatekeeper from Kubernetis after the test, you can execute the following command.</p>
+</code></pre><p>If you want to delete the OPA gatekeeper from Kubernetes after the test, you can execute the following command.</p>
 <pre><code>$ kubectl delete -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.3/deploy/gatekeeper.yaml
 </code></pre><h3 id="opa-gatekeeper-constraint-template">OPA Gatekeeper Constraint Template</h3>
 <p>First, let&apos;s look at an example of an OPA gatekeeper constraint template. The contents of the example presented in the OPA gatekeeper document (<a href="https://open-policy-agent.github.io/gatekeeper/website/docs/howto" target="_blank">https://open-policy-agent.github.io/gatekeeper/website/docs/howto</a>) are as follows.</p>
@@ -484,8 +497,8 @@ targets:
 <p><sup><a href="#fn_7" id="reffn_7">7</a></sup> # Source: <a href="https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/demo/basic/templates/k8srequiredlabels_template.yaml" target="_blank">https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/demo/basic/templates/k8srequiredlabels_template.yaml</a></p>
 <p>The contents are as follows. First of all, the API type of the constraint template object is templates.gatekeeper.sh/v1beta1. If you use the current version of the gatekeeper, you can use this value, and if the version goes up in the future, it can be templates.gatekeeper.sh/v1, and so on.</p>
 <p>Then, the name field in the metadata section defines the name of the constraint template. The spec section defines the specification of CRD, and the type of resource (Kind) defined by this CRD is K8sRequiredLabels, that is, the object for this resource is K8sRequiredLabels. And this resource has an attribute named labels, and the data type of the attribute is a string array.</p>
-<p>For more information on CRD definitions, visit the official document of Kubernetes at <a href="https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/" target="_blank">https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/</a>).</p>
-<p>In the last targets section, an array of objects with a target field and a rego field may come, and currently one object is used and the target is admisson.k8s.gatekeeper.sh. If a function is added to the gatekeeper, another target type may be added. The rego field contains a policy written in the rego language of OPA.</p>
+<p>For more information on CRD definitions, visit the official document of Kubernetes at <a href="https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/" target="_blank">https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/</a>.</p>
+<p>In the last targets section, an array of objects with a target field and a rego field may come, and currently one object is used and the target is admission.k8s.gatekeeper.sh. If a function is added to the gatekeeper, another target type may be added. The rego field contains a policy written in the rego language of OPA.</p>
 <p>The policy written in Rego is as follows. First of all, the package is designated the same as metadata.name, and one partial rule named violation is defined. The name of the package and partial rule must follow these rules and at least one violation rule must exist. Looking at blogs and examples on the Internet, the name of the partial rule is often named deny, which is the name used in the previous version of the OPA gatekeeper, so you can change it to violation and apply it.</p>
 <p>The vibration partial rule creates an object with msg and detail fields containing error messages for rule violations. If no rule violation was found, the vibration partial rules would produce no results, so the result of the rule evaluation would be an empty set. If there is a matching rule among the vibration partial rules and an error object is generated, the content of the object is recorded in the audit section, and the Kubernetes API request is not reflected and the error returns.</p>
 <p>Looking at the implementation of violation, first of all, while traversing the metadata.label item of the Kubernetes API object referred to as input.review.object.metadata.labels, the key of the label is named label, and collected as a set named provided using the set comprehension.</p>
@@ -684,7 +697,7 @@ LICENSE Makefile NOTICE README.md library src test test.sh
 $ ls
 general kustomization.yaml pod-security-policy
 </code></pre><h3 id="general-template">General Template</h3>
-<p>Table 9-1 shows a list of general templates provided by the current version of the OPA Gatekeeper Library (as of February 2021.</p>
+<p>Table 9-1 shows a list of general templates provided by the current version of the OPA Gatekeeper Library (as of February 2021).</p>
 <table>
 <thead>
 <tr>
@@ -797,7 +810,7 @@ spec:
         not all(satisfied)
         msg := sprintf(&quot;initContainer &lt;%v&gt; uses an image without a digest &lt;%v&gt;&quot;, [container.name, container.image])
       }
-</code></pre><p>The contents are as follows. Two violation partial rules are defined, and regular expression matching is performed by taking the spec.containers and spec.initContainers parts of the Kubernetes object that have passed over, respectively. It is difficult to understand the pattern matching in the regular expression only by looking at the constraints, but it will be easy to understand by looking at the example to be explained soon. If the part is not matched, an error message is generated, assigned to msg, and an object with an msg field is generated in the partial rule.</p>
+</code></pre><p>The contents are as follows. Two violation partial rules are defined, and regular expression matching is performed by taking the spec.containers and spec.initContainers parts of the Kubernetes object that have passed over, respectively. It is difficult to understand the pattern matching in the regular expression only by looking at the constraints, but it will be easy to understand by looking at the example to be explained soon. If the part is not matched, an error message is generated, assigned to msg, and an object with a msg field is generated in the partial rule.</p>
 <p>This time, let&apos;s look at constrain.yaml containing constraints.</p>
 <pre><code>apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sImageDigests
@@ -1034,7 +1047,7 @@ spec:
           msg := sprintf(&quot;ingress host conflicts with an existing ingress &lt;%v&gt;&quot;, [host])
         }
 </code></pre><p>It can be seen that the constraint template refers to the  data.inventory.</p>
-<p>Synchronized data is accessible through data.inventory, and cluster-scoped objects can be accessed in the form of data.inventory.cluster][<kind>][<name>], and namespace-scoped objects can be accessed through  data.inventory.namespace[<namespace>][groupVersion][<kind>][<name>].</name></kind></namespace></name></kind></p>
+<p>Synchronized data is accessible through data.inventory, and cluster-scoped objects can be accessed in the form of data.inventory.cluster[<kind>][<name>], and namespace-scoped objects can be accessed through  data.inventory.namespace[<namespace>][groupVersion][<kind>][<name>].</name></kind></namespace></name></kind></p>
 <p>Since ns, otherappiversoin, and name are not assigned variables in the data.inventory.names[ns][otherappiversion][name], so they are output variables. If the types of &quot;Ingress&quot; are found while traversing data.ineventory.names, ns, otherappiversion, and name variables are assigned  to the namespace, version, name of the found Ingress. And after matching the version with extensions/or networking.k8s.io/ with a regular expression, if the hosts are the same, check for the same object. If it has the same host even though it is not the same object, it generates an error message response object. In the Kubernetes environment, the exercise of uniqingresshost is left up to the readers. </p>
 <h3 id="exempting-namespace">Exempting Namespace</h3>
 <p>Exempting a particular namespace can help performance by preventing policies in the namespace that are not required by constraints from being evaluated. As for the exempting, the Configuration object can be modified and applied in the same way as the previous section of sync for data replication was set. After creating the expending_ns.yaml as follows, you can run kubectl apply &#x2013;f exempting_ns.yaml.</p>
@@ -1051,7 +1064,7 @@ spec:
 <p>Note that if the name of the existing configuration object and the metadata section are the same, it is recognized as the same configuration object, so the existing data synchronization setting can be removed by applying only the above content. Therefore, in order to maintain the existing setting, the match part of the spec section should be applied as the content added to the existing spec part.</p>
 <p>The official OPA gatekeeper document explains one more way to process the namespace exemption, but it can only be applied to the audit log and requires complicated processes such as adding namespace to arguments when executing the OPA gatekeeper container in the pod. Interested readers, check out the contents of <a href="https://open-policy-agent.github.io/gatekeeper/website/docs/exempt-namespaces#exempting-namespaces-from-the-gatekeeper-admission-webhook-using---exempt-namespace-flag" target="_blank">https://open-policy-agent.github.io/gatekeeper/website/docs/exempt-namespaces#exempting-namespaces-from-the-gatekeeper-admission-webhook-using---exempt-namespace-flag</a>.</p>
 <h3 id="webhook-configuration">Webhook Configuration</h3>
-<p>To set up the web hook of the OPA gatekeeper, you can find and modify the part of the YAML file you used for installation(<a href="https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.3/deploy/gatekeeper.yaml" target="_blank">https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.3/deploy/gatekeeper.yaml</a>). Find the section that kind of it is Validating Webbook Configuration, and then apply it using the kubectl apply. The web hook part of the file is as follows.</p>
+<p>To set up the web hook of the OPA gatekeeper, you can find and modify the part of the YAML file you used for installation(<a href="https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.3/deploy/gatekeeper.yaml" target="_blank">https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.3/deploy/gatekeeper.yaml</a>). Find the section that kind of it is Validating Webhook Configuration, and then apply it using the kubectl apply. The web hook part of the file is as follows.</p>
 <p>What can be set up in the webhook is that the gatekeeper is set to operate only for CREATE and UPDATE as default values, and add DELETE is required if policies for verification of DELETE are needed to prevent user mistakes, add DELETE. Or changing the timeout value.</p>
 <p>In addition, the part that requires attention in the webhook setting is the part set to Failure Policy: Ignore. The official document explains that in the event of a failure, it currently operates as an instance, so it was set to Ignore to reduce downtime and will be set to Fail when availability is secured in the future. However, in the state set to Ignore, a problem may occur because the request is executed when the webhook request fails. In the actual environment, it is better to change to Fail.</p>
 <pre><code>apiVersion: admissionregistration.k8s.io/v1beta1
@@ -1292,7 +1305,7 @@ allowed {
 <h3 id="opa-kafka-plugin">opa-kafka-plugin</h3>
 <p>Kafka can control access to message topics by implementing an authorization plug-in. The authorization plug-in only needs to implement the Authorizer Java interface, and for the contents of the Authorizer interface, see <a href="https://kafka.apache.org/24/javadoc/org/apache/kafka/server/authorizer/Authorizer.html" target="_blank">https://kafka.apache.org/24/javadoc/org/apache/kafka/server/authorizer/Authorizer.html</a>.</p>
 <p>To use OPA for kafka authorization, the implementation of the Autroizer interface can transfer the arguments of the authorization request to the OPA REST server as input and return the results to the result of the authorization request again. Of course, rules for authorization must be written and configured on the OPA server, and how to configure the OPA server has already been covered in Chapter 7. Since the result of determining the authorization request of the Authorizer interface is ALLOWED/DENIED, you can return the result to boolean in the OPA rule.</p>
-<p>Referring to the OPA official document <a href="https://www.openpolicyagent.org/docs/latest/kafka-authorization/" target="_blank">https://www.openpolicyagent.org/docs/latest/kafka-authorization/</a>, it explains how to link OPA to Kafka. In the official document, a module called kafka-authorizer (<a href="https://github.com/open-policy-agent/contrib/tree/master/kafka_authorizer" target="_blank">https://github.com/open-policy-agent/contrib/tree/master/kafka_authorizer</a>)), not opa-kafka-plugin (<a href="https://github.com/Bisnode/opa-kafka-plugin" target="_blank">https://github.com/Bisnode/opa-kafka-plugin</a>)), is used. The module is provided in a repository where OPA&apos;s user contribution codes are collected, and the version is not clearly managed.</p>
+<p>Referring to the <a href="https://www.openpolicyagent.org/docs/latest/kafka-authorization/" target="_blank">OPA official document</a>, it explains how to link OPA to Kafka. In the official document, a module called <a href="https://github.com/open-policy-agent/contrib/tree/master/kafka_authorizer" target="_blank">kafka-authorizer</a>, not <a href="https://github.com/Bisnode/opa-kafka-plugin" target="_blank">opa-kafka-plugin</a>, is used. The module is provided in a repository where OPA&apos;s user contribution codes are collected, and the version is not clearly managed.</p>
 <p>Either is fine because it is a simple code that receives input from Kafka&apos;s Authorizer interface and delivers it to the OPA server, but opa-kafka-plugin is systematically managing the version, so it would be better to use opa-kafka-plugin.</p>
 <p>The contents of the input transmitted through opa-kafka-plugin in Kafka are as follows.</p>
 <pre><code>{
@@ -1321,7 +1334,7 @@ allowed {
 <p>Recently, more and more service meshes are applied together than only Kubernetes. The most representative and widely used service mesh is Istio. Istio had previously provided OPA integration through mixer components, but as mixer components were removed from the latest version, it was changed to a structure interlocked through the Envoy Authz filter. The Envoy Authz filter defines a gRPC protocol capable of linking authentication/authorization specifications for external authentication servers with the outside. Since almost all service mesh implementations use Envoy as a data plane, the method using the Envoy Authz filter can be easily applied to other service meshes.</p>
 <p>It is too vast to explain the service mesh or Envoy itself, and the current Istio is changing at a rapid pace, so this book does not elaborate further. Interested readers should visit <a href="https://github.com/open-policy-agent/opa-envoy-plugin" target="_blank">https://github.com/open-policy-agent/opa-envoy-plugin</a>.</p>
 <h2 id="summary">Summary</h2>
-<p>Chapter 9 describes the outline and method of use of OPA gatekeepers that can be applied to Kubernetis&apos; own policies and authority management, not user applications. It also explained how to create and apply constraints templates and constraints for OPA gatekeepers, and how to check audit logs. In addition, we looked at policy libraries available at OPA gatekeepers. Finally, in addition to the OPA gatekeeper, other tools applicable to the Kubernetes-based environment were briefly introduced.</p>
+<p>Chapter 9 describes the outline and method of use of OPA gatekeepers that can be applied to Kubernetes&apos; own policies and authority management, not user applications. It also explained how to create and apply constraints templates and constraints for OPA gatekeepers, and how to check audit logs. In addition, we looked at policy libraries available at OPA gatekeepers. Finally, in addition to the OPA gatekeeper, other tools applicable to the Kubernetes-based environment were briefly introduced.</p>
 <p>Chapter 10 examines how to implement built-in functions and expand basic OPA functions.</p>
 
                                 
@@ -1366,7 +1379,7 @@ allowed {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 9. Using OPA in Kubernetes","level":"1.14","depth":1,"next":{"title":"Chap 10. Extending OPA","level":"1.15","depth":1,"path":"chap10/extending.md","ref":"chap10/extending.md","articles":[]},"previous":{"title":"Chap 8. Monitoring","level":"1.13","depth":1,"path":"chap8/monitoring.md","ref":"chap8/monitoring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap9/kubernetes.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 9. Using OPA in Kubernetes","level":"1.14","depth":1,"next":{"title":"Chap 10. Extending OPA","level":"1.15","depth":1,"path":"chap10/extending.md","ref":"chap10/extending.md","articles":[]},"previous":{"title":"Chap 8. Monitoring","level":"1.13","depth":1,"path":"chap8/monitoring.md","ref":"chap8/monitoring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap9/kubernetes.md","mtime":"2022-03-05T15:23:29.548Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1385,6 +1398,10 @@ allowed {
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

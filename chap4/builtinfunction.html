@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -508,7 +521,7 @@ abs(-10.4)
 # 3
 abs(3)
 </code></pre><h3 id="create-an-array-of-integers-in-a-specific-range">Create an array of integers in a specific range</h3>
-<p>The numbers.range function produces an array of integers in the specified range. Typical range of similar functions has scope from first number to last number - 1. However, numbers.range produces an array containing both the preceding and the latter digits. Also, if the preceding number is greater than the latter, an array is created in reverse order from the preceding to the latter. Because the Rego language used by OPA does not have a direct for loop, the use of nubmers.range to create an integer array can similarly implement the for loop.</p>
+<p>The numbers.range function produces an array of integers in the specified range. Typical range of similar functions has scope from first number to last number - 1. However, numbers.range produces an array containing both the preceding and the latter digits. Also, if the preceding number is greater than the latter, an array is created in reverse order from the preceding to the latter. Because the Rego language used by OPA does not have a direct for loop, the use of numbers.range to create an integer array can similarly implement the for loop.</p>
 <pre><code># [9, 8, 7, 6, 5, 4, 3, 2, 1]
 numbers.range(9, 1)
 
@@ -592,14 +605,44 @@ want: (any&lt;any&gt;, string)
 type_name(func(3))
 </code></pre><h3 id="type-checking-functions">Type Checking Functions</h3>
 <p>OPA provides built-in functions in the form is_<type name=""> as shown in Table 4-2. These functions return true if an argument is of that type and undefined if not of that type.</type></p>
-<p>| Function         | Description                             |
-| is_number(x)     | Examine whether x is a numeric type     |
-| is_string(x)     | Examine whether x is a string type      |
-| is_boolean(x)    | Examine whether x is a boolean type     |
-| is_array(x)      | Examine whether x is an array type      |
-| is_set(x)        | Examine whether x is a set type         |
-| is_object(x)     | Examine whether x is a objecttype       |
-| is_null(x)       | Examine whether x is null               |</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is_number(x)</td>
+<td>Examine whether x is a numeric type</td>
+</tr>
+<tr>
+<td>is_string(x)</td>
+<td>Examine whether x is a string type</td>
+</tr>
+<tr>
+<td>is_boolean(x)</td>
+<td>Examine whether x is a boolean type</td>
+</tr>
+<tr>
+<td>is_array(x)</td>
+<td>Examine whether x is an array type</td>
+</tr>
+<tr>
+<td>is_set(x)</td>
+<td>Examine whether x is a set type</td>
+</tr>
+<tr>
+<td>is_object(x)</td>
+<td>Examine whether x is a objecttype</td>
+</tr>
+<tr>
+<td>is_null(x)</td>
+<td>Examine whether x is null</td>
+</tr>
+</tbody>
+</table>
 <p>Table 4-2. Type Checking Built-in Functions Provided by OPA.</p>
 <p>An example of the use of type-check functions is as follows. Note that it returns undefined rather than false if it is not of that type.</p>
 <pre><code># undefined
@@ -727,9 +770,24 @@ any([])
 </code></pre><h2 id="composite-value-related-functions">Composite Value Related Functions</h2>
 <h3 id="array-related-functions">Array related functions</h3>
 <p>OPA provides functions that manipulatest arrays as shown in Table 4-3.</p>
-<p>| Function                                  | Description                                                                          |
-| array.concat(array1, array2)              | Returns the array that concatenates the two arrays that are passed  to the arguments   |
-| array.slice(array, startIndex, stopIndex) | Returns an array containing components ranging from startIndex to stopIndex(exclusive) |</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array.concat(array1, array2)</td>
+<td>Returns the array that concatenates the two arrays that are passed  to the arguments</td>
+</tr>
+<tr>
+<td>array.slice(array, startIndex, stopIndex)</td>
+<td>Returns an array containing components ranging from startIndex to stopIndex(exclusive)</td>
+</tr>
+</tbody>
+</table>
 <p>Table 4-3. Array manipulation built-in functions provided by OPA.</p>
 <p>An example of the use of array related functions is as follows.</p>
 <pre><code># [1,2,3,4,5,4,5,6]
@@ -946,7 +1004,7 @@ regex.is_valid(&quot;\\d+&quot;)
 # false
 regex.is_valid(&quot;\\o+&quot;)
 </code></pre><h3 id="regexmatch">regex.match</h3>
-<p>regex.match has the form regex.match (pattern, value) and checks whether a particular string satisfies the corresponding regular expression pattern. For example, [:alpha:]][:al num:]* is a regular expression that begins with an alphabet and can be followed by more than 0 arbitrary numbers or characters. If this expression is examined with regex.match, a1000000 and abcde are matched, but not 9ab0000 or 30000. Regex.match allows you to check whether the data entered is appropriate for the desired format. Examples of uses of regex.match include:</p>
+<p>regex.match has the form regex.match (pattern, value) and checks whether a particular string satisfies the corresponding regular expression pattern. For example, [:alpha:][:al num:]* is a regular expression that begins with an alphabet and can be followed by more than 0 arbitrary numbers or characters. If this expression is examined with regex.match, a1000000 and abcde are matched, but not 9ab0000 or 30000. Regex.match allows you to check whether the data entered is appropriate for the desired format. Examples of uses of regex.match include:</p>
 <pre><code># true
 regex.match(&quot;[[:alpha:]][[:alnum:]]*&quot;, &quot;a100000&quot;)
 
@@ -1187,7 +1245,7 @@ Rule &apos;response&apos; defined in package repl. Type &apos;show&apos; to see 
   &quot;f7ad8bc17f2bdacfa9187803d499484ef12d68b9cd8d7aecb190222e87a5c7600e8cdf0287b1d7c5a1f7f37d76bcbc24fc5944e55a04481dc5c45b302e70fc75&quot;
 ]
 </code></pre><h3 id="jwt-signature-verification">JWT Signature Verification</h3>
-<p>Functions validating JWT signatures have the form io.jwt.verify_<algorithm> (string, secret_or_certificate). To verify JWT signed by the HS512 algorithm, the function io.jwt.verfiy_hs512 can be used. If the signature algorithm is RS512, io.jwt.verify_rs512 can be used. The secret_or_certificate argument is either a secret code or a string containing the public key, depending on the algorithm. If verification is successful, the true is returned.</algorithm></p>
+<p>Functions validating JWT signatures have the form io.jwt.verify_<algorithm> (string, secret_or_certificate). To verify JWT signed by the HS512 algorithm, the function io.jwt.verfiy_hs512 can be used. If the signature algorithm is RS512, io.jwt.verify_rs512 can be used. The secret_or_certificate argument is either a secret code or a string containing the public key, depending on the algorithm. If verification is successful, then true is returned.</algorithm></p>
 <p>In the previous example, we validate the JWT generated by the HS512 algorithm, the secret code &quot;secret&quot;, and the results are as follows.</p>
 <pre><code>&gt; io.jwt.verify_hs512(&quot;eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9QQSBUZXN0IiwiaWF0IjoxNTE2MjM5MDIyfQ.962LwX8r2s-pGHgD1JlITvEtaLnNjXrssZAiLoelx2AOjN8Ch7HXxaH38312vLwk_FlE5VoESB3FxFswLnD8dQ&quot;, &quot;secret&quot;)
 true
@@ -1252,7 +1310,7 @@ true
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"next":{"title":"Chap 5. Writing Policies Using OPA","level":"1.10","depth":1,"path":"chap5/writingpolicy.md","ref":"chap5/writingpolicy.md","articles":[]},"previous":{"title":"Chap 3. Rego","level":"1.8","depth":1,"path":"chap3/rego.md","ref":"chap3/rego.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap4/builtinfunction.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 4. Built-in Functions","level":"1.9","depth":1,"next":{"title":"Chap 5. Writing Policies Using OPA","level":"1.10","depth":1,"path":"chap5/writingpolicy.md","ref":"chap5/writingpolicy.md","articles":[]},"previous":{"title":"Chap 3. Rego","level":"1.8","depth":1,"path":"chap3/rego.md","ref":"chap3/rego.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap4/builtinfunction.md","mtime":"2022-03-05T15:23:29.544Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1271,6 +1329,10 @@ true
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

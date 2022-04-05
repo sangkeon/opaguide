@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -466,7 +479,7 @@ By accessing <a href="https://code.visualstudio.com/" target="_blank">https://co
 <p>The most convenient way to run VSCode is to go from the shell to the parent project directory containing the source with the cd command, run the command code. or run the code <project top="" directory=""> command.</project></p>
 <p>If you have run VSCode outside the project directory, simply run File -&gt; Open Directory to open the top directory of the project.</p>
 <h3 id="install-of-vscode-opa-plugin">Install of vscode-opa plugin</h3>
-<p>Let&apos;s install the OPA vscode-opa plugin in VSCode. Click the Extensions icon as shown in Figure 2-6, or enter Ctrl + Shift + x (in Mac OS, [Cmd + Shift + x] to open the extension page. The Open Policy Agent can then be entered into the search bar to see the screen shown in Figure 2-6. Let&apos;s check if it&apos;s a plug-in from Torin Sandall, the core OPA developer, and click Install to install it.</p>
+<p>Let&apos;s install the OPA vscode-opa plugin in VSCode. Click the Extensions icon as shown in Figure 2-6, or enter [Ctrl + Shift + x] (in Mac OS, [Cmd + Shift + x]) to open the extension page. The Open Policy Agent can then be entered into the search bar to see the screen shown in Figure 2-6. Let&apos;s check if it&apos;s a plug-in from Torin Sandall, the core OPA developer, and click Install to install it.</p>
 <p><img src="img/fig_2-6.png" alt="Searching vscode-opa Plugins"></p>
 <p>Figure 2-6. Searching vscode-opa Plugin</p>
 <p>Create a directory called hello_vscode_opa, navigate to it, run vscode . to open the project. Then the screen appears as shown in Figure 2-7.</p>
@@ -520,9 +533,9 @@ allow_world {
 <p>OPA: Profile Selection command allows performance profiling results to be seen in the Output window, as shown in Figure 2-14. Units are expressed in nanoseconds, but the current rule is too simple to measure to zero.</p>
 <p><img src="img/fig_2-14.png" alt="Results of OPA: Profile Selection"></p>
 <p>Figure 2-14. OPA: Results of OPA: Profile Selection</p>
-<p>When the OPA: Toogle Evaluation Coverage command is launched, the Policy Evaluation Coverage section is displayed as shown in Figure 2-15. The OPA: Google Workspace Coverage menu also allows you to turn coverage off and on on a workspace-by-workspace basis. Coverage-related features are more useful when it comes to unit testing.</p>
-<p><img src="img/fig_2-15.png" alt="Results of OPA: Toogle Evaluation"></p>
-<p>Figure 2-15. Results of OPA: Toogle Evaluation</p>
+<p>When the OPA: Toggle Evaluation Coverage command is launched, the Policy Evaluation Coverage section is displayed as shown in Figure 2-15. The OPA: Google Workspace Coverage menu also allows you to turn coverage off and on a workspace-by-workspace basis. Coverage-related features are more useful when it comes to unit testing.</p>
+<p><img src="img/fig_2-15.png" alt="Results of OPA: Toggle Evaluation"></p>
+<p>Figure 2-15. Results of OPA: Toggle Evaluation</p>
 <p>Let&apos;s run a unit test this time. First, let&apos;s write a separate file called hello_test.rego as follows.</p>
 <blockquote>
 <p><a id="chap2/hello_vscode_opa/hello_test.rego" href="../code/chap2/hello_vscode_opa/hello_test.rego">chap2/hello_vscode_opa/hello_test.rego</a></p>
@@ -589,7 +602,7 @@ test_allow_world_not_allowed {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"next":{"title":"Chap 3. Rego","level":"1.8","depth":1,"path":"chap3/rego.md","ref":"chap3/rego.md","articles":[]},"previous":{"title":"Chap 1. Introduction to OPA","level":"1.6","depth":1,"path":"chap1/introduction.md","ref":"chap1/introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap2/installandusage.md","mtime":"2022-01-09T14:04:17.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 2. OPA Installation and Usage","level":"1.7","depth":1,"next":{"title":"Chap 3. Rego","level":"1.8","depth":1,"path":"chap3/rego.md","ref":"chap3/rego.md","articles":[]},"previous":{"title":"Chap 1. Introduction to OPA","level":"1.6","depth":1,"path":"chap1/introduction.md","ref":"chap1/introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap2/installandusage.md","mtime":"2022-03-05T15:23:29.544Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -608,6 +621,10 @@ test_allow_world_not_allowed {
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

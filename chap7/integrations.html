@@ -309,6 +309,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../chap12/opal.html">
+            
+                <a href="../chap12/opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -612,7 +625,7 @@ Serving HTTP on ::1 port 8080 (<a href="http://[::1]:8080/" target="_blank">http
 <p>If you look at the shell that started the OPA server, you can see that the following contents have been output.</p>
 <pre><code>{&quot;client_addr&quot;:&quot;[::1]:61080&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Received request.&quot;,&quot;req_id&quot;:1,&quot;req_method&quot;:&quot;POST&quot;,&quot;req_path&quot;:&quot;/v1/data/test/server/rest/allowed&quot;,&quot;time&quot;:&quot;2020-11-05T10:34:01+09:00&quot;}
 {&quot;client_addr&quot;:&quot;[::1]:61080&quot;,&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Sent response.&quot;,&quot;req_id&quot;:1,&quot;req_method&quot;:&quot;POST&quot;,&quot;req_path&quot;:&quot;/v1/data/test/server/rest/allowed&quot;,&quot;resp_bytes&quot;:68,&quot;resp_duration&quot;:8.0402,&quot;resp_status&quot;:200,&quot;time&quot;:&quot;2020-11-05T10:34:01+09:00&quot;}
-</code></pre><p>We briefly checked how to set up the OPA server. For more information on settings, see the official document at <a href="https://www.openpolicyagent.org/docs/latest/configuration/" target="_blank">https://www.openpolicyagent.org/docs/latest/configuration/</a>).</p>
+</code></pre><p>We briefly checked how to set up the OPA server. For more information on settings, see the official document at <a href="https://www.openpolicyagent.org/docs/latest/configuration/" target="_blank">https://www.openpolicyagent.org/docs/latest/configuration/</a>.</p>
 <p>Run OPA server in Docker and Kubernetes Environment
 OPA provides an official docker image, so you can easily float the OPA server using docker or Kubernetes. If you search for openpolicyagent/opa in the docker hub, you can find the OPA docker image as shown in Figure 7-3. If you check the description of the OPA official docker image, the images shown in Table 7-2 are provided.  In the development process, openpolicy agent/opa:latest-debug with a built-in shell for debugging can be used. openpolicyagent/opa:latest-rootless can be used rather than openpolicyagent/opa:latest for application in the production environment. However, it is better to use a rootless image that operates as a server with an account other than root because security check tools can complain of it as a security vulnerability.</p>
 <p><img src="img/fig_7-3.png" alt="OPA docker image (hub.docker.com/r/openpolicyagent/opa)"> </p>
@@ -1003,7 +1016,7 @@ The method of developing and operating a service that inquires policies stored i
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 7. OPA Integrations","level":"1.12","depth":1,"next":{"title":"Chap 8. Monitoring","level":"1.13","depth":1,"path":"chap8/monitoring.md","ref":"chap8/monitoring.md","articles":[]},"previous":{"title":"Chap 6. OPA Bundle","level":"1.11","depth":1,"path":"chap6/bundle.md","ref":"chap6/bundle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap7/integrations.md","mtime":"2022-01-09T14:04:17.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T16:56:40.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 7. OPA Integrations","level":"1.12","depth":1,"next":{"title":"Chap 8. Monitoring","level":"1.13","depth":1,"path":"chap8/monitoring.md","ref":"chap8/monitoring.md","articles":[]},"previous":{"title":"Chap 6. OPA Bundle","level":"1.11","depth":1,"path":"chap6/bundle.md","ref":"chap6/bundle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap7/integrations.md","mtime":"2022-03-05T15:23:29.548Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1022,6 +1035,10 @@ The method of developing and operating a service that inquires policies stored i
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

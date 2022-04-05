@@ -1,0 +1,675 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chap 12. Policy Synchronization using OPAL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-etoc-plus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../chap11/wasm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../LICENSE.html">
+            
+                <a href="../LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../AUTHOR.html">
+            
+                <a href="../AUTHOR.html">
+            
+                    
+                    About Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ACKNOWLEGEMENT.html">
+            
+                <a href="../ACKNOWLEGEMENT.html">
+            
+                    
+                    Acknowledgement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../CONTRIBUTORS.html">
+            
+                <a href="../CONTRIBUTORS.html">
+            
+                    
+                    Contributors and Sponsors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chap1/introduction.html">
+            
+                <a href="../chap1/introduction.html">
+            
+                    
+                    Chap 1. Introduction to OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chap2/installandusage.html">
+            
+                <a href="../chap2/installandusage.html">
+            
+                    
+                    Chap 2. OPA Installation and Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chap3/rego.html">
+            
+                <a href="../chap3/rego.html">
+            
+                    
+                    Chap 3. Rego
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chap4/builtinfunction.html">
+            
+                <a href="../chap4/builtinfunction.html">
+            
+                    
+                    Chap 4. Built-in Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chap5/writingpolicy.html">
+            
+                <a href="../chap5/writingpolicy.html">
+            
+                    
+                    Chap 5. Writing Policies Using OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../chap6/bundle.html">
+            
+                <a href="../chap6/bundle.html">
+            
+                    
+                    Chap 6. OPA Bundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../chap7/integrations.html">
+            
+                <a href="../chap7/integrations.html">
+            
+                    
+                    Chap 7. OPA Integrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../chap8/monitoring.html">
+            
+                <a href="../chap8/monitoring.html">
+            
+                    
+                    Chap 8. Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../chap9/kubernetes.html">
+            
+                <a href="../chap9/kubernetes.html">
+            
+                    
+                    Chap 9. Using OPA in Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../chap10/extending.html">
+            
+                <a href="../chap10/extending.html">
+            
+                    
+                    Chap 10. Extending OPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../chap11/wasm.html">
+            
+                <a href="../chap11/wasm.html">
+            
+                    
+                    Chap 11. OPA and Web Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="opal.html">
+            
+                <a href="opal.html">
+            
+                    
+                    Chap 12. Policy Synchronization using OPAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chap 12. Policy Synchronization using OPAL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chap-12-policy-synchronization-using-opal">Chap 12. Policy Synchronization using OPAL</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#introduction-to-opal">Introduction to OPAL</a></li>
+<li><a href="#differences-from-opa-bundles">Differences from OPA Bundles</a><ul>
+<li><a href="#scenario-using-opa-bundle">Scenario Using OPA Bundle</a></li>
+<li><a href="#scenario-using-opal">Scenario Using OPAL</a></li>
+<li><a href="#comparison-by-scenario">Comparison by Scenario</a></li>
+</ul>
+</li>
+<li><a href="#install-and-using-opal">Install and Using OPAL</a></li>
+<li><a href="#data-source-configuration">Data Source Configuration</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Introduction to OPAL</li>
+<li>Comparison of OPA Bundle and OPAL-applied Policy/Data Management</li>
+<li>Install and Using OPAL</li>
+</ul>
+<p>OPAL(Open-Policy Administration Layer) allows synchronization of policies and data between multiple OPA instances. OPA itself provides a synchronization function through a bundle, but there are scenarios where synchronization through OPAL is more suitable. This chapter describes a synchronization method using OPAL.</p>
+<h2 id="introduction-to-opal">Introduction to OPAL</h2>
+<p>OPAL operates separately from the OPA server and synchronizes policies and data between multiple OPA servers. OPAL can reflect changes from various data sources such as GIT, S3, and DB in real time to OPA instances.</p>
+<p><img src="img/fig_12-1.png" alt="Architecture of OPAL"> </p>
+<p>Figure 12-1. Architecture of OPAL <sup><a href="#fn_7" id="reffn_7">7</a></sup></p>
+<p><sup><a href="#fn_7" id="reffn_7">7</a></sup> (Source: <a href="https://github.com/permitio/opal/" target="_blank">https://github.com/permitio/opal/</a>)</p>
+<p>The overall structure of OPAL is shown in Figure 12-1. OPAL consists of a server responsible for tracking policy/data from the policy repository and an OPAL client that reflects changes to the OPA instances. Policies are managed through a policy repository tracked by the OPAL server and may also include their own data. However, in the case of frequently changing data from external data sources, such as parameters and settings of policies, the OPAL client can collect data directly from external data sources by delivering updates and data sources to the OPAL client. OPAL does not work in the process of performing policy queries on the OPA server in an application. There is no need to modify the application that requests an OPA query from the OPA server. Although not illustrated in the figure, several OPAL servers can operate in synchronization with each other, so they have performance scalability through clustering (scaling out and connecting several OPAL servers can be done through a backbone channel such as Kafka or Redis).</p>
+<h2 id="differences-from-opa-bundles">Differences from OPA Bundles</h2>
+<p>OPA can detect and synchronize policy and data changes from servers implementing external bundle APIs through the built-in bundle function. Let&apos;s look at the difference between OPA bundle function and OPAL synchronization with an example of Git repository synchronization scenario.</p>
+<h3 id="scenario-using-opa-bundle">Scenario Using OPA Bundle</h3>
+<p>For example, the following process is required to use policies stored in Git through the OPA bundle function. Currently, OPA does not provide direct access to policies stored in Git, so policies must be bundled for polling.</p>
+<p>Check out Git&apos;s policy modifications through the build script and create a bundle using the bundle tool. This is because OPA supports only packaged bundle forms when loading remote policies. In this case, revision information should be recorded using the OPA build tool. Upload the built bundle to a bundle server that can provide the bundle by HTTP. You can use Amazon S3, Google Cloud Storage, Azure Blob Storage, and Nginx to implement OPA bundles as bundled servers, and see <a href="https://www.openpolicyagent.org/docs/latest/management-bundles/#implementations" target="_blank">https://www.openpolicyagent.org/docs/latest/management-bundles/#implementations</a> for configuration instructions. While it is possible to manage the bundles built in the Git repository as releases and use them in OPA, OPA uses Etag to detect bundle changes, so it must maintain links to the latest releases.</p>
+<p>When using OPA, no matter what method you use, it is necessary to create an OPA bundle of directories in the Git repository.</p>
+<p>Bundle server access configuration such as S3 endpoint and AWS authentication is configured in the service section of the OPA configuration file, and bundle file and polling period are set in the bundle section. Using this setting when starting the OPA server, the OPA server&apos;s service and bundle plug-in detect changes in the remote bundle according to the settings and reflect them on the OPA server.</p>
+<h3 id="scenario-using-opal">Scenario Using OPAL</h3>
+<p>OPAL works by pushing data to the OPA server process by the opal-client, which operates as a separate process.</p>
+<p>OPAL server polls git changes or receives them through webhook and reflects the changes to OPAL clients. If OPAL is used, configuring OPAL_POLICY_REPO_URL on the OPAL server will fetch the policy from the Git repository. After cloning the contents of the Git repository to the specified directory, you can configure the OPAL server to periodically poll git changes according to the settings or detect changes through the Webhook. The OPAL client receives the changes from the server through the websocket and updates the changes to the OPA server.</p>
+<h3 id="comparison-by-scenario">Comparison by Scenario</h3>
+<p>Let&apos;s look at the trade-offs of each scenario. First of all, when using OPA bundles, the bundle build process is required, but policies stored in S3 can be updated immediately without the need to use a separate server. On the other hand, when using OPAL, there is no need for a separate process to build the bundle, but the process lifecycle management is necessary because the OPAL server and the OPAL client operate as separate processes.</p>
+<p>When using OPA, when a change in the bundle file is detected, the Etag is changed and the entire bundle must be downloaded. Recently, the concept of delta bundles has been added to OPA to solve this problem, but it is not yet easy to use and manage. However, with OPAL, only changes in git can be detected and updated except in situations such as restarting the client.</p>
+<p>If you use OPA bundles, you can configure Go-written applications to initialize OPA plugins and reflect changes through the OPA client library. However, updates via OPAL work in a way that OPAL clients update via the HTTP API provided by the OPA server, so they cannot be used if the OPA is embedded in an application in the form of a client library.</p>
+<p>Expanding the OPA bundle plug-in to connect new data sources is difficult to create and dynamically load plug-ins due to the nature of the Go language. It is necessary to modify the source code directly, and if it is a general function, it can be managed upstream by contributing to OPA, but if it is an individual and special code, it is difficult to manage it separately. On the other hand, since OPAL is developed as Python, modules can be installed and loaded, so it is more convenient to develop and link modules that bring external data.</p>
+<p>Large-scale synchronization using pub/sub, when client/server channels are intricately intertwined, and when more complex management or integration is required, OPAL is more advantageous. When using OPA bundles, it is difficult to centralize management of these settings if the policies used for each server are different for large systems using multiple OPA servers. If OPAL is used, if the policies used by each server are different, multiple topics can be created to specify the appropriate topics for each server.</p>
+<p>Finally, when performance expansion is required, it uses a large number of OPAL servers and provides the ability to configure clusters through synchronization between servers.</p>
+<p>Both the OPA bundle and OPAL are based on the external data integration method presented in the official OPA document (see <a href="https://www.openpolicyagent.org/docs/latest/external-data/" target="_blank">https://www.openpolicyagent.org/docs/latest/external-data/</a>). The method using the OPA bundle corresponds to Option 3, and the method using OPAL corresponds to Option 4. It would be reasonable to view OPAL as an implementation that users can use when they want to implement Option 4. Therefore, it is helpful to refer to the differences between the methods before deciding which method to use, the OPA bundle or OPAL.</p>
+<h2 id="install-and-using-opal">Install and Using OPAL</h2>
+<p>Let&#x2019;s try installing OPAL and using it. Let&apos;s install it using the pip as guided on the official OPAL website.</p>
+<p>First, create a virtual environment with the virtualenv command as follows. At this time, check if the Python version is 3.7 or higher required by OPAL.</p>
+<pre><code>$ virtualenv helloopal
+created virtual environment CPython3.8.10.final.0-64 in 80ms
+  creator CPython3Posix(dest=/home/sangkenlee/helloopal, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/sangkenlee/.local/share/virtualenv)
+    added seed packages: pip==22.0.4, setuptools==60.10.0, wheel==0.37.1
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+</code></pre><p>Activate the virtual environment as follows.</p>
+<pre><code>$ cd helloopal
+$ source bin/activate
+</code></pre><p>The OPAL server verifies the client&apos;s request through JWT, so let&apos;s generate a key for issuing JWT as follows. The -f option allows you to specify the name of the key file to be generated, which you specify as opalkey. A private key (opalkey) and a public key (opalkey.pub) are generated.</p>
+<pre><code>$ ssh-keygen -t rsa -b 4096 -m pem -f opalkey
+</code></pre><p>Check the shell prompt to verify that you are in the hello virtual environment that you created, and install the opal-server and the opal-client as a pip package.</p>
+<pre><code>(helloopal)  $ pip install opal-server opal-client
+</code></pre><p>Once the installation is complete, set the environment variables as follows and run the opal-server.</p>
+<pre><code>(helloopal)  $ export OPAL_AUTH_PRIVATE_KEY=~/opalkey
+(helloopal)  $ export OPAL_AUTH_PUBLIC_KEY=~/opalkey.pub
+(helloopal)  $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal) $ export OPAL_POLICY_REPO_URL=https://github.com/permitio/opal-example-policy-repo.git 
+(helloopal)  $ export OPAL_DATA_CONFIG_SOURCES=&quot;{\&quot;config\&quot;:{\&quot;entries\&quot;:[]}}&quot; 
+(helloopal)  $ export OPAL_LOG_COLORIZE=False
+(helloopal)  $ opal-server --policy-repo-polling-interval 60 run
+
+    &#x1F48E; OPAL-SERVER &#x1F48E;
+    Open-Policy Administration Layer - server
+
+-- Starting OPAL Server (with uvicron) --
+{&quot;text&quot;: &quot;2022-03-28T22:38:47.075095+0900 | opal_server.server                      | INFO  | OPAL is running in secure mode - will verify API requests with JWT tokens.\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:00.021170&quot;, &quot;seconds&quot;: 0.02117}, &quot;exception&quot;: null, &quot;extra&quot;: {}, &quot;file&quot;: {&quot;name&quot;: &quot;server.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/opal_server/server.py&quot;}, &quot;function&quot;: &quot;__init__&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x2139;&#xFE0F;&quot;, &quot;name&quot;: &quot;INFO&quot;, &quot;no&quot;: 20}, &quot;line&quot;: 106, &quot;message&quot;: &quot;OPAL is running in secure mode - will verify API requests with JWT tokens.&quot;, &quot;module&quot;: &quot;server&quot;, &quot;name&quot;: &quot;opal_server.server&quot;, &quot;process&quot;: {&quot;id&quot;: 56639, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 140258057254720, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-28 22:38:47.075095+09:00&quot;, &quot;timestamp&quot;: 1648474727.075095}}}
+...
+{&quot;text&quot;: &quot;2022-03-28T22:38:48.065627+0900 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at &apos;95638e87d8ea04e97fd0d931ab2932f9251aacce&apos;\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:01.011702&quot;, &quot;seconds&quot;: 1.011702}, &quot;exception&quot;: null, &quot;extra&quot;: {&quot;head&quot;: &quot;95638e87d8ea04e97fd0d931ab2932f9251aacce&quot;}, &quot;file&quot;: {&quot;name&quot;: &quot;git_policy_source.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/opal_common/sources/git_policy_source.py&quot;}, &quot;function&quot;: &quot;check_for_changes&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x2139;&#xFE0F;&quot;, &quot;name&quot;: &quot;INFO&quot;, &quot;no&quot;: 20}, &quot;line&quot;: 86, &quot;message&quot;: &quot;No new commits: HEAD is at &apos;95638e87d8ea04e97fd0d931ab2932f9251aacce&apos;&quot;, &quot;module&quot;: &quot;git_policy_source&quot;, &quot;name&quot;: &quot;opal_common.sources.git_policy_source&quot;, &quot;process&quot;: {&quot;id&quot;: 56639, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 140258057254720, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-28 22:38:48.065627+09:00&quot;, &quot;timestamp&quot;: 1648474728.065627}}}
+</code></pre><p>If successfully executed, the above results can be seen. As a result, depending on the platform, the log may be output (Ubuntu) in the form of json as described above or output (MacOS) in color text.</p>
+<p>A brief description of the contents is as follows. This example deals with the same content as the official opal document as the overall content, but there are some differences. First, since the default setting value of OPAL_DATA_CONFIG_SOURCES can output an error that confuses beginners, the data source item is set to an empty list. In the Ubuntu environment used in the test, the log is output to json (no format modification configuration was found), and the color change indicator is output to hex in the text in json, making the log difficult to read. To solve this problem, OPAL_LOG_COLORIZE was set as False. This setting is not necessary if the log is output in color text.
+Other settings are generally similar to official documents. The environment variables OPAL_AUTH_PRIVATE_KEY and OPAL_AUTH_PUBLIC_KEY specify the private key and public key files previously generated for JWT signature, respectively. The OPAL_AUTH_MASTER_TOKEN environment variable sets the token to be used when requesting JWT issuance from the opal-client. It is more preferable to generate an arbitrary value, but a simple string was used for convenience. OPAL_POLICY_REPO_URL used <a href="https://github.com/permitio/opal-example-policy-repo.git" target="_blank">https://github.com/permitio/opal-example-policy-repo.git</a> provided by OPAL as it was and set to poll every 60 seconds. For more information, see the documents provided by OPAL at <a href="https://github.com/permitio/opal/tree/master/docs" target="_blank">https://github.com/permitio/opal/tree/master/docs</a>).</p>
+<p>This time, run the client and try to connect to the server. Open another shell and activate the opalhello virtual environment. Then, if you enter the content, you can run the client.</p>
+<pre><code>
+(helloopal)  $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal)  $ export OPAL_LOG_COLORIZE=False
+(helloopal)  $ export OPAL_CLIENT_TOKEN=`opal-client obtain-token $OPAL_AUTH_MASTER_TOKEN`
+opal-client run
+
+    OPAL-CLIENT
+    Open-Policy Administration Layer - client
+
+-- Starting OPAL client (with uvicron) --
+{&quot;text&quot;: &quot;2022-03-29T00:03:43.444584+0900 | opal_common.fetcher.fetcher_register    | INFO  | Loading FetcherProvider &apos;FastApiRpcFetchProvider&apos; found at: &lt;class &apos;opal_common.fetcher.providers.fastapi_rpc_fetch_provider.FastApiRpcFetchProvider&apos;&gt;\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:00.080622&quot;, &quot;seconds&quot;: 0.080622}, &quot;exception&quot;: null, &quot;extra&quot;: {}, &quot;file&quot;: {&quot;name&quot;: &quot;fetcher_register.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/opal_common/fetcher/fetcher_register.py&quot;}, &quot;function&quot;: &quot;__init__&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x2139;&#xFE0F;&quot;, &quot;name&quot;: &quot;INFO&quot;, &quot;no&quot;: 20}, &quot;line&quot;: 39, &quot;message&quot;: &quot;Loading FetcherProvider &apos;FastApiRpcFetchProvider&apos; found at: &lt;class &apos;opal_common.fetcher.providers.fastapi_rpc_fetch_provider.FastApiRpcFetchProvider&apos;&gt;&quot;, &quot;module&quot;: &quot;fetcher_register&quot;, &quot;name&quot;: &quot;opal_common.fetcher.fetcher_register&quot;, &quot;process&quot;: {&quot;id&quot;: 60157, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 139769221486400, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-29 00:03:43.444584+09:00&quot;, &quot;timestamp&quot;: 1648479823.444584}}}
+...
+{&quot;text&quot;: &quot;2022-03-29T00:03:44.496096+0900 | fastapi_websocket_pubsub.pub_sub_client | INFO  | Connected to PubSub server ws://localhost:7002/ws\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:01.132134&quot;, &quot;seconds&quot;: 1.132134}, &quot;exception&quot;: null, &quot;extra&quot;: {}, &quot;file&quot;: {&quot;name&quot;: &quot;pub_sub_client.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/fastapi_websocket_pubsub/pub_sub_client.py&quot;}, &quot;function&quot;: &quot;run&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x2139;&#xFE0F;&quot;, &quot;name&quot;: &quot;INFO&quot;, &quot;no&quot;: 20}, &quot;line&quot;: 200, &quot;message&quot;: &quot;Connected to PubSub server ws://localhost:7002/ws&quot;, &quot;module&quot;: &quot;pub_sub_client&quot;, &quot;name&quot;: &quot;fastapi_websocket_pubsub.pub_sub_client&quot;, &quot;process&quot;: {&quot;id&quot;: 60157, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 139769221486400, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-29 00:03:44.496096+09:00&quot;, &quot;timestamp&quot;: 1648479824.496096}}}
+</code></pre><p>In the first line, the token required to receive the JWT from the server was stored in the OPAL_AUTH_MASTER_TOKEN environment variable. The OPAL_LOG_COLORIZE environment variable is the same as the server. The JWT was received from the server with the opal-client obtain-token command and stored in the OPAL_CLIENT_TOKEN environment variable. After that, when the client is executed, the server and the websocket are connected and the OPAL client starts. The default configuration of the OPAL client starts the OPA server present in the PATH. If OPA is installed in the path and does not change other settings, the server starts with 8181, the default port of the OPA server. Go to localhost:8181 in your web browser and check it out.</p>
+<p><img src="img/fig_12-2.png" alt="Web UI of OPA Server"> </p>
+<p>Figure 12-2. Web UI of the OPA Server</p>
+<p>You can view the web UI of the OPA server by accessing localhost:8181. Enter result=data in the Query section. This query takes all the contents of the data area loaded into the OPA (that is, all contents except input) and puts them in a variable called result. Note that the web UI provided by OPA always requires binding when executing queries, so simply entering data does not yield results. After entering the query, click the Submit button to see the results. If you check whether the output result is the same content as the files on <a href="https://github.com/permitio/opal-example-policy-repo.git" target="_blank">https://github.com/permitio/opal-example-policy-repo.git</a>, you can see that it is the same content.</p>
+<p><img src="img/fig_12-3.png" alt="Query Result of &quot;result=data&quot;"> </p>
+<p>Figure 12-3. Query Result of &quot;result=data&quot;</p>
+<h2 id="data-source-configuration">Data Source Configuration</h2>
+<p>In the previous example, OPAL_DATA_CONFIG_SOURCES is set to an empty list, but what happens if you run it with the default value? Shut down the old opal-server and opal-client, open a new shell, and activate the opalhello virtual environment. Remove the export OPAL_DATA_CONFIG_SOURCES=&quot;{\&quot;config\&quot;:{\&quot;entries\&quot;:[]}}&quot; line and run the server as follows:</p>
+<pre><code>(helloopal)  $ export OPAL_AUTH_PRIVATE_KEY=~/opalkey
+(helloopal)  $ export OPAL_AUTH_PUBLIC_KEY=~/opalkey.pub
+(helloopal)  $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal) $ export OPAL_POLICY_REPO_URL=https://github.com/permitio/opal-example-policy-repo.git 
+(helloopal)  $ (helloopal)  $ export OPAL_LOG_COLORIZE=False
+(helloopal)  $ opal-server --policy-repo-polling-interval 60 run
+</code></pre><p>Open another shell, activate the opalhello virtual environment, and then run the client.</p>
+<pre><code>(helloopal)  $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal)  $ export OPAL_LOG_COLORIZE=False
+(helloopal)  $ export OPAL_CLIENT_TOKEN=`opal-client obtain-token $OPAL_AUTH_MASTER_TOKEN`
+opal-client run
+</code></pre><p>When you run the client, you can see the following errors.</p>
+<pre><code>{&quot;text&quot;: &quot;2022-03-29T00:38:43.647847+0900 | opal_client.data.updater                |ERROR  | Failed to fetch url http://localhost:7002/policy-data, got response code 401 with error: {&apos;detail&apos;: {&apos;error&apos;: &apos;access token was not provided&apos;, &apos;token&apos;: None}}\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:02.295990&quot;, &quot;seconds&quot;: 2.29599}, &quot;exception&quot;: null, &quot;extra&quot;: {&quot;url&quot;: &quot;http://localhost:7002/policy-data&quot;, &quot;status&quot;: 401, &quot;error&quot;: {&quot;detail&quot;: {&quot;error&quot;: &quot;access token was not provided&quot;, &quot;token&quot;: null}}}, &quot;file&quot;: {&quot;name&quot;: &quot;updater.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/opal_client/data/updater.py&quot;}, &quot;function&quot;: &quot;update_policy_data&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x274C;&quot;, &quot;name&quot;: &quot;ERROR&quot;, &quot;no&quot;: 40}, &quot;line&quot;: 291, &quot;message&quot;: &quot;Failed to fetch url http://localhost:7002/policy-data, got response code 401 with error: {&apos;detail&apos;: {&apos;error&apos;: &apos;access token was not provided&apos;, &apos;token&apos;: None}}&quot;, &quot;module&quot;: &quot;updater&quot;, &quot;name&quot;: &quot;opal_client.data.updater&quot;, &quot;process&quot;: {&quot;id&quot;: 63023, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 139882438235968, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-29 00:38:43.647847+09:00&quot;, &quot;timestamp&quot;: 1648481923.647847}}}
+</code></pre><p>The error means that there is no access token for server access, and the reason for this error is as follows. You can verify the current OPAL settings by executing the opal-server print-config command. When the above command is executed without setting the OPAL_DATA_CONFIG_SOURCES environment variable and the contents of the DATA_CONFIG_SOURCES item are as follows. By default, <a href="http://localhost:7002/policy-data" target="_blank">http://localhost:7002/policy-data</a> is set as the data source.</p>
+<pre><code>  &quot;DATA_CONFIG_SOURCES&quot;: &quot;config=DataSourceConfig(entries=[DataSourceEntry(url=&apos;http://localhost:7002/policy-data&apos;, config=None, topics=[&apos;policy_data&apos;], dst_path=&apos;&apos;, save_method=&apos;PUT&apos;)]) external_source_url=None&quot;,
+</code></pre><p>Since localhost:7002 is the default address of the OPAL server, the client requests /policy-data from the server again for information from the data source. The OPAL server returns a 401 error if the JWT is not in the HTTP Authorization header. So what should we do to prevent these errors from occurring? You can find answers at <a href="https://github.com/permitio/opal/blob/master/docker/run-example-with-security.sh" target="_blank">https://github.com/permitio/opal/blob/master/docker/run-example-with-security.sh</a>. In this script, start the opal-server, run the opal-client opatamin-token, issue the JWT, and save it in the environment variable OPAL_CLIENT_TOKEN. After exiting the opal-server, restart the opal-server by setting OPAL_CLIENT_TOKEN in the header of the data source. Reflecting this information in server execution will be as follows.</p>
+<pre><code>(helloopal)  $ export OPAL_AUTH_PRIVATE_KEY=~/opalkey
+(helloopal)  $ export OPAL_AUTH_PUBLIC_KEY=~/opalkey.pub
+(helloopal)  $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal)  $ export OPAL_POLICY_REPO_URL=https://github.com/permitio/opal-example-policy-repo.git
+
+(helloopal)  $ opal-server run &amp;
+(helloopal)  $ sleep 2;
+(helloopal)  $ export OPAL_CLIENT_TOKEN=`opal-client obtain-token $OPAL_AUTH_MASTER_TOKEN`
+(helloopal)  $ ps -ef | grep opal | grep -v grep | awk &apos;{print $2}&apos; | xargs kill
+(helloopal)  $ sleep 5;
+
+(helloopal)  $ export OPAL_LOG_COLORIZE=False
+
+(helloopal)  $ export OPAL_DATA_CONFIG_SOURCES=&quot;{\&quot;config\&quot;:{\&quot;entries\&quot;:[{\&quot;url\&quot;:\&quot;http://localhost:7002/policy-data\&quot;,\&quot;config\&quot;:{\&quot;headers\&quot;:{\&quot;Authorization\&quot;:\&quot;Bearer ${OPAL_CLIENT_TOKEN}\&quot;}},\&quot;topics\&quot;:[\&quot;policy_data\&quot;],\&quot;dst_path\&quot;:\&quot;/static\&quot;}]}}&quot;
+
+(helloopal)  $ opal-server --policy-repo-polling-interval 60 run
+</code></pre><p>If you run the OPAL server as described above and then run the client again, you can check that no authorization error has occurred.</p>
+<pre><code>{&quot;text&quot;: &quot;2022-03-29T11:01:27.069878+0900 | fastapi_websocket_pubsub.pub_sub_client | INFO  | Connected to PubSub server ws://localhost:7002/ws\n&quot;, &quot;record&quot;: {&quot;elapsed&quot;: {&quot;repr&quot;: &quot;0:00:01.145920&quot;, &quot;seconds&quot;: 1.14592}, &quot;exception&quot;: null, &quot;extra&quot;: {}, &quot;file&quot;: {&quot;name&quot;: &quot;pub_sub_client.py&quot;, &quot;path&quot;: &quot;/home/sangkenlee/helloopal/lib/python3.8/site-packages/fastapi_websocket_pubsub/pub_sub_client.py&quot;}, &quot;function&quot;: &quot;run&quot;, &quot;level&quot;: {&quot;icon&quot;: &quot;&#x2139;&#xFE0F;&quot;, &quot;name&quot;: &quot;INFO&quot;, &quot;no&quot;: 20}, &quot;line&quot;: 200, &quot;message&quot;: &quot;Connected to PubSub server ws://localhost:7002/ws&quot;, &quot;module&quot;: &quot;pub_sub_client&quot;, &quot;name&quot;: &quot;fastapi_websocket_pubsub.pub_sub_client&quot;, &quot;process&quot;: {&quot;id&quot;: 12917, &quot;name&quot;: &quot;MainProcess&quot;}, &quot;thread&quot;: {&quot;id&quot;: 140619623663424, &quot;name&quot;: &quot;MainThread&quot;}, &quot;time&quot;: {&quot;repr&quot;: &quot;2022-03-29 11:01:27.069878+09:00&quot;, &quot;timestamp&quot;: 1648519287.069878}}}
+</code></pre><p>Let&apos;s set up a more practical data source. <a href="https://github.com/permitio/opal-fetcher-postgres" target="_blank">https://github.com/permitio/opal-fetcher-postgres</a> has an example of a provider which imports data from Postgres. Install an example and set it up in a helloopal virtual environment.</p>
+<pre><code>(helloopal) $ git clone https://github.com/permitio/opal-fetcher-postgres
+(helloopal) $ cd opal-fetcher-postgres
+(helloopal) $ pip install .
+...
+Successfully installed asyncpg-0.23.0 click-7.1.2 opal-fetcher-postgres-0.0.1 pydantic-1.8.2
+</code></pre><p>If the module was successfully installed, install postgres.</p>
+<p>With Linux, you can install it with the following command:</p>
+<pre><code>$ sudo apt install postgresql postgresql-contrib
+$ sudo systemctl start postgresql.service
+</code></pre><p>For MacOS, run the following command:</p>
+<pre><code>$ brew install postgresql
+$ brew services postgresql start
+</code></pre><p>When the installation is complete, run psql with postgres account privileges, create users and databases as follows, and exit psql with the quit command. </p>
+<p>For Linux, run psql as follows.</p>
+<pre><code>$ sudo -u postgres psql
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type &quot;help&quot; for help.
+</code></pre><p>For MacOS, run psql as follows.</p>
+<pre><code>$ psql postgres
+</code></pre><p>When psql is executed, create a user as follows:</p>
+<pre><code>postgres=# CREATE USER helloopal PASSWORD &apos;helloopal&apos;;
+CREATE ROLE
+postgres=# create database helloopal owner helloopal;
+CREATE DATABASE
+postgres=# quit
+</code></pre><p>Again, connect to the account and database you just created in the shell as follows.</p>
+<pre><code>$ psql -U helloopal -h 127.0.0.1 -d helloopal
+</code></pre><p>Run the following query to create a sample table and add data.</p>
+<pre><code>CREATE TABLE IF NOT EXISTS mapping (
+  num INT NOT NULL,
+  name varchar(250) NOT NULL,
+  PRIMARY KEY (num)
+);
+
+INSERT INTO mapping (num, name) values (1,&#x2019;one&#x2019;),(2,&#x2019;two&#x2019;),(3,&#x2019;three&#x2019;);
+</code></pre><p>Let&apos;s run a query to see if the data has been added well.</p>
+<pre><code>helloopal=&gt; select * from mapping;
+num | name  
+-----+-------
+   1 | one
+   2 | two
+   3 | three
+(3 rows)
+</code></pre><p>Now that the data is ready, let&apos;s set up an opal server and a client. First, the server added opal_fetcher_postgres.provider to the OPAL_FETCH_PROVIDER_MODULES environment variable and set postgres connection information and queries to be executed in OPAL_DATA_CONFIG_SOURCES as follows.</p>
+<pre><code>(helloopal) $ export OPAL_AUTH_PRIVATE_KEY=~/opalkey
+(helloopal) $ export OPAL_AUTH_PUBLIC_KEY=~/opalkey.pub
+(helloopal) $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal) $ export OPAL_POLICY_REPO_URL=https://github.com/permitio/opal-example-policy-repo.git 
+(helloopal) $ export OPAL_LOG_COLORIZE=False
+(helloopal) $ export OPAL_FETCH_PROVIDER_MODULES=opal_common.fetcher.providers,opal_fetcher_postgres.provider
+(helloopal) $ export OPAL_DATA_CONFIG_SOURCES=&quot;{\&quot;config\&quot;:{\&quot;entries\&quot;:[{\&quot;url\&quot;:\&quot;postgresql://helloopal@127.0.0.1:5432/helloopal\&quot;,\&quot;config\&quot;:{\&quot;fetcher\&quot;:\&quot;PostgresFetchProvider\&quot;,\&quot;query\&quot;:\&quot;SELECT * from mapping;\&quot;,\&quot;connection_params\&quot;:{\&quot;password\&quot;:\&quot;helloopal\&quot;}},\&quot;topics\&quot;:[\&quot;policy_data\&quot;],\&quot;dst_path\&quot;:\&quot;mapping\&quot;}]}}&quot;
+
+(helloopal) $ opal-server --policy-repo-polling-interval 60 run
+</code></pre><p>When the server is running, try running the client. Since the server delivers the data source URL and the postgres connection occurs on the client, the client also needs to set the OPAL_FETCH_PROVIDER_MODULES environment variable.</p>
+<pre><code>(helloopal) $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal) $ export OPAL_LOG_COLORIZE=False
+(helloopal) $ export OPAL_CLIENT_TOKEN=`opal-client obtain-token $OPAL_AUTH_MASTER_TOKEN`
+(helloopal) $ export OPAL_FETCH_PROVIDER_MODULES=opal_common.fetcher.providers,opal_fetcher_postgres.provider
+(helloopal) $ opal-client run
+</code></pre><p>Once the client is running, go to localhost:8181 and verify that the postgres data is reflected in the OPA. Since mapping has been set to dst_path in the previous data source setting, it must be connected to data.mapping when data is loaded into OPA. Type mapping=data.mapping in Query and click Submit. You can see that the data added to the database earlier has been loaded.</p>
+<p>What kind of work is needed to add data to the OPA? Since opal_fetcher_postgres is a simple sample implementation, it does not provide updates through polling. Therefore, a data update event must be issued.</p>
+<p><img src="img/fig_12-3.png" alt="Query Result of &quot;mapping=data.mapping&quot;"> </p>
+<p>Figure 12-4. Query Result of &quot;mapping=data.mapping&quot;</p>
+<p>Let&apos;s issue a data update event as follows.</p>
+<pre><code>(helloopal) $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
+(helloopal) $ export OPAL_LOG_COLORIZE=False
+(helloopal) $ export OPAL_DATASOURCE_TOKEN=`opal-client obtain-token $OPAL_AUTH_MASTER_TOKEN --type datasource`
+(helloopal) $ opal-client publish-data-update $OPAL_DATASOURCE_TOKEN --src-url postgresql://helloopal@127.0.0.1:5432/helloopal --src-config &quot;{\&quot;fetcher\&quot;:\&quot;PostgresFetchProvider\&quot;,\&quot;query\&quot;:\&quot;SELECT * from mapping;\&quot;,\&quot;connection_params\&quot;:{\&quot;password\&quot;:\&quot;helloopal\&quot;}}&quot; -t policy_data --dst-path mapping
+Publishing event:
+id=None entries=[DataSourceEntry(url=&apos;postgresql://helloopal@127.0.0.1:5432/helloopal&apos;, config={&apos;fetcher&apos;: &apos;PostgresFetchProvider&apos;, &apos;query&apos;: &apos;SELECT * from mapping;&apos;, &apos;connection_params&apos;: {&apos;password&apos;: &apos;helloopal&apos;}}, topics=[&apos;policy_data&apos;], dst_path=&apos;mapping&apos;, save_method=&apos;PUT&apos;)] reason=&apos;&apos; callback=UpdateCallback(callbacks=[])
+Event Published Successfully
+</code></pre><p>First of all, it is noteworthy that the JWT token type was issued as a datasource. The opal-client publish-data-update command issues events, but the configuration is complicated, not just specifying the source of the event. Because opal_fetcher_postgres does not have the ability to read and process url-based settings when updating, it also sets key data source settings, topics, and OPA data target paths. If you check the results of the mapping=data.mapping query in the web UI again after issuing the event, you can see that data has been added.</p>
+<p>When implementing a custom data fetcher module, it is necessary to update the data of the source only by specifying the name of source and some parameters you want to override.</p>
+<h2 id="summary">Summary</h2>
+<p>In this chapter, we briefly explained the difference between using OPAL and updating the policy/data of OPA when using OPAL bundles. In addition, for users who are using OPAL for the first time, the usage method was briefly explained and the confusing parts were guided. Since OPAL faithfully implements the policy and data update scenario presented by OPAL, the contents of this chapter will be able to provide insight into OPA policy/data management even if OPAL is not used directly. Although this chapter has not explained everything about OPAL, I hope it can be a good starting point. For more information about OPAL, visit the official website: <a href="https://opal.ac" target="_blank">https://opal.ac</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../chap11/wasm.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Chap 11. OPA and Web Assembly">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chap 12. Policy Synchronization using OPAL","level":"1.17","depth":1,"previous":{"title":"Chap 11. OPA and Web Assembly","level":"1.16","depth":1,"path":"chap11/wasm.md","ref":"chap11/wasm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap12/opal.md","mtime":"2022-04-05T14:20:39.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-etoc-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
