@@ -567,7 +567,7 @@ num | name
 (helloopal) $ opal-client run
 </code></pre><p>Once the client is running, go to localhost:8181 and verify that the postgres data is reflected in the OPA. Since mapping has been set to dst_path in the previous data source setting, it must be connected to data.mapping when data is loaded into OPA. Type mapping=data.mapping in Query and click Submit. You can see that the data added to the database earlier has been loaded.</p>
 <p>What kind of work is needed to add data to the OPA? Since opal_fetcher_postgres is a simple sample implementation, it does not provide updates through polling. Therefore, a data update event must be issued.</p>
-<p><img src="img/fig_12-3.png" alt="Query Result of &quot;mapping=data.mapping&quot;"> </p>
+<p><img src="img/fig_12-4.png" alt="Query Result of &quot;mapping=data.mapping&quot;"> </p>
 <p>Figure 12-4. Query Result of &quot;mapping=data.mapping&quot;</p>
 <p>Let&apos;s issue a data update event as follows.</p>
 <pre><code>(helloopal) $ export OPAL_AUTH_MASTER_TOKEN=&quot;HELLO&quot;
@@ -620,7 +620,7 @@ Event Published Successfully
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chap 12. Policy Synchronization using OPAL","level":"1.17","depth":1,"previous":{"title":"Chap 11. OPA and Web Assembly","level":"1.16","depth":1,"path":"chap11/wasm.md","ref":"chap11/wasm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace","livereload"],"pluginsConfig":{"ace":{},"etoc-plus":{},"livereload":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap12/opal.md","mtime":"2022-04-05T14:20:39.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-05T15:26:20.628Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chap 12. Policy Synchronization using OPAL","level":"1.17","depth":1,"previous":{"title":"Chap 11. OPA and Web Assembly","level":"1.16","depth":1,"path":"chap11/wasm.md","ref":"chap11/wasm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hints","etoc-plus","include-codeblock","ace"],"pluginsConfig":{"ace":{},"etoc-plus":{},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap12/opal.md","mtime":"2022-04-06T06:50:04.303Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-06T06:52:33.654Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -639,10 +639,6 @@ Event Published Successfully
     
         
         <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
